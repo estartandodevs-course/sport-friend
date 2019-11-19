@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';
 import axios from 'axios';
-import URL_API from '../../environment/configSheetDB';
+import sheetDBConfig from '../../environment';
 
 
 export default function RegisterUser() {
@@ -22,7 +22,7 @@ export default function RegisterUser() {
 
     const postUser = (_user) => {
         console.log("pre-posting")
-        axios.post(URL_API, {
+        axios.post(sheetDBConfig.URL_API, {
             "data": _user
         }).then(res => {
             console.log(res);

@@ -1,8 +1,64 @@
 .Menu {
-  display: flex;
-  background: #4d4040;
+  top: 0;
   width: 40vh;
-  height: 93em;
-  position: fixed;
+  height: 100vh;
+  display: flex;
+  position: absolute;
+  background-color: white;
   transition: all 1s ease 0s;
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.54);
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 35px;
+  }
+  .containerUser {
+    display: flex;
+    width: 100%;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+    .user {
+      width: 100px;
+      height: 100px;
+      display: flex;
+      border-radius: 50px;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      box-shadow: 1px 0 5px rgba(0, 0, 0, 0.54);
+      i {
+        display: flex;
+        font-size: 55px;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    .user-perfil {
+      display: flex;
+      // width: 100%;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 30px;
+      .logout {
+        width: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      h2 {
+        font-family: inherit;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 15px;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+      }
+    }
+  }
 }

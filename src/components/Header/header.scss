@@ -1,11 +1,12 @@
-div{
+.box{
     background: aqua;
     width: 100vw;
     height: 12vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    img{
+    .detalis{
         margin-left: 5px;
+        font-size: 35px;
     }
 }

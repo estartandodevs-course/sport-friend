@@ -13,7 +13,7 @@ export default function Header(props) {
     return (
         <div>
             <img onClick={toogleMenu} src={detalis} className="menu" alt="" />
-            <Menu className="openMenu" openMenu={props.openMenu} left={menu ? "0" : "-320px"} />
+            <Menu close={toogleMenu} className="openMenu" openMenu={props.openMenu} left={menu ? "0" : "-320px"} />
         </div>
     );
 }

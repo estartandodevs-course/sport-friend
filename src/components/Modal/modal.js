@@ -1,37 +1,37 @@
-import React from 'react';
-import React, { Component } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import './modal.scss';
 
 
-class Dashboard extends Component {
-  state = { show: false };
 
-    showModal = () => {
-    this.setState({ show: true });
-  };
 
-    hideModal = () => {
-    this.setState({ show: false });
-  };
+function Modal (props) {
+  const [show, setShow] = useState(false); 
 
-  render() {
-    return (
-      <main>
-        <h1>Modal</h1>
-        <Modal show={this.state.show} handleClose={this.hideModal}>
-          <p>dsddd sd sd sds ds dsds sdsddd ssd</p>
-          <p>fdff fd  ff dfdf fd dfdfdfdf df dfdf</p>
-        </Modal>
-        <button type="button" onClick={this.showModal}>
-          Abrir Modal
-        </button>
-      </main>
-    );
+  const toogleModal = () => {
+    setShow( !show );
+    console.log(show)
   }
+
+    return (
+      <>
+      <h1>Modal</h1>
+        {show ? ( 
+        <div className="Fundo">
+          <div className="modal-container" >
+            <p onClick={toogleModal}>close modal</p>
+            <div>{props.children}</div>
+          </div>
+        </div>
+        ) : (
+          <button type="button" onClick={toogleModal}>
+          Open Modal
+        </button>
+        )}
+      </>
+  );
 }
 
-const container = document.createElement("div");
-document.body.appendChild(container);
-ReactDOM.render(<Dashboard />, container);
 
+export default Modal;
 

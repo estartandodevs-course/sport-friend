@@ -1,12 +1,13 @@
 import React from 'react';
-import Home from './pages/Home/home'
+import Routers from './Router';
+// import Home from './pages/Home/home'
 import './App.scss';
 
 
 function App() {
   return (
-    <Home />
-    
+    // <Home />
+    <Routers/>
   );
 }
 

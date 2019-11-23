@@ -4,6 +4,13 @@ import sheetDBConfig from "../../environment";
 const sheetDB_URL = sheetDBConfig.URL_API;
 
 const loginService = {
+  getAll: () => {
+    axios
+      .get(sheetDB_URL)
+        .then(res =>{
+          return res.data;
+        })
+  },
   addUser: (newUser) => {
     console.log("pre-posting new user");
     axios

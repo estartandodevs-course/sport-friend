@@ -1,43 +1,34 @@
-import React, { useState }  from 'react';
-import axios from 'axios';
-import sheetDBConfig from '../../environment';
+import axios from "axios";
+import sheetDBConfig from "../../environment";
 
+const sheetDB_URL = sheetDBConfig.URL_API;
 
-export default function RegisterUser() {
+const loginService = {
+  addUser: (newUser) => {
+    console.log("pre-posting new user");
+    axios
+      .post(sheetDB_URL, {
+        data: newUser
+      })
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
+  },
+  searchUser: (userId) => {
+    console.log(userId)
+  },
+  getSortBy: async (sort) => {
+    axios
+      .get(sheetDB_URL + `?sort_by=${sort}&sort_order=asc`)
+      .then(res  => {
+        return res.data;
+      })
+  },
+  // getLastId: () => {
+  //   const lastObj = this.getSortBy("id").pop();
+  //   return lastObj.id;
+  // }
+};
 
-    const [user, setUser] = useState({
-        id: 10,
-        name: "JAJAJAJ",
-        age: 15,
-    });
-
-    const handleSubmit = event => {
-        event.preventDefault();
-        postUser(user);
-    }
-
-    const handleChange = event => {
-        setUser({ name: event.target.value, id: user.id+1, age: user.age});
-    }
-
-    const postUser = (_user) => {
-        console.log("pre-posting")
-        axios.post(sheetDBConfig.URL_API, {
-            "data": _user
-        }).then(res => {
-            console.log(res);
-            console.log(res.data);
-        })
-    };
-  return (
-    <div>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Person Name:
-            <input type="text" name="name" onChange={handleChange} />
-          </label>
-          <button type="submit">Add</button>
-        </form>
-    </div>
-  );
-}
+export default loginService;

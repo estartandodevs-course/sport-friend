@@ -1,0 +1,12 @@
+div{
+    background: aqua;
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img{
+        margin-left: 5px;
+        z-index: 1;
+    }
+}

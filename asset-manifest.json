@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/sport-friend/static/css/main.26bbc251.chunk.css",
+    "main.js": "/sport-friend/static/js/main.584d1d72.chunk.js",
+    "main.js.map": "/sport-friend/static/js/main.584d1d72.chunk.js.map",
+    "runtime-main.js": "/sport-friend/static/js/runtime-main.b8306acc.js",
+    "runtime-main.js.map": "/sport-friend/static/js/runtime-main.b8306acc.js.map",
+    "static/js/2.a725dbbb.chunk.js": "/sport-friend/static/js/2.a725dbbb.chunk.js",
+    "static/js/2.a725dbbb.chunk.js.map": "/sport-friend/static/js/2.a725dbbb.chunk.js.map",
+    "index.html": "/sport-friend/index.html",
+    "precache-manifest.40a3d3b8f1308b7dcf66b0ef91e255d6.js": "/sport-friend/precache-manifest.40a3d3b8f1308b7dcf66b0ef91e255d6.js",
+    "service-worker.js": "/sport-friend/service-worker.js",
+    "static/css/main.26bbc251.chunk.css.map": "/sport-friend/static/css/main.26bbc251.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b8306acc.js",
+    "static/js/2.a725dbbb.chunk.js",
+    "static/css/main.26bbc251.chunk.css",
+    "static/js/main.584d1d72.chunk.js"
+  ]
+}

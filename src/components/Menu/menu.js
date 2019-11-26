@@ -1,5 +1,7 @@
 import React from 'react'
 import './menu.scss'
+import { Link } from "react-router-dom";
+
 import Logout from '../../assets/img/logout.png'
 export default function menu(props) {
     return (
@@ -15,15 +17,15 @@ export default function menu(props) {
                     </div>
                     <div className="user-perfil">
                         <h2>Perfil</h2>
+                        <h2>Notificação</h2>
                         <h2>Minhas atividades</h2>
-                        <h2>Historico</h2>
-                        <h2>Comentarios</h2>
-                        <div className="logout">
+                        {/* <h2>Historico</h2>
+                        <h2>Comentarios</h2> */}
+                        <Link className="logout" to="/Login">
                             <img src={Logout} alt="logout"></img>
                             <h2>sair</h2>
-                        </div>
+                        </Link>
                     </div>
-                    {/* <Link to="../Login/login"></Link> */}
                 </div>
             </div>
         </section>

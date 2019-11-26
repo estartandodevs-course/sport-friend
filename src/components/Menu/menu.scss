@@ -48,6 +48,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        text-decoration:none;
+        cursor: pointer;
       }
       h2 {
         font-family: inherit;
@@ -58,6 +60,7 @@
         display: flex;
         align-items: center;
         padding: 5px;
+        color: black;
       }
     }
   }

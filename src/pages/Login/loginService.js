@@ -27,15 +27,12 @@ const loginService = {
   },
   getSortBy: async (sort) => {
     axios
+    // pass the collumn u wanna sort
       .get(sheetDB_URL + `?sort_by=${sort}&sort_order=asc`)
       .then(res  => {
         return res.data;
       })
-  },
-  // getLastId: () => {
-  //   const lastObj = this.getSortBy("id").pop();
-  //   return lastObj.id;
-  // }
+  }
 };
 
 export default loginService;

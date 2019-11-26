@@ -16,7 +16,7 @@ export default function Login() {
         }
 
         setNewUser(Object.assign(newUser, inputObj));
-        
+
         console.log(newUser);
     };
 
@@ -26,27 +26,27 @@ export default function Login() {
     }
 
     return (
-    <>
-    <h1 className="login-title"> Página de login </h1>
-    <Link to="/">Ir para Home</Link> 
-        <form onSubmit={handleSubmit}>
-            <label>Name</label>
-            <input
-             type="text" 
-             name="name" 
-             onChange={handleInputChange} />
+        <>
+            <h1 className="login-title"> Página de login </h1>
+            <Link to="/">Ir para Home</Link>
+            <form onSubmit={handleSubmit}>
+                <label>Name</label>
+                <input
+                    type="text"
+                    name="name"
+                    onChange={handleInputChange} />
 
-            <label>Age</label>
-            <input
-             type="text" 
-             name="age" 
-             onChange={handleInputChange} />
+                <label>Age</label>
+                <input
+                    type="text"
+                    name="age"
+                    onChange={handleInputChange} />
 
-            <input 
-             type="submit" 
-             value="Register User" />
+                <input
+                    type="submit"
+                    value="Register User" />
 
-        </form>
-    </>  
+            </form>
+        </>
     );
 }

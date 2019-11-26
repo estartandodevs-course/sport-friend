@@ -1,0 +1,6 @@
+import Football from '../assets/img/football.png'
+import Frame from '../assets/img/Frame.png'
+import gym from '../assets/img/gym.png'
+import running from '../assets/img/running.png'
+import Skate from '../assets/img/Skate.png'
+import walk from '../assets/img/walk.png'

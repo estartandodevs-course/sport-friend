@@ -4,11 +4,34 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background: linear-gradient(180deg, #60d4d1 0%, #4795ec 100%);
-  .Test{
-    width: 270px;
-    height: 81px;
-    background: #FFFFFF;
-    opacity: 0.6;
-    border-radius: 10px;
+  .containerHome {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    .Test {
+      width: 270px;
+      height: 60px;
+      background: #ffffff96;
+      // background: #FFFFFF;
+      // opacity: 0.6;
+      border-radius: 10px;
+      margin-bottom: 34px;
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 760px) {
+  body {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: linear-gradient(180deg, #60d4d1 0%, #4795ec 100%);
+    .containerHome {
+      .Test {
+        display: flex;
+      }
+    }
   }
 }

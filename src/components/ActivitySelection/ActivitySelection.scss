@@ -1,11 +1,12 @@
 .main {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
   .container-activity {
     display: flex;
     justify-content: center;
     width: 65%;
-    flex-wrap: wrap;
     .sports {
       width: 72px;
       height: 72px;
@@ -24,6 +25,17 @@
         width: 45px;
         height: 45px;
       }
+    }
+  }
+}
+@media screen and (max-width: 760px) {
+  .main {
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;
+    .container-activity {
+      flex-wrap: wrap;
     }
   }
 }

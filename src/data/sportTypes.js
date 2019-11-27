@@ -8,27 +8,27 @@ export const sportTypes = [
   },
   {
     id: 2,
-    name: "Futebol",
-    imagem: Imagens.football
+    name: "frame",
+    imagem: Imagens.frame
   },
   {
     id: 3,
-    name: "Futebol",
-    imagem: Imagens.football
+    name: "gym",
+    imagem: Imagens.gym
   },
   {
     id: 4,
-    name: "Futebol",
-    imagem: Imagens.football
+    name: "running",
+    imagem: Imagens.running
   },
   {
     id: 5,
-    name: "Futebol",
-    imagem: Imagens.football
+    name: "skate",
+    imagem: Imagens.skate
   },
   {
     id: 6,
-    name: "Futebol",
-    imagem: Imagens.football
+    name: "walk",
+    imagem: Imagens.walk
   }
 ];

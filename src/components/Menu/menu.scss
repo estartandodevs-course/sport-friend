@@ -4,14 +4,17 @@
   height: 100vh;
   display: flex;
   position: absolute;
-  background-color: white;
-  transition: all 1s ease 0s;
+  background: linear-gradient(180deg, #60d4d1 0%, #4795ec 100%);  transition: all 1s ease 0s;
   box-shadow: 1px 0 5px rgba(0, 0, 0, 0.54);
   .close {
     position: absolute;
-    right: 10px;
+    left: 10px;
     top: 5px;
     font-size: 35px;
+    color: white;
+    &:hover{
+      color: rgba(218, 241, 77, 0.76);
+    }
   }
   .containerUser {
     display: flex;
@@ -20,6 +23,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 5em;
+    color: white;
     .user {
       width: 100px;
       height: 100px;
@@ -60,7 +64,8 @@
         display: flex;
         align-items: center;
         padding: 5px;
-        color: black;
+        color: white;
+
       }
     }
   }

@@ -1,9 +1,9 @@
 import axios from "axios";
-import sheetDBConfig from "../../environment";
+import environment from "../environment";
 
-const sheetDB_URL = sheetDBConfig.URL_API;
+const sheetDB_URL = environment.sheetDBConfig.URL_API;
 
-const loginService = {
+const sheetDBService = {
   getAll: () => {
     axios
       .get(sheetDB_URL)
@@ -11,7 +11,7 @@ const loginService = {
           return res.data;
         })
   },
-  addUser: (newUser) => {
+  add: (newUser) => {
     console.log("pre-posting new user");
     axios
       .post(sheetDB_URL, {
@@ -22,7 +22,7 @@ const loginService = {
         console.log(res.data);
       });
   },
-  searchUser: (userId) => {
+  searchById: (userId) => {
     console.log(userId)
   },
   getSortBy: async (sort) => {
@@ -32,10 +32,6 @@ const loginService = {
         return res.data;
       })
   },
-  // getLastId: () => {
-  //   const lastObj = this.getSortBy("id").pop();
-  //   return lastObj.id;
-  // }
 };
 
-export default loginService;
+export default sheetDBService;

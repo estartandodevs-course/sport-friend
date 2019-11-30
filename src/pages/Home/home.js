@@ -5,6 +5,8 @@ import Card from '../../components/Card/card'
 import './home.scss';
 import firebase from '../../services/firebase'
 import ActivitySelection from '../../components/ActivitySelection/ActivitySelection.js';
+import Loading from '../../components/Loading/Loading.js';
+
 
 
 export default function Home(props) {
@@ -35,6 +37,7 @@ export default function Home(props) {
         {/* <Link to="/login">Ir para Login</Link> */}
         <ActivitySelection />
         <Card />
+        <Loading />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
     </div>
   );

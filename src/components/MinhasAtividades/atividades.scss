@@ -1,4 +1,8 @@
-section {
+.containerAtividades {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   .alertAtividade {
     width: 300px;
     height: 128px;
@@ -24,6 +28,10 @@ section {
     }
   }
   .user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     .addCircle {
       font-size: 60px;
       color: #ffffff;

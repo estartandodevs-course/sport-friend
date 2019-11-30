@@ -8,7 +8,7 @@ export default function Perfil() {
     return (
         <main>
             <Header />
-            <section>
+            <section className="containerPerfil">
                 <div className="user">
                     <i class="material-icons addCircle">add</i>
                     <h1>Adcionar foto</h1>

@@ -4,6 +4,7 @@ import Header from '../../components/Header/header.js'
 import Card from '../../components/Card/card'
 import './home.scss';
 import firebase from '../../services/firebase'
+import ActivitySelection from '../../components/ActivitySelection/ActivitySelection.js';
 
 
 export default function Home(props) {
@@ -32,7 +33,7 @@ export default function Home(props) {
         <h1>Hello, {firebase.getCurrentUsername()}</h1>
         {/* <h2>Your quote: {quote ? `"${quote}"`: ""}</h2> */}
         {/* <Link to="/login">Ir para Login</Link> */}
-        <Activityselection />
+        <ActivitySelection />
         <Card />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
     </div>

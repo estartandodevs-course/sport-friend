@@ -17,20 +17,6 @@ export default function Login(props) {
         }
     }
 
-    const getNextId = () => {
-        // Trying to get the last id from db --WIP
-        // const arrSorted = loginService.getSortBy("id");
-        // const lastId = arrSorted.pop().id;
-
-        // incorrect way, need to get the last id from the database not from the state.
-        const lastId = newUser.id;
-        console.log(lastId);
-        setNewUser({
-            id: (lastId + 1)
-        })
-        console.log("Last Id --->" + newUser.id);
-    }
-
     return (
         <section>
             <h1 className="login-title"> Login </h1>

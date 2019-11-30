@@ -8,4 +8,12 @@
     img{
         margin-left: 5px;
     }
+
+    @media screen and (max-width: 760px) {
+        .Menu_Bar {
+          img {
+            display: flex;
+          }
+        }
+    }
 }

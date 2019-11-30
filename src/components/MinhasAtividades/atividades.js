@@ -5,7 +5,7 @@ import './atividades.scss';
 
 export default function MinhasAtividades() {
     return (
-        <section>
+        <section className="containerAtividades">
             <Header />
             <div className="alertAtividade">
                 <h2>Opss... você não possui <br/> atividades !!! </h2>

@@ -8,7 +8,7 @@ export default function menu(props) {
 
      async function logout() {
 		await firebase.logout()
-		props.history.push('/')
+		// props.history.push('/')
 	}
 
     return (

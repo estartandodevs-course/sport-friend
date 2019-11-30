@@ -11,7 +11,7 @@ export default function Header(props) {
         setMenu(!menu)
     }
     return (
-        <div>
+        <div className="Menu_Bar">
             <img onClick={toogleMenu} src={detalis} className="menu" alt="" />
             <Menu close={toogleMenu} className="openMenu" openMenu={props.openMenu} left={menu ? "0" : "-320px"} />
         </div>

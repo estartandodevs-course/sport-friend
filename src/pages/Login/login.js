@@ -1,52 +1,39 @@
 import React, { useState } from "react";
-import loginService from "./loginService";
 import { Link } from "react-router-dom";
+import "./login.scss"
+import firebase from "../../services/firebase";
 
-export default function Login() {
-    const [newUser, setNewUser] = useState({
-        name: "",
-        age: ""
-    });
+export default function Login(props) {
 
-    const handleInputChange = (event) => {
-        const value = event.target.value;
-        const name = event.target.name;
-        const inputObj = {
-            [name]: value
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
+    async function login() {
+        try {
+            await firebase.login(email, password);
+            props.history.replace("/")
+        } catch (error) {
+            alert(error.menssage)
         }
-
-        setNewUser(Object.assign(newUser, inputObj));
-
-        console.log(newUser);
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        loginService.addUser(newUser);
     }
 
     return (
-        <>
-            <h1 className="login-title"> Página de login </h1>
-            <Link to="/">Ir para Home</Link>
-            <form onSubmit={handleSubmit}>
-                <label>Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    onChange={handleInputChange} />
+        <section>
+            <h1 className="login-title"> Login </h1>
 
-                <label>Age</label>
-                <input
-                    type="text"
-                    name="age"
-                    onChange={handleInputChange} />
+            <form onSubmit={e=> e.preventDefault() && false}>
+                <label htmlFor="email">Email</label>
+                <input id="email" name="email" autoComplete="off" autoFocus value={email} onChange={e => setEmail(e.target.value)} />
 
-                <input
-                    type="submit"
-                    value="Register User" />
+                <label htmlFor="password">Senha</label>
+                <input id="password" type="password" name="password" autoComplete="off"value={password} onChange={e => setPassword(e.target.value)} />
 
+                <button type="submit" onClick={login} >Login</button>
+                <Link to="/register">Cadastre-se</Link> 
             </form>
-        </>
+
+            {/* <Link to="/">Home</Link> */}
+
+        </section>  
     );
 }

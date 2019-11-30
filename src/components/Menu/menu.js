@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 import firebase from "../../services/firebase"
 
 export default function menu(props) {
+
+     async function logout() {
+		await firebase.logout()
+		props.history.push('/')
+	}
+
     return (
         <section>
             <div className="Menu" style={{ left: props.left }}>
@@ -14,7 +20,7 @@ export default function menu(props) {
                         <i class="material-icons">perm_identity</i>
                     </div>
                     <div>
-                        <h1>${firebase.getCurrentUsername()} </h1>
+                        <h1>{firebase.getCurrentUsername()} </h1>
                     </div>
                     <div className="user-perfil">
                         <h2>Perfil</h2>
@@ -22,7 +28,7 @@ export default function menu(props) {
                         <h2>Minhas atividades</h2>
                         {/* <h2>Historico</h2>
                         <h2>Comentarios</h2> */}
-                        <Link className="logout" to="/Login">
+                        <Link className="logout" onCLick={logout} to="/login">
                             {/* <img src={Logout} alt="logout"></img> */}
                             <h2>sair</h2>
                         </Link>

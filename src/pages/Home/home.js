@@ -22,10 +22,10 @@ export default function Home(props) {
     return null
   }
 
-  async function logout() {
-		await firebase.logout()
-		props.history.push('/')
-	}
+  // async function logout() {
+	// 	await firebase.logout()
+	// 	props.history.push('/')
+	// }
 
   return (
     <div className="flex-center">

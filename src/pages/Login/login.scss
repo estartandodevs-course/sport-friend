@@ -1,13 +1,113 @@
-form {
+.containerLogin {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    padding: 30px;
-    margin: 20px;
-    border-radius: 15px;
-    background-color: rgb(49, 146, 153);
-
-    input {
-        margin: 10px 0;
+    min-height: 100px;
+    form {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .input {
+        width: 260px;
+        height: 25px;
+        border: none;
+        display: flex;
+        background: none;
+        border-bottom: 1px solid #ffffff;
+        text-align: center;
+        margin: 10px;
+        outline: none;
+      }
+      .placeText {
+        font-family: Sanchez;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 23px;
+        color: #fffdfd;
+        &::-webkit-input-placeholder {
+          color: #fffdfd;
+        }
+      }
+      .submit {
+        width: 296px;
+        height: 40px;
+        background: #b6dc61;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 24px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 55px;
+        margin-bottom: 10px;
+        outline: none;
+      }
+      .submitText {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #ffffff;
+      }
+      .Textlabel {
+        font-family: Sanchez;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #efefef;
+        margin-bottom: 53px;
+      }
+      .loginSocial {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        min-height: 100px;
+        margin-bottom: 50px;
+        .test {
+          margin-bottom: 17px;
+        }
+        .SocialIcon {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .iconFace {
+            margin-left: 40px;
+          }
+          .icons {
+            cursor: pointer;
+          }
+        }
+      }
+      .NewUser {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #ffffff;
+        text-decoration: none;
+      }
+      .cadastrar {
+        cursor: pointer;
+        &:hover{
+          color: #551a8b;
+        }
+      }
     }
-
-}
+  }
+  

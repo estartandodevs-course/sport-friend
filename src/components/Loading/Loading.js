@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Ring } from "react-awesome-spinners";
-
-const SFloading = () => {
+const Loading = () => {
     const [loading, setLoading] = useState(true)
       
     return (
@@ -9,4 +8,4 @@ const SFloading = () => {
     );
   }
 
-  export default SFloading;
+  export default Loading; 

@@ -1,4 +1,4 @@
-export const activities = [
+const activities = [
     {
         type: "Caminha",
         // id of who created
@@ -44,3 +44,5 @@ export const activities = [
         }
     }
 ]
+
+export default activities;

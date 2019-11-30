@@ -14,10 +14,10 @@ export default function menu(props) {
     return (
         <section>
             <div className="Menu" style={{ left: props.left }}>
-                <i onClick={props.close} class="material-icons close">close</i>
+                <i onClick={props.close} className="material-icons close">close</i>
                 <div className="containerUser">
-                    <div class="user">
-                        <i class="material-icons">perm_identity</i>
+                    <div className="user">
+                        <i className="material-icons">perm_identity</i>
                     </div>
                     <div>
                         <h1>{firebase.getCurrentUsername()} </h1>
@@ -28,7 +28,7 @@ export default function menu(props) {
                         <h2>Minhas atividades</h2>
                         {/* <h2>Historico</h2>
                         <h2>Comentarios</h2> */}
-                        <Link className="logout" onCLick={logout} to="/login">
+                        <Link className="logout" onClick={logout} to="/login">
                             {/* <img src={Logout} alt="logout"></img> */}
                             <h2>sair</h2>
                         </Link>

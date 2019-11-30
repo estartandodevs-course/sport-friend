@@ -7,7 +7,7 @@ export default function ActivitySelection() {
         <div className="main">
             <div className="container-activity">
                 {sportTypes.map(type => {
-                    return (<div className="activity">
+                    return (<div key={type.id} className="activity">
                         <div className="sports">
                             <img src={type.imagem} alt={type.name}/>
                         </div>

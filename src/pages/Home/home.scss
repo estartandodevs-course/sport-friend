@@ -1,6 +1,21 @@
-    // div{
-    //     height: 100vh;
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    // }
+body {
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background: linear-gradient(180deg, #60d4d1 0%, #4795ec 100%);
+  .Test{
+    width: 270px;
+    height: 81px;
+    background: #FFFFFF;
+    opacity: 0.6;
+    border-radius: 10px;
+  }
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

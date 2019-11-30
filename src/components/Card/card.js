@@ -26,6 +26,7 @@ export default function Card() {
                 <button className="acc">TMJ</button>
             </div>
         </section>
+        
     );
 }
 

@@ -4,6 +4,9 @@ import './button.scss';
 
 export default function Button() {
   return (
-    <div />
-  );
+    <div>
+      <button onClick={ this.Clicked("") }>Entrar</button>
+    </div>
+    <button onClick={this.}
+  )
 }

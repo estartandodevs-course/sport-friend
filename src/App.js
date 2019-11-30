@@ -3,6 +3,8 @@ import Routers from './Router';
 // import Home from './pages/Home/home'
 import './App.scss';
 import firebase from "./services/firebase";
+import Loading from "./components/Loading/Loading";
+
 
 function App() {
 
@@ -17,7 +19,7 @@ function App() {
   return firebaseInitialized !== false ? (
     // <Home />
     <Routers/>
-  ) : <div id="loader">Loading..</div>
+  ) : <div id="loader"><Loading /></div>
 }
 
 export default App;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './header.scss';
 import Menu from '../Menu/menu'
+import detalis from '../../assets/img/menu.svg'
 
 export default function Header(props) {
 
@@ -10,8 +11,8 @@ export default function Header(props) {
         setMenu(!menu)
     }
     return (
-        <div className="box">
-            <i onClick={toogleMenu} class="material-icons detalis">menu</i>
+        <div className="Menu_Bar">
+            <img onClick={toogleMenu} src={detalis} className="menu" alt="" />
             <Menu close={toogleMenu} className="openMenu" openMenu={props.openMenu} left={menu ? "0" : "-320px"} />
         </div>
     );

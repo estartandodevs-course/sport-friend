@@ -1,13 +1,13 @@
-const activities = [
+export const activities = [
     {
         type: "Caminha",
         // id of who created
         author_id: 1,
         description: "Leve caminhada",
         date: {
-            day: 05,
+            day: 5,
             month: 12,
-            year: 2019
+            year: 2019,
         },
         moment: {
             hour: "10:00",

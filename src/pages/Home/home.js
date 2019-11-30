@@ -1,5 +1,7 @@
 import React from 'react';
 // import { Link } from "react-router-dom";
+import Header from '../../components/Header/header.js'
+import Card from '../../components/Card/card'
 import './home.scss';
 import firebase from '../../services/firebase'
 
@@ -31,6 +33,7 @@ export default function Home(props) {
         {/* <h2>Your quote: {quote ? `"${quote}"`: ""}</h2> */}
         {/* <Link to="/login">Ir para Login</Link> */}
         <Activityselection />
+        <Card />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
     </div>
   );

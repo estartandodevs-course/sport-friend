@@ -1,20 +1,11 @@
-.box {
-  // background: aqua;
-  width: 100vw;
-  height: 12vh;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  .detalis {
-    margin-left: 5px;
-    font-size: 35px;
-    display: none;
-  }
-}
-@media screen and (max-width: 760px) {
-  .box {
-    .detalis {
-      display: flex;
+.Menu_Bar{
+    background: aqua;
+    width: 100vw;
+    height: 12vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img{
+        margin-left: 5px;
     }
-  }
 }

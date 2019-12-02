@@ -34,8 +34,8 @@ export default function Login(props) {
                 <div className="loginSocial">
                     <h2 className="test placeText">Entrar com</h2>
                     <div className="SocialIcon">
-                        <img className="icons" src={Google}></img>
-                        <img className="iconFace icons" src={Facebook}></img>
+                        <img className="icons" alt="icone do Google" src={Google}></img>
+                        <img className="icons iconFace" alt="icone do Facebook" src={Facebook}></img>
                     </div>
                 </div>
                <label className="NewUser">Novo usuário ?<Link className="NewUser cadastrar" to="/register">&nbsp;Cadastre-se</Link></label> 

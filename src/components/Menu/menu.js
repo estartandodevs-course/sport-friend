@@ -1,7 +1,6 @@
 import React from 'react'
 import './menu.scss'
 import { Link } from "react-router-dom";
-// import Logout from '../../assets/img/logout.png';
 import firebase from "../../services/firebase"
 
 export default function menu(props) {
@@ -29,7 +28,6 @@ export default function menu(props) {
                         {/* <h2>Historico</h2>
                         <h2>Comentarios</h2> */}
                         <Link className="logout" onClick={logout} to="/login">
-                            {/* <img src={Logout} alt="logout"></img> */}
                             <h2>sair</h2>
                         </Link>
                     </div>

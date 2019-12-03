@@ -4,8 +4,7 @@ import "./input.scss";
 export default function Input(props) {
   return (
     <>
-      {/* <i className="material-icons">lok</i>
-      <i className="material-icons">person</i> */}
+      {props.icon ? <i className="material-icons">{props.icon}</i> : null}
 
       <input
         className={props.className ? props.className + " input" : "input"}
@@ -17,7 +16,6 @@ export default function Input(props) {
         autoComplete={props.autoComplete}
         autoFocus={props.autoFocus}
       />
-      {/* <input placeholder={Email} /> */}
     </>
   );
 }

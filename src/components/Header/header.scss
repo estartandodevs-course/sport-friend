@@ -1,22 +1,26 @@
-.Menu_Bar{
-    background: aqua;
+.header{
     width: 100vw;
     height: 12vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .menu{
+    .open-menu{
       color: white;
       font-size: 35px;
+      margin-left: 19px;
+      cursor: pointer;
+
+      &:focus {
+        outline: none;
+      }
+
   }
-    img{
-        margin-left: 5px;
-    }
-    @media screen and (max-width: 760px) {
-        .Menu_Bar {
-          img {
-            display: flex;
-          }
-        }
-    }
+
+    // @media screen and (max-width: 760px) {
+    //     & {
+    //       img {
+    //         display: flex;
+    //       }
+    //     }
+    // }
 }

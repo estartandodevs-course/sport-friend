@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Ring } from "react-awesome-spinners";
 const Loading = () => {
-    const [loading, setLoading] = useState(true)
-      
     return (
-        loading && <Ring />
+       <Ring />
     );
   }
 

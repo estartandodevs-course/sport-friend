@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './header.scss';
-import Menu from '../Menu/menu'
+import Menu from './Menu/menu'
 
 export default function Header(props) {
 
@@ -10,9 +10,9 @@ export default function Header(props) {
         setMenu(!menu)
     }
     return (
-        <div className="Menu_Bar">
-            <i onClick={toogleMenu} className="material-icons menu" alt="">menu</i>
+        <header className="header">
+            <i onClick={toogleMenu} className="material-icons open-menu" alt="">menu</i>
             <Menu close={toogleMenu} className="openMenu" openMenu={props.openMenu} left={menu ? "0" : "-320px"} />
-        </div>
+        </header>
     );
 }

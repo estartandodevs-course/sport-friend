@@ -1,7 +1,7 @@
 import React from 'react'
 import './menu.scss'
 import { Link } from "react-router-dom";
-import firebase from "../../services/firebase"
+import firebase from "../../../services/firebase"
 
 export default function menu(props) {
 
@@ -28,7 +28,7 @@ export default function menu(props) {
                         {/* <h2>Historico</h2>
                         <h2>Comentarios</h2> */}
                         <Link className="logout" onClick={logout} to="/login">
-                            <h2>sair</h2>
+                            <h2>Sair</h2>
                         </Link>
                     </div>
                 </div>

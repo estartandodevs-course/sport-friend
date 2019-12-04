@@ -1,20 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './ActivitySelection.scss'
 import { sportTypes } from '../../data/sportTypes'
 
 export default function ActivitySelection() {
+    const [typesUnselecteds, setUnselecteds] = useState(sportTypes);
+
     return (
-        <div className="main">
-            <div className="container-activity">
-                {sportTypes.map(type => {
-                    return (<div key={type.id} className="activity">
-                        <div className="sports">
-                            <img src={type.imagem} alt={type.name}/>
-                        </div>
-                    </div>
-                    )
-                })}
-            </div>
+        <div className="container-activity">
+            {typesUnselecteds.map(type => {
+                return (
+                <div key={type.id} className="sport">
+                    <img src={type.imagem} className="sport-img" alt={type.name}/>
+                    <p>{type.name}</p>
+                </div>
+                )
+            })}
         </div>
     )
 }

@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from '../Header/header'
+import Header from '../../components/Header/header'
 
-import './atividades.scss';
+import './myActivities.scss';
 
-export default function MinhasAtividades() {
+export default function MyActivities() {
     return (
         <section className="containerAtividades">
             <Header />

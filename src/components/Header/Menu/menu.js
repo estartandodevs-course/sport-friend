@@ -23,7 +23,7 @@ export default function menu(props) {
                     </div>
                     <div className="user-perfil">
                         <Link className="link" to="/perfil"><h2>Perfil</h2></Link>
-                        <Link className="link" to="/MinhasAtividades"><h2>Minhas atividade</h2></Link>
+                        <Link className="link" to="/my-activities"><h2>Minhas atividade</h2></Link>
                         <h2>Notificação</h2>
                         {/* <h2>Historico</h2>
                         <h2>Comentarios</h2> */}

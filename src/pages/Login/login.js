@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Google from "../../assets/img/google.png"
 import Facebook from "../../assets/img/facebook.png"
-import Logo from '../../components/logo/logo'
+import Logo from '../../components/Logo/logo'
 import "./login.scss"
 import firebase from "../../services/firebase";
 

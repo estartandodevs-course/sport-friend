@@ -4,7 +4,8 @@ import Header from '../../components/Header/header.js'
 import Card from '../../components/Card/card'
 import './home.scss';
 import firebase from '../../services/firebase'
-import ActivitySelection from '../../components/ActivitySelection/ActivitySelection.js';
+// import ActivitySelection from '../../components/ActivitySelection/ActivitySelection.js';
+import ActivitySelection from '../../components/ActivitySelection/ActivitySelectionClass.js';
 
 
 export default function Home(props) {
@@ -30,7 +31,9 @@ export default function Home(props) {
   return (
     <main className="flex-center">
         <Header />
-        <h1>Olá, {firebase.getCurrentUsername()}</h1>
+        <h1 className="apresentation-title">
+          {/* Olá {firebase.getCurrentUsername()}! <br></br>  */}
+          Que tal encontrar uma atividade ?</h1>
         <ActivitySelection />
         <Card />
     </main>

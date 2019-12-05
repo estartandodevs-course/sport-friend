@@ -86,3 +86,7 @@ yarn-error.log*
 
 environment.js
 src/environment.js
+.firebaserc
+firebase.json
+index.html
+.firebase/hosting..cache

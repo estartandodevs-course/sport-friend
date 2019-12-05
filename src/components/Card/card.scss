@@ -13,11 +13,13 @@
     display: flex;
     flex-direction: column;
     margin-top: 10px;
+    align-items: center;
+
     .img {
-      width: 40px;
-      height: 40px;
-      border-radius: 20px;
-      background-color: black;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: #fff;
     }
 
     .User_Name {
@@ -46,6 +48,12 @@
 
       .start {
         margin-right: 5px;
+        display: flex;
+
+        .icon_start {
+          font-size: 15px;
+          margin-right: 5px;
+        }
       }
     }
   }
@@ -53,7 +61,8 @@
   .Box_info {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
+    align-items: center;
+    justify-content: flex-end;
     .Local {
       margin: 0;
     }
@@ -62,7 +71,7 @@
       width: 27px;
       height: 26px;
       border-radius: 20px;
-      background-color: black;
+      background-color: #fff;
       margin-top: 10px;
     }
 
@@ -90,11 +99,12 @@
       display: flex;
       flex-direction: column;
       margin-top: 10px;
+      align-items: center;
       .img {
-        width: 40px;
-        height: 40px;
-        border-radius: 20px;
-        background-color: black;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background-color: #fff;
       }
 
       .User_Name {
@@ -132,7 +142,8 @@
     .Box_info {
       display: flex;
       flex-direction: column;
-      margin-top: 20px;
+      align-items: center;
+      justify-content: flex-end;
       .Local {
         margin: 0;
       }
@@ -141,7 +152,7 @@
         width: 27px;
         height: 27px;
         border-radius: 20px;
-        background-color: black;
+        background-color: #fff;
         margin-top: 10px;
       }
 

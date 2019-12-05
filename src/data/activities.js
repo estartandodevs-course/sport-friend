@@ -10,8 +10,8 @@ const activities = [
             year: 2019,
         },
         moment: {
-            hour: "10:00",
-            part_day: "AM"
+            start_hour: "10:00",
+            finish_hour: "11:00", 
         },
         place: {
             city: "Rio de Janeiro",

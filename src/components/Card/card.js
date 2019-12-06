@@ -1,19 +1,29 @@
 import React from 'react';
 import './card.scss';
-import activities from '../../data/activities.js'
+// import activities from '../../data/activities.js'
 import users from '../../data/users.js'
 
 export default function Card(props) {
 
-    const activity = activities[0];
+
+    // const activity = activities[0];
+    const activity = props.activity;
     const user = users[0];
-    const NewDate = activity;
+    // const [user, setUser] = useState("");
+    const date = activity.date;
+    
+
+//    function getUser () {
+//         const currentUserId = activity.author_id
+//         const author = users.find(user => user.id === currentUserId)
+//         setUser(author.first_name);
+//     }
 
 
     return (
         <section className="Container">
             <div className="box">
-                <div className="img"></div>
+                <img className="img" src={user.avatar} alt={user.first_name} />
                 <p className="User_Name">{user.first_name}</p>
             </div>
             <div className="Time">
@@ -27,8 +37,9 @@ export default function Card(props) {
                     
                 </div>
                 <div className="stats">
-                <p className="Local">{activity.place.city}</p>
-                <p className="data">{NewDate.date["day"]}/{NewDate.date["month"]}/{NewDate.date["year"]}</p>
+                <p className="User_Name">{activity.type}</p>
+                <p className="Local">{activity.place}</p>
+                <p className="data">{date["day"]}/{date["month"]}/{date["year"]}</p>
                 </div>
             </div>
         </section>

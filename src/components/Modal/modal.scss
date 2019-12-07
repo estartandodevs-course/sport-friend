@@ -1,30 +1,107 @@
-.Fundo{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.253);
-    position: absolute;
-    
-}
-.modal-container{
+.main {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.91);
+  .modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     border: solid black 1px;
     border-radius: 5px;
-    background-color: rgb(179, 81, 236);
-    width: 400px;
-    height: 300px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-}
-button{
-    background-color: rgba(43, 129, 129, 0.699);
-    border: 1px solid rgba(0, 0, 0, 0.74);
-    border-radius: 5px;
-    width: 100px;
-    height: 50px;
-    margin: 10px;
-    font-size: 20px;
-}
+    background-color: white;
+    width: 65%;
+    height: 65%;
+    .closeModal {
+      color: black;
+      position: relative;
+      top: 142px;
+      right: 167px;
+      font-size: 35px;
+      cursor: pointer;
+      &:hover {
+        color: red;
+      }
+    }
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 85%;
+      height: 100%;
 
-p{
-    font-size: 18px;
+      .formTime {
+        width: 90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        img {
+          width: 20px;
+          height: 20px;
+        }
+        h2 {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 16px;
+        }
+        p {
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 12px;
+          line-height: 16px;
+        }
+        .Input {
+          text-align: center;
+          width: 60px;
+          height: 20px;
+          font-family: Open Sans;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 12px;
+          line-height: 16px;
+          text-decoration-line: underline;
+          display: flex;
+          align-items: center;
+          &input[type="time"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+          }
+        }
+      }
+      .formInput {
+        width: 85%;
+        height: 31px;
+        margin: 12px;
+        border-radius: 2px;
+        border: 0.5px solid #ccc;
+      }
+    }
+    .btns {
+      width: 50%;
+      margin: 35px;
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      button {
+        width: 90px;
+        height: 30px;
+        border: none;
+        display: flex;
+        cursor: pointer;
+        border-radius: 4px;
+        align-items: center;
+        justify-content: center;
+        background: rgba(70, 234, 234, 0.64);
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
 }

@@ -35,6 +35,7 @@
       outline: none;
     }
     .placeText {
+      z-index: 5;
       font-family: Sanchez;
       font-style: normal;
       font-weight: normal;
@@ -46,6 +47,8 @@
       }
     }
     .submit {
+      z-index: 5;
+      cursor: pointer;
       width: 296px;
       height: 40px;
       background: #b6dc61;

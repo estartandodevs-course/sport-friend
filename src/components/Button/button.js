@@ -2,11 +2,19 @@ import React from 'react';
 
 import './button.scss';
 
-export default function Button() {
+export default function Button(props) {
   return (
-    <div>
-      <button onClick={ this.Clicked("") }>Entrar</button>
-    </div>
-    <button onClick={this.}
-  )
+    <>
+      <button
+        className={props.className ? props.className + "button" : "button"}
+        type={props.type}
+        onChange={props.onChange}
+        id={props.id}
+        autoFocus={props.autoFocus}
+        onClick={props.onClick}
+      >
+        {props.value}
+      </button>
+    </>
+  );
 }

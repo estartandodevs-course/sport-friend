@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../../components/Header/header'
 import { Link } from "react-router-dom";
-
+import Button from "../../components/Button/button"
 import '../Perfil/perfil.scss';
 
-export default function Perfil() {
+export default function Perfil(props) {
     return (
         <main>
             <Header />
@@ -19,8 +19,8 @@ export default function Perfil() {
                 <input className="input" placeholder="Celular" autoComplete="off" />
                 <input className="input" placeholder="Bairro" autoComplete="off" />
                 <div className="box3000">
-                    <Link to="/"><button type="submit" className="btns btnsColors">Cancelar</button></Link>
-                    <button type="submit" className="btns ">Salvar</button>
+                    <Link to="/"><Button className="btns " type="submit" value="cancelar"/></Link>                    
+                    <Button className="btns btnsColors " type="submit" value="salvar"/>
                 </div>
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
             </section>

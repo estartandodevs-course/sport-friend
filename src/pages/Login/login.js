@@ -5,6 +5,7 @@ import Facebook from "../../assets/img/facebook.png"
 import Logo from '../../components/Logo/logo'
 import "./login.scss"
 import firebase from "../../services/firebase";
+import Button from "../../components/Button/button"
 
 export default function Login(props) {
 
@@ -29,7 +30,7 @@ export default function Login(props) {
 
                 {/* <label htmlFor="password">Senha</label> */}
                 <input placeholder="Senha" className="input placeText" id="password" type="password" name="password" autoComplete="off" value={password} onChange={e => setPassword(e.target.value)} />
-                <button className="submit submitText" type="submit" onClick={login} >Login</button>
+                <Button className="submit submitText" type="submit" onClick={login} value="login"/>
                 <label className="Textlabel">Esqueceu sua senha ?</label>
                 <div className="loginSocial">
                     <h2 className="test placeText">Entrar com</h2>

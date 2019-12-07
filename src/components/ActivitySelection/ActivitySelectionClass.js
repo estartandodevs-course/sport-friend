@@ -9,20 +9,13 @@ export default class ActivitySelection extends Component {
 
     handleSelectedSport (elementName) {
         const sports = this.state.allSports;
-        // console.log(sports.find(obj => obj.name === elementName))
-        while(sports[4].name !== elementName){
-            const arrTurned = this.turnArray(sports);
-            // console.log(arrTurned)
-            this.setState({allSports: arrTurned});
-        }
-    }
+        const nextSport = sports.find(obj => obj.name === elementName)
+        const nextSportIndex = sports.indexOf(nextSport);
+        const currentSelected = sports[4];
 
-    turnArray = (_arr) => {
-        const arr = _arr;
-        const firstItem = arr.splice(0, 1);
-        arr.push(firstItem[0]);
+        sports[nextSportIndex] = currentSelected;
+        sports[4] = nextSport;
 
-        return arr;
     }
 
     render() {

@@ -2,7 +2,7 @@ import React from 'react';
 import './card.scss';
 // import activities from '../../data/activities.js'
 import users from '../../data/users.js'
-
+import Map from '../../assets/img/maps.png'
 export default function Card(props) {
 
 
@@ -11,13 +11,13 @@ export default function Card(props) {
     const user = users[0];
     // const [user, setUser] = useState("");
     const date = activity.date;
-    
 
-//    function getUser () {
-//         const currentUserId = activity.author_id
-//         const author = users.find(user => user.id === currentUserId)
-//         setUser(author.first_name);
-//     }
+
+    //    function getUser () {
+    //         const currentUserId = activity.author_id
+    //         const author = users.find(user => user.id === currentUserId)
+    //         setUser(author.first_name);
+    //     }
 
 
     return (
@@ -34,12 +34,14 @@ export default function Card(props) {
             </div>
             <div className="Box_info">
                 <div className="cheked">
-                    
                 </div>
                 <div className="stats">
-                <p className="User_Name">{activity.type}</p>
-                <p className="Local">{activity.place}</p>
-                <p className="data">{date["day"]}/{date["month"]}/{date["year"]}</p>
+                    <p className="User_Name">{activity.type}</p>
+                    <p className="Local">{activity.place}</p>
+                    <div className="lacalization">
+                        <p className="data">{date["day"]}/{date["month"]}/{date["year"]}</p>
+                        <img src={Map}></img>
+                    </div>
                 </div>
             </div>
         </section>

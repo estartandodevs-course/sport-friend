@@ -10,7 +10,7 @@
   font-family: "Sanchez", serif;
   margin: 10px;
   color: #000;
-  background: #FFFFFF;
+  background: #ffffff;
   cursor: pointer;
 
   .box {
@@ -70,7 +70,18 @@
     .Local {
       margin: 0;
     }
+    .lacalization {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      img {
+        width: 25px;
+        height: 25px;
+        border: 1px solid rgba(17, 201, 201, 0.54);
+        border-radius: 15px;
 
+      }
+    }
     .icon {
       width: 27px;
       height: 26px;

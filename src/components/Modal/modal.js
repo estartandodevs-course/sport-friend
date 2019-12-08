@@ -1,25 +1,24 @@
-import React, { useState } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
 import { sportTypes } from '../../data/sportTypes.js'
 import Clock from '../../assets/img/clock.png'
 import Calendar from '../../assets/img/Calendario.png'
 import './modal.scss';
 
 function Modal(props) {
-  var x = document.getElementById("demo");
+  // var x = document.getElementById("demo");
 
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-  }
+  // function getLocation() {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(showPosition);
+  //   } else {
+  //     x.innerHTML = "Geolocation is not supported by this browser.";
+  //   }
+  // }
 
-  function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-      "<br>Longitude: " + position.coords.longitude;
-  }
+  // function showPosition(position) {
+  //   x.innerHTML = "Latitude: " + position.coords.latitude +
+  //     "<br>Longitude: " + position.coords.longitude;
+  // }
 
   return (
     <div style={{ display: props.display }}>

@@ -6,6 +6,7 @@ import Logo from '../../components/Logo/logo'
 import "./login.scss"
 import firebase from "../../services/firebase";
 import Button from "../../components/Button/button"
+import banner from "../../assets/img/bg-login.png"
 
 export default function Login(props) {
 
@@ -23,9 +24,11 @@ export default function Login(props) {
 
     return (
         <section className="containerLogin">
-            <div className="Logo "> <Logo /></div>
+        <div className="banner"> <img src={banner}/> </div>
+            
             <form onSubmit={e => e.preventDefault() && false}>
                 {/* <label htmlFor="email">Email</label> */}
+                <div className="Logo "> <Logo/> </div>
                 <input placeholder="Email" className="input placeText" id="email" name="email" autoComplete="off" autoFocus value={email} onChange={e => setEmail(e.target.value)} />
 
                 {/* <label htmlFor="password">Senha</label> */}

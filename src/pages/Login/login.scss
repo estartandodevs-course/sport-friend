@@ -1,29 +1,54 @@
-.Logo{
-    position: absolute;
-    border: solid 1px black;
-    border-radius: 1px ;
-    width: 943px;
-    height: 695px;
-    right: 0px;
-  }
-  .containerLogin {
-  
-  top: 50px;
+
+.logoclass{
+
+}
+
+.containerLogin {
+  display: flex;
+  flex-direction: row;
   right: 100px;
-  position: absolute;
+  border-radius: 18px;
+  
+  .banner{
+    text-align: center;
+    top: 40px;
+    left: 50px;
+    position: absolute;
+    z-index: 1;
+    
+    border-radius: 18px ;
+    width: 910px;
+    height: 600px;
+    right: 0px;
+    display: flex;
+    flex-direction: row;
+
+    img{
+      width: 880px;
+      height: 550px;
+    }
+  }
   
   
   form {
+    height: 480px;
+    top: 10px;
+    bottom: 10px;
+    position: absolute;
+    right: 50px;
+    margin-top: 50px;
+    border: solid 2px rgba(21, 144, 201, 0.575);
     padding: 10px;
-    border: solid 1px black;
+    padding-left: 135px;
     border-radius: 10px;
-    width: 519px;
-    height: 636px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+
     .input {
+      
       width: 327px;
       height: 25px;
       border: none;
@@ -35,7 +60,8 @@
       outline: none;
     }
     .placeText {
-      z-index: 5;
+      padding-left: 10px;
+      text-align: start;
       font-family: Sanchez;
       font-style: normal;
       font-weight: normal;
@@ -58,7 +84,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 55px;
+      margin-top: 10px;
       margin-bottom: 10px;
       outline: none;
     }
@@ -83,7 +109,7 @@
       align-items: center;
       text-align: center;
       color: #efefef;
-      margin-bottom: 53px;
+      margin-bottom: 10px;
     }
     .loginSocial {
       display: flex;
@@ -91,7 +117,7 @@
       align-items: center;
       flex-direction: column;
       min-height: 100px;
-      margin-bottom: 50px;
+      margin-bottom: 10px;
       .test {
         margin-bottom: 17px;
       }
@@ -103,6 +129,7 @@
           margin-left: 40px;
         }
         .icons {
+          width: 40px;
           cursor: pointer;
         }
       }
@@ -127,7 +154,7 @@
     }
   }
 }
-@media (max-width: 600px) {
+@media only screen and (max-width: 600px) {
 
 
 .containerLogin {
@@ -136,6 +163,7 @@
     align-items: center;
     flex-direction: column;
     min-height: 100px;
+    
     form {
       display: flex;
       justify-content: center;

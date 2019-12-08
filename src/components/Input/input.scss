@@ -1,12 +1,85 @@
-.input{
-    display: flex;
-    width: 260px;
-    border:none;
-    background: none;
-    border:none;
-    border-bottom: 1px solid #FFFFFF;
+// .input{
+//     display: flex;
+//     width: 260px;
+//     border:none;
+//     background: none;
+//     border:none;
+//     border-bottom: 1px solid #FFFFFF;
 
-    &:focus {
+//     &:focus {
+//         outline: none;
+//     }
+// }
+
+.label-float{
+    position: relative;
+    padding-top: 18px;
+    margin: 5px 0;
+    
+    input{
+        display: flex;
+        background-color: transparent;
+        color: #fff;
+        padding: 0px 10px 2px;
+        border: 0;
+        border-bottom: 1px solid #fff;
         outline: none;
+        min-width: 260px;
+        font-size: 16px;
+        transition: all .3s ease-out;
+        -webkit-transition: all .3s ease-out;
+        -moz-transition: all .3s ease-out;
+        -webkit-appearance:none;
+        border-radius: 0;
+
+        &:focus{
+            border-bottom: 1px solid #fff;
+            outline: none;
+        }
+        
+        &::placeholder{
+            color:transparent;
+        }
+
+        &:required:invalid + label{
+            color: red;
+        }
+
+        &:focus:required:invalid{
+        border-bottom: 2px solid red;
+        }
+    }
+    
+  
+    label{
+      color: #fff;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-top: 13px;
+      margin-left: 5px;
+      transition: all .2s ease-out;
+      -webkit-transition: all .2s ease-out;
+      -moz-transition: all .2s ease-out;
+    }
+    
+    input:required:invalid + label:before{
+        content: '*';
+    }
+
+    input:focus + label,
+    input:not(:placeholder-shown) + label{
+        font-size: 13px;
+        margin-top: 0;
+        color: #fffdfdb3;
+    }
+
+    i {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.7);
+    right: 0;
+    bottom: 0;
+    margin-bottom: 5px;
     }
 }

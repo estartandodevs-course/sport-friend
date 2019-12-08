@@ -21,7 +21,14 @@ export default function Login(props) {
     }
   }
 
-  return (
+    return (
+        <section className="containerLogin">
+        <div className="banner"> <img src={banner}/> </div>
+            
+            <form onSubmit={e => e.preventDefault() && false}>
+                {/* <label htmlFor="email">Email</label> */}
+                <div className="Logo "> <Logo/> </div>
+                <input placeholder="Email" className="input placeText" id="email" name="email" autoComplete="off" autoFocus value={email} onChange={e => setEmail(e.target.value)} />
 
     <section className="containerLogin">
       <div className="Logo ">

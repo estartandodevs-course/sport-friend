@@ -1,12 +1,9 @@
 
-.logoclass{
-
-}
-
 .containerLogin {
   display: flex;
   flex-direction: row;
   right: 100px;
+  left: 100px;
   border-radius: 18px;
   
   .banner{
@@ -24,7 +21,7 @@
     flex-direction: row;
 
     img{
-      width: 880px;
+      width: 900px;
       height: 550px;
     }
   }
@@ -156,7 +153,12 @@
 }
 @media only screen and (max-width: 600px) {
 
-
+.banner{
+  visibility: hidden;
+}
+.Logo{
+  
+}
 .containerLogin {
     display: flex;
     justify-content: center;
@@ -164,7 +166,10 @@
     flex-direction: column;
     min-height: 100px;
     
+    
+    
     form {
+      border: none;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -201,7 +206,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 55px;
+        margin-top: 30px;
         margin-bottom: 10px;
         outline: none;
       }
@@ -226,7 +231,7 @@
         align-items: center;
         text-align: center;
         color: #efefef;
-        margin-bottom: 53px;
+        margin-bottom: 10px;
       }
       .loginSocial {
         display: flex;
@@ -234,7 +239,7 @@
         align-items: center;
         flex-direction: column;
         min-height: 100px;
-        margin-bottom: 50px;
+        margin-bottom: 0px;
         .test {
           margin-bottom: 17px;
         }

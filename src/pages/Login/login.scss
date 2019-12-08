@@ -34,7 +34,8 @@
     position: absolute;
     right: 50px;
     margin-top: 50px;
-    border: solid 2px rgba(21, 144, 201, 0.575);
+    
+    box-shadow: 1px 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 10px;
     padding-left: 135px;
     border-radius: 10px;
@@ -160,6 +161,7 @@
   
 }
 .containerLogin {
+   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -169,6 +171,7 @@
     
     
     form {
+      box-shadow:none;
       border: none;
       display: flex;
       justify-content: center;
@@ -239,7 +242,7 @@
         align-items: center;
         flex-direction: column;
         min-height: 100px;
-        margin-bottom: 0px;
+        margin-bottom: 10px;
         .test {
           margin-bottom: 17px;
         }

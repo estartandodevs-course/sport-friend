@@ -4,6 +4,7 @@ import Google from "../../assets/img/google.png"
 import Facebook from "../../assets/img/facebook.png"
 import Logo from '../../components/Logo/logo'
 import "./login.scss"
+// import Input from '../../components/Input/input'
 import firebase from "../../services/firebase";
 import Button from "../../components/Button/button"
 

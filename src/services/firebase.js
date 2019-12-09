@@ -28,6 +28,10 @@ class Firebase {
         })
     }
 
+    async updateUser(data){
+        return this.auth.currentUser.updateProfile(data);
+    }
+
     // addQuote(quote) {
     //     if(!this.auth.currentUser) {
     //         return alert("Not authorized")

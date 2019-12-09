@@ -10,31 +10,14 @@ export default function Card(props) {
   // const [user, setUser] = useState("");
   const date = activity.date;
 
-  //    function getUser () {
-  //         const currentUserId = activity.author_id
-  //         const author = users.find(user => user.id === currentUserId)
-  //         setUser(author.first_name);
-  //     }
-
   const [match, setMatch] = useState(false);
-
-  //    function getUser () {
-  //         const currentUserId = activity.author_id
-  //         const author = users.find(user => user.id === currentUserId)
-  //         setUser(author.first_name);
-  //     }
-
-  function toogleMatch() {
-    setMatch(!match);
-    alert("foi");
-  }
 
   function toogleMatch() {
     setMatch(!match);
   }
 
   return (
-    <section className="Container">
+    <section className="Container" onClick={props.onClick}>
       <div className="box">
         <img className="img" src={user.avatar} alt={user.first_name} />
         <p className="User_Name">{user.first_name}</p>

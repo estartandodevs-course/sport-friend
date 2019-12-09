@@ -21,8 +21,8 @@
     .closeModal {
       color: black;
       position: relative;
-      top: 142px;
-      right: 167px;
+      top: 6.5vh;
+      left: 30vw;
       font-size: 35px;
       cursor: pointer;
       &:hover {
@@ -36,7 +36,36 @@
       flex-direction: column;
       width: 85%;
       height: 100%;
+      .descripitionInput {
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 35px;
+        margin-bottom: -7px;
+        text-align: start;
+        width: 84%;
+      }
+      .containerSporte {
+        width: 100%;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .sports {
+          width: 75px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
+          .sportImg {
+            width: 9.5vh;
+            height: 9.5vh;
+            border-radius: 55px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          }
+        }
+      }
       .formTime {
         width: 90%;
         display: flex;
@@ -86,10 +115,10 @@
     }
     .btns {
       width: 50%;
-      margin: 35px;
       display: flex;
-      justify-content: space-around;
       align-content: center;
+      margin: 16px 0px 50px 0px;
+      justify-content: space-around;
       button {
         width: 90px;
         height: 30px;

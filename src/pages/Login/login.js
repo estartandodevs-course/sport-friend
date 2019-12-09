@@ -35,7 +35,7 @@ export default function Login(props) {
             placeholder="Email"
             icon="perm_identity"
             id="email"
-            style={{ width: 300 + "px" }}
+            style={{ width: 280 + "px" }}
             autoFocus
             value={email}
             type="text"
@@ -47,16 +47,33 @@ export default function Login(props) {
             id="password"
             type="password"
             name="password"
-            style={{ width: 300 + "px" }}
+            style={{ width: 280 + "px" }}
             value={password}
             onChange={e => setPassword(e.target.value)}
           />
           <Button
-            className="submit submitText"
             type="submit"
             onClick={login}
             value="Entrar"
-            style={{backgroundColor: "#F06033", color:"#fff"}}
+            style={{backgroundColor: "#F06033", color:"#fff", cursor: "pointer",
+            width: "280px",
+            height: "36px",
+            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+            borderRadius: "24px",
+            border: "none",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: "10px",
+            marginBottom: "10px",
+            outline: "none",
+            color: "#ffffff",
+            textAlign: "center",
+            fontFamily: "Roboto",
+            fontStyle: "normal",
+            fontWeight: "500",
+            fontSize: "18px",
+          }}
           />
           <label className="Textlabel">Esqueceu sua senha ?</label>
           <div className="loginSocial">

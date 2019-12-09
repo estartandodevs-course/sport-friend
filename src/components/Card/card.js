@@ -3,12 +3,17 @@ import './card.scss';
 // import activities from '../../data/activities.js'
 import users from '../../data/users.js'
 import Map from '../../assets/img/maps.png'
+import Img from '../../assets/img.js'
+
+
+
 export default function Card(props) {
 
 
     // const activity = activities[0];
     const activity = props.activity;
     const user = users[0];
+    const imgs = Img;
     // const [user, setUser] = useState("");
     const date = activity.date;
 
@@ -33,6 +38,7 @@ export default function Card(props) {
     }
 
     return (
+
         <section className="Container">
             <div className="box">
                 <img className="img" src={user.avatar} alt={user.first_name} />
@@ -49,17 +55,35 @@ export default function Card(props) {
                     <i className="material-icons icon_start" id="img" onClick={toogleMatch}>{match ? "check_box" : "check_box_outline_blank"}</i>
                 </div>
                 <div className="stats">
-                    <p className="ativi_name">{activity.type}</p>
                     <p className="Local">{activity.place}</p>
                     <div className="lacalization">
                         <p className="data">{date["day"]}/{date["month"]}/{date["year"]}</p>
                         <img src={Map} alt=""></img>
                     </div>
-                    {/* <p className="data">{date["day"]}/{date["month"]}/{date["year"]}</p> */}
+                    
                 </div>
             </div>
-        </section>
 
+            <div className="mobile">
+
+                <p className="hour">
+                    <img src={imgs.clock} alt="clock" className="test" style={{ paddingRight: "5px" }} />
+                    {activity.moment.start_hour}-                 {activity.moment.finish_hour}
+                </p>
+
+                <p className="data">
+                    <img src={imgs.calendar} alt="" style={{ paddingRight: "5px" }} />{date["day"]}/
+                {date["month"]}/
+                {date["year"]}
+                </p>
+
+                <p className="Local">
+                    <img src={imgs.location} alt="" style={{ paddingRight: "5px" }} />{activity.place}
+                </p>
+
+            </div>
+        </section>
+        
     );
 }
 

@@ -67,6 +67,17 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+
+    .cheked {
+      display: flex;
+      width: 160px;
+      height: 160px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .ativi_name {
+      display: none;
+    }
     .Local {
       margin: 0;
     }
@@ -79,7 +90,6 @@
         height: 25px;
         border: 1px solid rgba(17, 201, 201, 0.54);
         border-radius: 15px;
-
       }
     }
     .icon {

@@ -21,7 +21,7 @@ export default class ActivitySelection extends Component {
     render() {
         return (
             <div className="container-activity">
-                { this.state.allSports.map((sport,key) => {
+                { this.state.allSports.map(sport => {
                     return (
                     <div key={sport.id} className="sport">
                         <img src={sport.imagem} className="sport-img" alt={sport.name} name={sport.name} key={sport.id} onClick={e => {this.handleSelectedSport(e.target.name); this.props.filter(e.target.name)}} />

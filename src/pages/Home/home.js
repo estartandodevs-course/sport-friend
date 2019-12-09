@@ -6,9 +6,8 @@ import ModalActivity from "../../components/ModalActivity/modalActivity";
 // import Modal from '../../components/Modal/modal.js'
 import "./home.scss";
 // import firebase from '../../services/firebase'
-// import ActivitySelection from '../../components/ActivitySelection/ActivitySelection.js';
-import ActivitySelection from "../../components/ActivitySelection/ActivitySelectionClass.js";
-import activities from "../../data/activities.js";
+import ActivitySelection from '../../components/ActivitySelection/ActivitySelection.js';
+import activities from '../../data/activities.js';
 
 export default class Home extends Component {
   allActivities = activities;

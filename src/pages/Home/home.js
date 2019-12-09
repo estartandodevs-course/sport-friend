@@ -44,8 +44,7 @@ import Card from '../../components/Card/card'
 // import Modal from '../../components/Modal/modal.js'
 import './home.scss';
 // import firebase from '../../services/firebase'
-// import ActivitySelection from '../../components/ActivitySelection/ActivitySelection.js';
-import ActivitySelection from '../../components/ActivitySelection/ActivitySelectionClass.js';
+import ActivitySelection from '../../components/ActivitySelection/ActivitySelection.js';
 import activities from '../../data/activities.js';
 
 export default class Home extends Component {

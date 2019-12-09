@@ -1,40 +1,41 @@
-
-.containerLogin {
+.container-login {
+  background: #E5E5E5;
   display: flex;
-  flex-direction: row;
-  right: 100px;
-  left: 100px;
-  border-radius: 18px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #60D3D3 0%, #4897ED 100%);
+  @media only screen and (min-width: 1024px) { 
+    background-image: url("https://cdn.pixabay.com/photo/2015/10/12/15/00/water-984077_960_720.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+
+.content-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // min-height: 100vh;
+  height: 100vh;
+  width: 100%;
+  max-width: 1024px;
   
   .banner{
-    text-align: center;
-    top: 40px;
-    left: 50px;
-    position: absolute;
-    z-index: 1;
-    
-    border-radius: 18px ;
-    width: 910px;
-    height: 600px;
-    right: 0px;
     display: flex;
-    flex-direction: row;
-
-    img{
-      width: 920px;
-      height: 550px;
-    }
+    z-index: 1;
+    border-radius: 18px ;
+    width: 750px;
+    height: auto;
+    margin-right: -155px;
   }
   
   
   form {
+    background: linear-gradient(180deg, #60D3D3 0%, #4897ED 100%);
     height: 480px;
     top: 10px;
-    bottom: 10px;
-    position: absolute;
-    right: 50px;
-    margin-top: 50px;
-    
+    // margin-top: 50px;
     box-shadow: 1px 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 10px;
     padding-left: 135px;
@@ -45,18 +46,18 @@
     flex-direction: column;
 
 
-    .input {
+    // .input {
       
-      width: 327px;
-      height: 25px;
-      border: none;
-      display: flex;
-      background: none;
-      border-bottom: 1px solid #ffffff;
-      text-align: center;
-      margin: 10px;
-      outline: none;
-    }
+    //   width: 327px;
+    //   height: 25px;
+    //   border: none;
+    //   display: flex;
+    //   background: none;
+    //   border-bottom: 1px solid #ffffff;
+    //   text-align: center;
+    //   margin: 10px;
+    //   outline: none;
+    // }
     .placeText {
       padding-left: 10px;
       text-align: start;
@@ -75,7 +76,6 @@
       cursor: pointer;
       width: 296px;
       height: 40px;
-      background: #b6dc61;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 24px;
       border: none;
@@ -152,14 +152,30 @@
     }
   }
 }
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 1100px) {
+  .content-login {
+    .banner {
+      width: 650px;
+    }
+
+    form {
+      height: 420px;
+
+      .logo {
+        width: 100px;
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 1023px) {
 
 .banner{
-  visibility: hidden;
+  display: none;
 }
-.Logo{
-  
-}
+
 .containerLogin {
    
     display: flex;
@@ -177,17 +193,18 @@
       justify-content: center;
       align-items: center;
       flex-direction: column;
-      .input {
-        width: 260px;
-        height: 25px;
-        border: none;
-        display: flex;
-        background: none;
-        border-bottom: 1px solid #ffffff;
-        text-align: center;
-        margin: 10px;
-        outline: none;
-      }
+
+      // .input {
+      //   width: 260px;
+      //   height: 25px;
+      //   border: none;
+      //   display: flex;
+      //   background: none;
+      //   border-bottom: 1px solid #ffffff;
+      //   text-align: center;
+      //   margin: 10px;
+      //   outline: none;
+      // }
       .placeText {
         font-family: Sanchez;
         font-style: normal;
@@ -258,18 +275,6 @@
           }
         }
       }
-      .NewUser {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 19px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        color: #ffffff;
-        text-decoration: none;
-      }
       .cadastrar {
         cursor: pointer;
         &:hover{
@@ -278,4 +283,4 @@
       }
     }
   }
-  } 
+} 

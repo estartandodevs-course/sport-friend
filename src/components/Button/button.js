@@ -12,6 +12,7 @@ export default function Button(props) {
         id={props.id}
         autoFocus={props.autoFocus}
         onClick={props.onClick}
+        style={props.style}
       >
         {props.value}
       </button>

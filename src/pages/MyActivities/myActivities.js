@@ -18,7 +18,7 @@ export default function MyActivities(props) {
                 <h2>Para adicionar uma atividade <br /> clique no botão abaixo.</h2>
             </div>
             <div className="user">
-                <i onClick={toogleModal} class="material-icons addCircle">add</i>
+                <i onClick={toogleModal} className="material-icons addCircle">add</i>
                 <h1>Adcionar atividade</h1>
                 <Modal close={toogleModal}  openModal={props.openModal} display={modal ? "none" : "flex"} />
             </div>

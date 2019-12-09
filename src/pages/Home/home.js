@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "../../components/Header/header.js";
 import Card from "../../components/Card/card";
-import ModalActivity from "../../components/ModalActivity/ModalActivity";
+import ModalActivity from "../../components/ModalActivity/modalActivity";
 // import Map from '../../components/Maps/maps.js'
 // import Modal from '../../components/Modal/modal.js'
 import "./home.scss";

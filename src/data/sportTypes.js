@@ -32,4 +32,4 @@ export const sportTypes = [
     imagem: Imagens.walk
   }
 ];
-// export default sportTypes;
+export default sportTypes;

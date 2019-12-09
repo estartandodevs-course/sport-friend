@@ -1,28 +1,51 @@
-import React, { useState } from 'react';
-import './card.scss';
+import React, { useState } from "react";
+import "./card.scss";
 // import activities from '../../data/activities.js'
+<<<<<<< HEAD
 import users from '../../data/users.js'
 import Map from '../../assets/img/maps.png'
 import Img from '../../assets/img.js'
 
 
 
+=======
+import users from "../../data/users.js";
+import Map from "../../assets/img/maps.png";
+>>>>>>> develop
 export default function Card(props) {
+  // const activity = activities[0];
+  const activity = props.activity;
+  const user = users[0];
+  // const [user, setUser] = useState("");
+  const date = activity.date;
 
+  //    function getUser () {
+  //         const currentUserId = activity.author_id
+  //         const author = users.find(user => user.id === currentUserId)
+  //         setUser(author.first_name);
+  //     }
 
+<<<<<<< HEAD
     // const activity = activities[0];
     const activity = props.activity;
     const user = users[0];
     const imgs = Img;
     // const [user, setUser] = useState("");
     const date = activity.date;
+=======
+  const [match, setMatch] = useState(false);
+>>>>>>> develop
 
+  //    function getUser () {
+  //         const currentUserId = activity.author_id
+  //         const author = users.find(user => user.id === currentUserId)
+  //         setUser(author.first_name);
+  //     }
 
-    //    function getUser () {
-    //         const currentUserId = activity.author_id
-    //         const author = users.find(user => user.id === currentUserId)
-    //         setUser(author.first_name);
-    //     }
+  function toogleMatch() {
+    setMatch(!match);
+    alert("foi");
+  }
 
     let [match, setMatch] = useState(false)
 
@@ -86,4 +109,3 @@ export default function Card(props) {
         
     );
 }
-

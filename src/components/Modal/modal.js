@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { sportTypes } from "../../data/sportTypes";
 import meetingPoints from "../../data/meetingPoint";
 import Clock from "../../assets/img/clock.png";
@@ -20,6 +20,24 @@ function Modal(props) {
   //   x.innerHTML = "Latitude: " + position.coords.latitude +
   //     "<br>Longitude: " + position.coords.longitude;
   // }
+
+  const activity = {
+    type: "Caminhar",
+    author: {
+      name: "Breno"
+    },
+    description: "Leve caminhada",
+    date: {
+      day: 5,
+      month: 12,
+      year: 2019
+    },
+    moment: {
+      start_hour: "10:00",
+      finish_hour: "11:00"
+    },
+    meeting_point: "Pedra de Guaratiba"
+  };
 
   return (
     <div style={{ display: props.display }}>
@@ -74,7 +92,7 @@ function Modal(props) {
           </form>
           <div className="btns">
             <button>Cancelar</button>
-            <button>Publicar</button>
+            <button onClick={() => props.action(activity)}>Publicar</button>
           </div>
         </div>
       </div>

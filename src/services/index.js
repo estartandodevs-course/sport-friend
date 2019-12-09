@@ -1,5 +1,5 @@
 import { BehaviorSubject } from "rxjs";
-import { firebase } from "../../firebase";
+import firebase from "./initFirebase";
 
 export class Service {
   Activities = new BehaviorSubject([]);
@@ -12,19 +12,22 @@ export class Service {
   getActivities = () => {
     firebase
       .database()
-      .ref("activities")
+      .ref("Activities")
       .on("value", snapshot => {
         let response = snapshot.val();
+        if (!response) return;
         let resource = Object.keys(response).map(key => response[key]);
         this.Activities.next(resource);
       });
   };
 
   insertActivity(activity) {
-    return firebase
-      .database()
-      .ref("activities")
-      .child("")
-      .push(activity);
+    return (
+      firebase
+        .database()
+        .ref("activities")
+        // .child("")
+        .push(activity)
+    );
   }
 }

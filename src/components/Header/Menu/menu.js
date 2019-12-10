@@ -32,6 +32,9 @@ function Menu(props) {
             <Link className="link" to="/perfil">
               <h2>Perfil</h2>
             </Link>
+            <Link className="link" to="/">
+              <h2>Página inicial</h2>
+            </Link>
             <Dropdown
               onClick={toogleDropdown}
               close={toogleDropdown}

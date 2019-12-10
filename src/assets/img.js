@@ -7,6 +7,7 @@ import walk from '../assets/img/walk.png'
 import calendar from '../assets/img/cal-card.png'
 import location from '../assets/img/loc-card.png'
 import clock from '../assets/img/clock-card.png'
+import arrows from '../assets/img/open-card.png'
 
 export default {
     football: football,
@@ -18,6 +19,6 @@ export default {
     calendar: calendar,
     location: location,
     clock: clock,
-
+    arrows: arrows,
 
 }

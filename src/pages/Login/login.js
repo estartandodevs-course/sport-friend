@@ -35,7 +35,7 @@ export default function Login(props) {
             placeholder="Email"
             icon="perm_identity"
             id="email"
-            style={{ width: 280 + "px" }}
+            style={{ width: 250 + "px" }}
             autoFocus
             value={email}
             type="text"
@@ -48,7 +48,7 @@ export default function Login(props) {
             id="password"
             type="password"
             name="password"
-            style={{ width: 280 + "px" }}
+            style={{ width: 250 + "px" }}
             value={password}
             autoComplete="off"
             onChange={e => setPassword(e.target.value)}
@@ -60,7 +60,7 @@ export default function Login(props) {
             style={{backgroundColor: "#F06033",
             color:"#fff",
             cursor: "pointer",
-            width: "280px",
+            width: "250px",
             height: "36px",
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             borderRadius: "24px",
@@ -68,7 +68,7 @@ export default function Login(props) {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            marginTop: "10px",
+            marginTop: "20px",
             marginBottom: "10px",
             outline: "none",
             textAlign: "center",
@@ -91,9 +91,9 @@ export default function Login(props) {
             </div>
           </div>
           <label className="NewUser">
-            Novo usuário ?
+            Novo no SportFriend ?
             <Link className="NewUser cadastrar" to="/register">
-              &nbsp;Cadastre-se
+              &nbsp;Escreva-se
             </Link>
           </label>
         </form>

@@ -11,6 +11,9 @@
     background-size: cover;
   }
 
+  .logo{ 
+    margin-left: 35px;
+  }
 
   .content-login {
     display: flex;
@@ -27,18 +30,20 @@
       border-radius: 18px;
       width: 750px;
       height: auto;
-      margin-right: -155px;
+      margin-right: -140px;
     }
 
 
     form {
+      
       background: linear-gradient(180deg, #60D3D3 0%, #4897ED 100%);
       height: 480px;
       top: 10px;
       box-shadow: 1px 0px 4px 4px rgba(0, 0, 0, 0.25);
       padding: 10px;
       padding-left: 135px;
-      border-radius: 10px;
+      padding-right: 30px;
+      border-radius: 8px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -153,6 +158,7 @@
       
       form {
         padding-left: 0;
+        padding-right: 0;
         background: transparent;
         box-shadow: none;
         border: none;

@@ -22,9 +22,8 @@ export default function Card(props) {
 
   return (
     <section
-      className="Container"
+      className="card_container"
       onClick={props.onClick}
-      className="Container"
     >
       <div className="box">
         <img className="img" src={user.avatar} alt={user.first_name} />

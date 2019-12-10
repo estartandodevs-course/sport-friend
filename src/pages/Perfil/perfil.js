@@ -19,8 +19,13 @@ export default function Perfil(props) {
                 <input className="input" placeholder="Celular" autoComplete="off" />
                 <input className="input" placeholder="Bairro" autoComplete="off" />
                 <div className="box3000">
-                    <Link to="/"><Button className="btns " type="submit" value="cancelar"/></Link>                    
-                    <Button className="btns btnsColors " type="submit" value="salvar"/>
+                    <Link to="/">
+                        <Button 
+                        className="btns" 
+                        type="submit"
+                        >Cancelar</Button>
+                    </Link>                    
+                    <Button className="btns btnsColors " type="submit">Salvar</Button>
                 </div>
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
             </section>

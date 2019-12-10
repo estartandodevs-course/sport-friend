@@ -36,8 +36,8 @@ export default class Map extends Component {
                 >
                     {this.state.positions.map((pos, index) => {
                         return <Marker icon={Fut} key={index} lat={pos.lat} lng={pos.lng} />
-                        return <Marker icon={Fut} key={index} lat={pos.lat} lng={pos.lng} />
-                        return <Marker icon={Fut} key={index} lat={pos.lat} lng={pos.lng} />
+                        // return <Marker icon={Fut} key={index} lat={pos.lat} lng={pos.lng} />
+                        // return <Marker icon={Fut} key={index} lat={pos.lat} lng={pos.lng} />
                     })}
                 </GoogleMapReact>
             </main>

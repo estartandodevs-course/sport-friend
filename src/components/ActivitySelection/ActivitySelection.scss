@@ -12,6 +12,7 @@
     align-items: center;
     padding: 0 10px;
     z-index: 3;
+    width: 75px;
     
     &:nth-child(5) {
       .sport-img{
@@ -29,7 +30,8 @@
     }
 
     &:nth-child(1), &:nth-child(3){
-      margin: 0 2px -70px;
+      // margin: 0 2px -70px;
+      margin: 0 -6px -71px;
     }
     
     .sport-img {

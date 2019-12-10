@@ -17,11 +17,12 @@
     border-radius: 24px;
     background: #ffffff;
     flex-direction: column;
+    position: relative;
     i {
-      top: 5em;
+      top: 6px;
       color: black;
       position: absolute;
-      right: 12.2em;
+      right: 8px;
     }
     section {
       display: flex;

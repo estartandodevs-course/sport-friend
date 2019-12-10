@@ -7,6 +7,7 @@ import Logo from '../../components/Logo/logo'
 import './register.scss';
 
 export default function Register(props) {
+    // const [form, setForm] = useState({})
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -27,6 +28,13 @@ export default function Register(props) {
             }
         }
     }
+
+    // function changeForm (event) {
+    //     setForm({
+    //         ...form,
+    //         [event.target.name]: event.target.value
+    //     })
+    // }
 
     return (
         <section className="containerRegister">

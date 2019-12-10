@@ -5,9 +5,10 @@
   height: 100vh;
   display: flex;
   position: absolute;
-  background: linear-gradient(180deg, #60d4d1 0%, #4795ec 100%);  transition: all 1s ease 0s;
+  background: linear-gradient(180deg, #60d4d1 0%, #4795ec 100%);
+  transition: all 1s ease 0s;
   box-shadow: 1px 0 5px rgba(0, 0, 0, 0.54);
-  
+
   .close {
     position: absolute;
     right: 10px;
@@ -15,8 +16,8 @@
     font-size: 35px;
     color: white;
     cursor: pointer;
-    &:hover{
-      color: #F06033;
+    &:hover {
+      color: #f06033;
     }
   }
   .containerUser {
@@ -50,12 +51,13 @@
       flex-direction: column;
       align-items: center;
       margin-top: 30px;
-      .logout, .link {
+      .logout,
+      .link {
         min-width: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
-        text-decoration:none;
+        text-decoration: none;
         cursor: pointer;
       }
       h2 {
@@ -68,7 +70,6 @@
         align-items: center;
         padding: 5px;
         color: white;
-
       }
     }
   }

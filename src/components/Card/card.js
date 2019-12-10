@@ -3,6 +3,7 @@ import "./card.scss";
 import users from "../../data/users.js";
 import Clock from "../../assets/img/alarm-clock.png";
 import Calendario from "../../assets/img/Calendario.svg";
+import arrows from '../../assets/img/open-card.png'
 import Local from "../../assets/img/Local.svg";
 import Map from "../../assets/img/maps.png";
 // import Img from "../../assets/img.js";
@@ -46,9 +47,8 @@ export default function Card(props) {
           <i
             className="material-icons icon_start"
             id="img"
-            onClick={toogleMatch}
-          >
-            {match ? "check_box" : "check_box_outline_blank"}
+            onClick={toogleMatch}>
+            {match ? "check_box" : "check_box_outline_blank" }
           </i>
         </div>
         <div className="stats">
@@ -83,6 +83,9 @@ export default function Card(props) {
           {activity.place}
         </p>
       </div>
+        <div className="open_card">
+          <img src={arrows} alt=""/>
+        </div>
     </section>
   );
 }

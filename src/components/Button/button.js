@@ -6,7 +6,7 @@ export default function Button(props) {
   return (
     <>
       <button
-        className={props.className ? props.className + "button" : "button"}
+        className={props.className ? `button-default ${props.className}` : "button-default"}
         type={props.type}
         onChange={props.onChange}
         id={props.id}

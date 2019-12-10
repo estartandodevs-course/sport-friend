@@ -56,27 +56,7 @@ export default function Login(props) {
           <Button
             type="submit"
             onClick={login}
-            // value="Entrar"
-            style={{backgroundColor: "#F06033",
-            color:"#fff",
-            cursor: "pointer",
-            width: "250px",
-            height: "36px",
-            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-            borderRadius: "24px",
-            border: "none",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: "20px",
-            marginBottom: "10px",
-            outline: "none",
-            textAlign: "center",
-            fontFamily: "Roboto",
-            fontStyle: "normal",
-            fontWeight: "500",
-            fontSize: "18px",
-          }}
+            style={{width: 200 +"px", fontWeight: "bold"}}
           >Entrar</Button>
           <label className="Textlabel">Esqueceu sua senha ?</label>
           <div className="loginSocial">

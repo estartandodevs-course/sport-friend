@@ -1,7 +1,7 @@
 .Menu {
   z-index: 10;
   top: 0;
-  width: 40vh;
+  width: 260px;
   height: 100vh;
   display: flex;
   position: fixed;
@@ -74,8 +74,12 @@
     }
   }
 }
-// @media screen and (min-width: 760px) {
-//   .close {
-//     display: none;
-//   }
-// }
+
+@media screen and (min-width: 1024px) {
+  .Menu {
+    left: 0 !important;
+  }
+  .close {
+    display: none !important;
+  }
+}

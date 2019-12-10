@@ -45,7 +45,7 @@ export default class Home extends Component {
 
   render() {
     return (
-      <main className="flex-center">
+      <main className="flex-center space-menu">
         <Header />
         <h1 className="apresentation-title">
           {/* Olá {firebase.getCurrentUsername()}! <br></br>  */}

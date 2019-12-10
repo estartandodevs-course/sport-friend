@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Sanchez&display=swap");
 
-.Container {
+.card_container {
   display: flex;
   justify-content: space-around;
   width: 500px;
@@ -98,7 +98,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .Container {
+  .card_container {
     display: flex;
     justify-content: space-around;
     width: 314px;

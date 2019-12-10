@@ -41,10 +41,18 @@ export default function ModalActivity(props) {
           <div className="description">
             <h2>{props.card.description}</h2>
           </div>
-          <Button className="btnTeste " value="Confirmar Atividade" />
+          <Button
+            active={props.onClick}
+            className="btnTeste "
+            value="Confirmar Atividade"
+          />
         </div>
         <Map />
-        <Button className="btnConfirmar " value="Confirmar Atividade" />
+        <Button
+          active={props.onClick}
+          className="btnConfirmar "
+          value="Confirmar Atividade"
+        />
       </div>
     </main>
   );

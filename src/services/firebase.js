@@ -16,11 +16,12 @@ class Firebase {
     return this.auth.signOut();
   }
 
-  async register(user) {
+  async register(form) {
+    const user = form;
     await this.auth.createUserWithEmailAndPassword(user.email, user.password);
     return this.auth.currentUser.updateProfile({
+      ...user,
       displayName: user.name
-      // send extra data from user
     });
   }
 

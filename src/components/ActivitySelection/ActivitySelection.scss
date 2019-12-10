@@ -19,6 +19,8 @@
         height: 75px;
         margin: 5px 10px -7px;
         background: #F06033;
+        // color: #fff;
+        // filter: brightness(1000%);
       }
         
       p{
@@ -49,15 +51,28 @@
   }
 }
 
-  @media screen and (max-width: 760px) {
-    // .main {
-    //   display: flex;
-    //   /* justify-content: center; */
-    //   flex-direction: column;
-    //   align-items: center;
-      .container-activity {
-        flex-wrap: wrap;
+@media screen and (min-width: 768px) {
+  .container-activity {
+    width: initial;
+
+    .sport{
+      &:nth-child(1), &:nth-child(3){
+        margin: 0;
       }
-    // }
+      
+      &:nth-child(5) {
+        .sport-img{
+          width: 40px;
+          height: 40px;
+          padding: 10px;
+          margin:0 0 -7px 0;
+        }
+        
+        p{
+          font-size: initial;
+        }
+      }
+    }
   }
+}
   

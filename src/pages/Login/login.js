@@ -39,6 +39,7 @@ export default function Login(props) {
             autoFocus
             value={email}
             type="text"
+            autoComplete="off"
             onChange={e => setEmail(e.target.value)}
           />
           <Input
@@ -49,13 +50,16 @@ export default function Login(props) {
             name="password"
             style={{ width: 280 + "px" }}
             value={password}
+            autoComplete="off"
             onChange={e => setPassword(e.target.value)}
           />
           <Button
             type="submit"
             onClick={login}
-            value="Entrar"
-            style={{backgroundColor: "#F06033", color:"#fff", cursor: "pointer",
+            // value="Entrar"
+            style={{backgroundColor: "#F06033",
+            color:"#fff",
+            cursor: "pointer",
             width: "280px",
             height: "36px",
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -67,14 +71,13 @@ export default function Login(props) {
             marginTop: "10px",
             marginBottom: "10px",
             outline: "none",
-            color: "#ffffff",
             textAlign: "center",
             fontFamily: "Roboto",
             fontStyle: "normal",
             fontWeight: "500",
             fontSize: "18px",
           }}
-          />
+          >Entrar</Button>
           <label className="Textlabel">Esqueceu sua senha ?</label>
           <div className="loginSocial">
             <h2 className="test placeText">Entrar com</h2>

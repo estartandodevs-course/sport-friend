@@ -5,13 +5,13 @@ import Clock from "../../assets/img/alarm-clock.png";
 import Calendario from "../../assets/img/Calendario.svg";
 import Local from "../../assets/img/Local.svg";
 import Map from "../../assets/img/maps.png";
-import Img from "../../assets/img.js";
+// import Img from "../../assets/img.js";
 
 export default function Card(props) {
   // const activity = activities[0];
   const activity = props.activity;
   const user = users[0];
-  const imgs = Img;
+  // const imgs = Img;
   // const [user, setUser] = useState("");
   const date = activity.date;
 

@@ -14,7 +14,7 @@ export default function Button(props) {
         onClick={props.onClick}
         style={props.style}
       >
-        {props.value}
+        {props.children}
       </button>
     </>
   );

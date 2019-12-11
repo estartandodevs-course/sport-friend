@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Sanchez&display=swap");
 
 .card_container {
-  padding-top: 5px;
+  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+  align-items: center;
   display: flex;
   justify-content: space-around;
   width: 500px;
   height: 150px;
-  border: solid 2px #11c9c9;
   border-radius: 24px;
   font-family: "Sanchez", serif;
   margin: 10px;
@@ -101,7 +101,7 @@
     
   }
   .open_card{
-   
+   margin-top: 70px;
   }
 }
 

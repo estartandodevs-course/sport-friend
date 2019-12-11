@@ -25,9 +25,9 @@ function Menu(props) {
           <div className="user">
             <i className="material-icons">perm_identity</i>
           </div>
-          <div>
-            <h1>{firebase.getCurrentUsername()} </h1>
-          </div>
+          <h1>{firebase.getCurrentUsername()} </h1>
+        {/* <div>
+          </div> */}
           <div className="user-perfil">
             <Link className="link" to="/perfil">
               <h2>Perfil</h2>
@@ -41,7 +41,7 @@ function Menu(props) {
               className="DropdownShow"
               display={dropdown ? "none" : "flex"}
             />
-            <h2>Notificação</h2>
+            {/* <h2>Notificação</h2> */}
             <Link className="logout" onClick={logout} to="/login">
               <h2>Sair</h2>
             </Link>

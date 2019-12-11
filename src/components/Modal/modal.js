@@ -1,65 +1,118 @@
 import React, { useState } from "react";
-import ReactDOM from "react-dom";
-import { sportTypes } from '../../data/sportTypes.js'
-import Clock from '../../assets/img/clock.png'
-import Calendar from '../../assets/img/Calendario.png'
-import './modal.scss';
+import { sportTypes } from "../../data/sportTypes";
+import meetingPoints from "../../data/meetingPoint";
+import Img from "../../assets/img.js";
+import Button from "../Button/button";
+import InputMask from "react-input-mask";
+
+import Clock from "../../assets/img/clock.png";
+// import Calendar from "../../assets/img/Calendario.png";
+import "./modal.scss";
 
 function Modal(props) {
-  var x = document.getElementById("demo");
+  // var x = document.getElementById("demo");
 
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-  }
+  // function getLocation() {
+  //   if (navigator.geolocation) {
+  //     navigator.geolocation.getCurrentPosition(showPosition);
+  //   } else {
+  //     x.innerHTML = "Geolocation is not supported by this browser.";
+  //   }
+  // }
 
-  function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude +
-      "<br>Longitude: " + position.coords.longitude;
-  }
+  // function showPosition(position) {
+  //   x.innerHTML = "Latitude: " + position.coords.latitude +
+  //     "<br>Longitude: " + position.coords.longitude;
+  // }
+
+  const activity = {
+    type: "Caminhar",
+    author: {
+      name: "Breno"
+    },
+    description: "Leve caminhada",
+    date: {
+      day: 5,
+      month: 12,
+      year: 2019
+    },
+    moment: {
+      start_hour: "10:00",
+      finish_hour: "11:00"
+    },
+    meeting_point: "Pedra de Guaratiba"
+  };
 
   return (
     <div style={{ display: props.display }}>
       <div className="main">
-        <div className="modal-container" >
-          <i onClick={props.close} className="material-icons closeModal">close</i>
+        <div className="modal-container">
           <form>
-            <select className="formInput">
-              {sportTypes.map(sport => {
+            <h2 className="descripitionInput">Escolha a atividade:</h2>
+            <div className="containerSporte">
+              {sportTypes.map((sport, key) => {
                 return (
-                  <option>
-                    {sport.name}
-                  </option>
-                )
+                  <div key={sport.id} className="containerSports">
+                    <div className="sports ">
+                      <img className="sportImg" src={sport.imagem} alt="" />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            <h2 className="descripitionInput">Defina o ponto de encontro:</h2>
+            <select className="formInput">
+              {meetingPoints.map((meetingPoint, key) => {
+                return <option>{meetingPoint.meeting_point}</option>;
               })}
             </select>
-            <input className="formInput" type="text" placeholder="Ponto de Encontro"></input>
-            <input className="formInput" type="text" placeholder="Descrição"></input>
-            <div className="formTime">
-              <img src={Clock} alt="clock"></img>
-              <h2>Hora:</h2>
-              <p>Início</p>
-              <input className="Input" type="time" value="00:00" ></input>
-              <p>Até</p>
-              <input className="Input" type="time" value="00:00" ></input>
+
+            <div className="containerFormTime">
+              <div className="formTime">
+                <img src={Img.clock} alt="clock"></img>
+                <InputMask
+                  className="Input"
+                  placeholder="Hora Inicial"
+                  mask="99:99"
+                  onChange={props.onChange}
+                  value={props.value}
+                />
+                <img src={Img.clock} alt="clock"></img>
+                <InputMask
+                  type="tell"
+                  className="Input"
+                  placeholder="Hora Final"
+                  mask="99:99"
+                  onChange={props.onChange}
+                  value={props.value}
+                />
+              </div>
             </div>
-            <div className="formTime">
-              <img src={Calendar} alt="clock"></img>
-              <h2>Data:</h2>
-              <p>Dia</p>
-              <input className="Input" type="number"></input>
-              <p>Mês</p>
-              <input className="Input" type="number"></input>
-              <p>Ano</p>
-              <input className="Input" type="number"></input>
+            <div className="containerFormTime">
+              <InputMask
+                type="tell"
+                className="Input date"
+                placeholder="Data"
+                mask="99/99/9999"
+                onChange={props.onChange}
+                value={props.value}
+              />
             </div>
+            <h2 className="descripitionInput">Descrição</h2>
+            <textarea
+              className="descriçaoAtividade"
+              placeholder="Digite a descrição da sua atividade aqui"
+            ></textarea>
           </form>
           <div className="btns">
-            <button>Cancelar</button>
-            <button>Publicar</button>
+            <Button className="modalBtn">Cancelar</Button>
+            <Button
+              className="modalBtn btnSecundario"
+              onClick={() => props.action(activity)}
+            >
+              Publicar
+            </Button>
           </div>
         </div>
       </div>
@@ -67,6 +120,4 @@ function Modal(props) {
   );
 }
 
-
 export default Modal;
-

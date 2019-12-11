@@ -6,60 +6,33 @@
   min-height: 100vh;
   .navegate {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 30px;
+    left: 25px;
     border: 1px solid white;
     color: white;
     border-radius: 30px;
-    font-size: 20px;
+    font-size: 30px;
+    cursor: pointer;
   }
+
+  .step {
+    color: #fff;
+    font-family: Roboto;
+    font-size: 24px;
+    position: fixed;
+    top: 30px;
+    right: 25px;
+  }
+
   form {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    .input {
-      width: 260px;
-      height: 25px;
-      border: none;
-      display: flex;
-      background: none;
-      border-bottom: 1px solid #ffffff;
-      text-align: center;
-      margin: 10px;
-      outline: none;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 18px;
-      line-height: 21px;
-      color: #ffffff;
-      &::-webkit-input-placeholder {
-        color: #fffdfd;
-      }
-    }
-    .cadastrar {
-      width: 296px;
-      height: 40px;
-      background: #b6dc61;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      border-radius: 24px;
-      border: none;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 55px;
-      margin-bottom: 10px;
-      outline: none;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 21px;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      color: #ffffff;
     }
   }
+// }
+
+@media only screen and (max-width: 768px) {
+  
 }

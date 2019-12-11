@@ -1,22 +1,25 @@
 .Menu {
-  z-index: 10;
   top: 0;
-  width: 40vh;
-  height: 100vh;
+  z-index: 4;
+  width: 260px;
   display: flex;
-  position: absolute;
-  background: linear-gradient(180deg, #60d4d1 0%, #4795ec 100%);  transition: all 1s ease 0s;
+  height: 100vh;
+  position: fixed;
+  transition: all 1s ease 0s;
   box-shadow: 1px 0 5px rgba(0, 0, 0, 0.54);
-  
+  background: linear-gradient(180deg, #60d4d1 0%, #4795ec 100%);
+
   .close {
-    position: absolute;
-    right: 10px;
     top: 5px;
-    font-size: 35px;
+    right: 10px;
     color: white;
     cursor: pointer;
-    &:hover{
-      color: #F06033;
+    font-size: 28px;
+    border: 2px solid;
+    position: absolute;
+    border-radius: 17px;
+    &:hover {
+      color: #f06033;
     }
   }
   .containerUser {
@@ -35,28 +38,33 @@
       align-items: center;
       justify-content: center;
       background-color: white;
-      box-shadow: 1px 0 5px rgba(0, 0, 0, 0.54);
+      // box-shadow: 1px 0 5px rgba(0, 0, 0, 0.54);
+      box-shadow: 0px 4px 6px #868181;
       i {
         display: flex;
         font-size: 55px;
         align-items: center;
         justify-content: center;
+        color: #252323e3;
       }
     }
     .user-perfil {
       display: flex;
-      // width: 100%;
+      width: 100%;
       justify-content: center;
       flex-direction: column;
       align-items: center;
-      margin-top: 30px;
-      .logout, .link {
-        min-width: 60px;
+      margin-top: 15px;
+      .logout,
+      .link {
+        // min-width: 60px;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        text-decoration:none;
+        text-decoration: none;
         cursor: pointer;
+        // border-bottom: 1px solid #ffffff;
       }
       h2 {
         font-family: inherit;
@@ -68,13 +76,16 @@
         align-items: center;
         padding: 5px;
         color: white;
-
       }
     }
   }
 }
-// @media screen and (min-width: 760px) {
-//   .close {
-//     display: none;
-//   }
-// }
+
+@media screen and (min-width: 1024px) {
+  .Menu {
+    left: 0 !important;
+  }
+  .close {
+    display: none !important;
+  }
+}

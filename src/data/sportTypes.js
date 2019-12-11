@@ -1,4 +1,4 @@
-import Imagens from "../assets/img"
+import Imagens from "../assets/img";
 
 export const sportTypes = [
   {
@@ -32,4 +32,4 @@ export const sportTypes = [
     imagem: Imagens.walk
   }
 ];
-// export default sportTypes;
+export default sportTypes;

@@ -29,13 +29,13 @@
     }
   }
   .input {
+    text-align: start;
     width: 260px;
     height: 25px;
     border: none;
     display: flex;
     background: none;
     border-bottom: 1px solid #ffffff;
-    text-align: center;
     margin: 10px;
     outline: none;
     font-family: Roboto;
@@ -49,9 +49,11 @@
     }
   }
   .box3000 {
+    margin-top: 15px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    
     .btns {
       width: 120px;
       height: 40px;
@@ -68,10 +70,10 @@
       font-family: Roboto;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       cursor: pointer;
-      background: #B6DC61;
+      background: #da2b2b;
     }
     .btnsColors {
-        background: #da2b2b;
+      background: #F06033;
     }
   }
 }

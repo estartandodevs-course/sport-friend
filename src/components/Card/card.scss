@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Sanchez&display=swap");
 
-.Container {
+.card_container {
+  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
+  align-items: center;
   display: flex;
   justify-content: space-around;
-  width: 314px;
-  height: 132px;
-  border: solid 2px #11c9c9;
+  width: 500px;
+  height: 150px;
   border-radius: 24px;
   font-family: "Sanchez", serif;
   margin: 10px;
@@ -14,14 +15,15 @@
   cursor: pointer;
 
   .box {
+    
     display: flex;
     flex-direction: column;
     margin-top: 10px;
     align-items: center;
 
     .img {
-      width: 55px;
-      height: 55px;
+      width: 65px;
+      height: 65px;
       border-radius: 50%;
       background-color: #fff;
     }
@@ -29,21 +31,17 @@
     .User_Name {
       font-size: 14px;
     }
-
-    .data {
-      margin: 0;
-      font-size: 12px;
-    }
   }
-
   .Time {
+    visibility: hidden;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    font-size: 12px;
+    font-size: 14px;
     margin-bottom: 25px;
 
     .bar {
+      
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -60,61 +58,74 @@
         }
       }
     }
-  }
 
+    .hour {
+      display: flex;
+      align-items: center;
+    }
+
+    .data {
+      margin: 0;
+      font-size: 12px;
+    }
+  }
   .Box_info {
+    border: solid 1px black;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    .Local {
-      margin: 0;
-    }
-    .lacalization {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      img {
-        width: 25px;
-        height: 25px;
-        border: 1px solid rgba(17, 201, 201, 0.54);
-        border-radius: 15px;
+    align-items: flex-start;
+    justify-content: space-between;
 
+    .cheked {
+      margin: 20px;
+    }
+
+    .stats {
+      .Local {
+        margin: 0;
+      }
+      .lacalization {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        img {
+          width: 25px;
+          height: 25px;
+          border: 1px solid rgba(17, 201, 201, 0.54);
+          border-radius: 15px;
+        }
       }
     }
-    .icon {
-      width: 27px;
-      height: 26px;
-      border-radius: 20px;
-      background-color: #fff;
-      margin-top: 10px;
-    }
-
-    .acc {
-      display: flex;
-      justify-content: center;
-      width: 35px;
-      height: 30px;
-      border: none;
-      border-radius: 7px;
-      margin: 15px 0px 0px 55px;
-    }
-    .acc:hover {
-      background-color: rgba(70, 234, 234, 0.64);
-    }
+  }
+  .mobile {
+    
+  }
+  .open_card{
+   margin-top: 70px;
   }
 }
 
-@media screen and (min-width: 740px) {
-  .Container {
-    width: 500px;
-    height: 145px;
+@media screen and (max-width: 768px) {
+  .card_container {
+    display: flex;
+    justify-content: space-around;
+    width: 314px;
+    height: 132px;
+    border: solid 2px #11c9c9;
+    border-radius: 24px;
+    font-family: "Sanchez", serif;
+    margin: 10px;
+    color: #000;
+    background: #ffffff;
+    cursor: pointer;
 
     .box {
       display: flex;
       flex-direction: column;
       margin-top: 10px;
       align-items: center;
+      justify-content: center;
+
       .img {
         width: 55px;
         height: 55px;
@@ -125,61 +136,26 @@
       .User_Name {
         font-size: 14px;
       }
-
-      .data {
-        margin: 0;
-        font-size: 12px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-          "Helvetica Neue", sans-serif;
-      }
     }
-
     .Time {
+      display: none;
+    }
+    .Box_info {
+      display: none;
+    }
+    .mobile {
       display: flex;
-      justify-content: center;
       flex-direction: column;
-      font-size: 12px;
-      margin-bottom: 25px;
-
-      .bar {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border-right: 1px solid;
-        height: 40px;
-
-        .start {
-          margin-right: 5px;
-        }
+      justify-content: center;
+      p {
+        margin: 5px;
       }
     }
-
-    .Box_info {
+    .open_card{
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      .Local {
-        margin: 0;
-      }
-
-      .icon {
-        width: 27px;
-        height: 27px;
-        border-radius: 20px;
-        background-color: #fff;
-        margin-top: 10px;
-      }
-
-      .acc {
-        border-radius: 30px;
-        width: 35px;
-        height: 35px;
-        margin: 15px 0px 0px 70px;
-      }
-      .acc:hover {
-        background-color: rgba(70, 234, 234, 0.64);
-      }
+      align-items: flex-end;
+      margin-bottom: 15px;
+      margin-right: 4px;
     }
   }
 }

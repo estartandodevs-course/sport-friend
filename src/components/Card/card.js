@@ -1,27 +1,48 @@
-import React, { useState } from 'react';
-import './card.scss';
-// import activities from '../../data/activities.js'
-import users from '../../data/users.js'
-import Map from '../../assets/img/maps.png'
-export default function Card(props) {
+import React, { useState } from "react";
+import "./card.scss";
+import users from "../../data/users.js";
+// import Map from "../../assets/img/maps.png";
+import Img from "../../assets/img.js";
+// import { sportTypes } from '../../data/sportTypes'
 
+export default function Card(props) {
+  // const activity = activities[0];
+  const activity = props.activity;
+  const user = users[0];
+  // const imgs = Img;
+  // const [user, setUser] = useState("");
+  const date = activity.date;
+
+  let [match, setMatch] = useState(false);
+  function toogleMatch() {
+    setMatch(!match);
+  }
 
     // const activity = activities[0];
     const activity = props.activity;
     const user = users[0];
     // const [user, setUser] = useState("");
     const date = activity.date;
-<<<<<<< Updated upstream
 
+      <div className="mobile">
+        <p className="hour">
+          <img
+            src={Img.clock}
+            alt="clock"
+            className="test"
+            style={{ paddingRight: "5px", width: "16px" }}
+          />
+          {activity.moment.start_hour}- {activity.moment.finish_hour}
+        </p>
 
     //    function getUser () {
     //         const currentUserId = activity.author_id
     //         const author = users.find(user => user.id === currentUserId)
     //         setUser(author.first_name);
     //     }
-=======
+
     const [match, setMatch] = useState(false)
->>>>>>> Stashed changes
+
 
     //    function getUser () {
     //         const currentUserId = activity.author_id
@@ -48,26 +69,19 @@ export default function Card(props) {
             </div>
             <div className="Box_info">
                 <div className="cheked">
-<<<<<<< Updated upstream
-=======
-                    <i className="material-icons icon_start" onClick={toogleMatch} >check_box_outline_blank</i>
->>>>>>> Stashed changes
+                    <i className="material-icons icon_start" onClick={toogleMatch}></i>
                 </div>
                 <div className="stats">
                     <p className="User_Name">{activity.type}</p>
                     <p className="Local">{activity.place}</p>
-<<<<<<< Updated upstream
                     <div className="lacalization">
                         <p className="data">{date["day"]}/{date["month"]}/{date["year"]}</p>
-                        <img src={Map}></img>
+                        <img src={Map} alt=""></img>
                     </div>
-=======
-                    <p className="data">{date["day"]}/{date["month"]}/{date["year"]}</p>
->>>>>>> Stashed changes
+                    {/* <p className="data">{date["day"]}/{date["month"]}/{date["year"]}</p> */}
                 </div>
             </div>
         </section>
 
     );
 }
-

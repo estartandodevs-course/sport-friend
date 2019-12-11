@@ -2,13 +2,12 @@
   width: 334px;
   height: 321px;
   position: relative;
+  margin-right: 11px;
 }
 @media screen and (max-width: 764px) {
   .map {
-    // border-radius: 141px;
     width: 240px;
     height: 171px;
-    // margin-left: 8px;
-    // margin-top: -44px;
+    margin-right: 0;
   }
 }

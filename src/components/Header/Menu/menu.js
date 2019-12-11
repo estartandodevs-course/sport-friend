@@ -19,7 +19,7 @@ function Menu(props) {
     <section>
       <div className="Menu" style={{ left: props.left }}>
         <i onClick={props.close} className="material-icons close">
-          close
+          keyboard_arrow_left
         </i>
         <div className="containerUser">
           <div className="user">

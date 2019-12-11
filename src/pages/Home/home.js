@@ -15,12 +15,16 @@ export default class Home extends Component {
     filterBy: "",
     filteredActitivies: [],
     showModal: false,
+    showCards: false,
     cardClicked: "",
   }
   
   componentDidMount() {
     this.service.getActivities()
     this.service.Activities.subscribe(activities => (this.AllActivities = activities, this.setState({filteredActitivies: activities})));
+    setTimeout(() => {
+      this.setState({ showCards: true });
+    }, 1500);
   }
 
 
@@ -58,7 +62,7 @@ export default class Home extends Component {
         </h1>
         <ActivitySelection filter={this.filter} />
 
-        {this.AllActivities ?
+        {this.state.showCards ?
         (filteredActitivies.map((activity, index) => {
           return (
             <Card

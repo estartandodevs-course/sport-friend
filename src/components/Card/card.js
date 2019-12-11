@@ -30,7 +30,7 @@ export default function Card(props) {
         <img className="img" src={user.avatar} alt={user.first_name} />
         <p className="User_Name">{user.first_name}</p>
       </div>
-      <div className="Time">
+      {/*<div className="Time">
         <div className="bar">
           <p className="start">
             <i className="material-icons icon_start">alarm</i>
@@ -60,7 +60,7 @@ export default function Card(props) {
             <img src={Map} alt=""></img>
           </div>
         </div>
-      </div>
+  </div>*/ }
 
       <div className="mobile">
         <p className="hour">

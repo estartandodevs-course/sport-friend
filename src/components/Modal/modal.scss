@@ -9,8 +9,6 @@
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.91);
   .modal-container {
-    width: 65%;
-    height: 65%;
     width: 336px;
     height: 535px;
     display: flex;
@@ -57,10 +55,10 @@
             height: 46.39px;
             left: 21px;
             top: 115px;
-            background: #ffffff;
             /* atividades */
-            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.47);
             border-radius: 55px;
+            background: #ffffff;
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.47);
             .sportImg {
               width: 24.65px;
               height: 19.51px;
@@ -75,14 +73,18 @@
         justify-content: space-around;
         .formTime {
           display: flex;
-          justify-content: center;
-          align-items: baseline;
-          flex-direction: row-reverse;
+          margin-top: 15px;
           margin-left: -6px;
+          margin-bottom: 15px;
+          align-items: baseline;
+          justify-content: center;
+          flex-direction: row-reverse;
           img {
+            z-index: 2;
             width: 16px;
             height: 16px;
-            margin-left: -25px;
+            margin-left: -17px;
+            margin-right: 13px;
           }
           .label-float {
             margin: 5px 12px;
@@ -92,22 +94,22 @@
         }
         .Input {
           padding: 0;
+          border: none;
           height: 20px;
+          width: 104px;
           display: flex;
+          outline: none;
           font-size: 12px;
           color: #3e3e3e;
-          min-width: 115px;
-          max-width: 107px;
           line-height: 16px;
-          text-align: start;
           font-style: normal;
-          align-items: center;
+          text-align: center;
           font-weight: normal;
+          text-decoration: none;
           font-family: Open Sans;
-          text-decoration-line: underline;
           border-bottom: 1px solid #3e3e3e;
         }
-        .Date {
+        .date {
           min-width: 240px;
         }
         label {
@@ -123,6 +125,7 @@
       }
       .descriçaoAtividade {
         width: 256px;
+        resize: none;
         height: 99px;
         padding: 10px;
         text-align: left;
@@ -140,12 +143,26 @@
       .modalBtn {
         width: 120px;
         height: 40px;
+        border-radius: 20px;
         background: #868181;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 20px;
       }
       .btnSecundario {
         background: #f06033;
+      }
+    }
+  }
+}
+@media screen and (max-width: 350px) {
+  .main {
+    .modal-container {
+      width: 290px;
+      form {
+        .containerSporte {
+          width: calc(100% - 20px);
+          padding-left: 41px;
+          overflow: scroll;
+        }
       }
     }
   }

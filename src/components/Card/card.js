@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./card.scss";
 import users from "../../data/users.js";
-import Map from "../../assets/img/maps.png";
+// import Map from "../../assets/img/maps.png";
 import Img from "../../assets/img.js";
 // import { sportTypes } from '../../data/sportTypes'
 
@@ -55,7 +55,7 @@ export default function Card(props) {
             <img src={Map} alt=""></img>
           </div>
         </div>
-  </div>*/ }
+  </div>*/}
 
       <div className="mobile">
         <p className="hour">

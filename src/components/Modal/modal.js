@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { sportTypes } from "../../data/sportTypes";
 import meetingPoints from "../../data/meetingPoint";
 import Img from "../../assets/img.js";
-import Input from "../Input/input";
 import Button from "../Button/button";
+import InputMask from "react-input-mask";
 
 import Clock from "../../assets/img/clock.png";
 // import Calendar from "../../assets/img/Calendario.png";
@@ -71,27 +71,38 @@ function Modal(props) {
             <div className="containerFormTime">
               <div className="formTime">
                 <img src={Img.clock} alt="clock"></img>
-                <Input
+                <InputMask
                   className="Input"
-                  type="number"
                   placeholder="Hora Inicial"
+                  mask="99:99"
+                  onChange={props.onChange}
+                  value={props.value}
                 />
                 <img src={Img.clock} alt="clock"></img>
-                <Input
+                <InputMask
+                  type="tell"
                   className="Input"
-                  type="number"
                   placeholder="Hora Final"
+                  mask="99:99"
+                  onChange={props.onChange}
+                  value={props.value}
                 />
               </div>
             </div>
             <div className="containerFormTime">
-              <Input className="Input Date" type="number" placeholder="Data" />
+              <InputMask
+                type="tell"
+                className="Input date"
+                placeholder="Data"
+                mask="99/99/9999"
+                onChange={props.onChange}
+                value={props.value}
+              />
             </div>
             <h2 className="descripitionInput">Descrição</h2>
             <textarea
               className="descriçaoAtividade"
-              id="message"
-              placeholder="Digite sua mensagem aqui"
+              placeholder="Digite a descrição da sua atividade aqui"
             ></textarea>
           </form>
           <div className="btns">

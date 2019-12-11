@@ -1,7 +1,7 @@
 import { BehaviorSubject } from "rxjs";
 import firebase from "./initFirebase";
 
-export class Service {
+class Service {
   Activities = new BehaviorSubject([]);
   Cats = new BehaviorSubject([]);
 
@@ -25,9 +25,11 @@ export class Service {
     return (
       firebase
         .database()
-        .ref("activities")
+        .ref("Activities")
         // .child("")
         .push(activity)
     );
   }
 }
+
+export default Service;

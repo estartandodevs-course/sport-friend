@@ -2,31 +2,34 @@ import React, { Component } from "react";
 import Header from "../../components/Header/header.js";
 import Card from "../../components/Card/card";
 import ModalActivity from "../../components/ModalActivity/modalActivity";
-// import Map from '../../components/Maps/maps.js'
-// import Modal from '../../components/Modal/modal.js'
 import "./home.scss";
-// import firebase from '../../services/firebase'
+import Service from '../../services/index'
 import ActivitySelection from '../../components/ActivitySelection/ActivitySelection.js';
-import activities from '../../data/activities.js';
+import Loading from "../../components/Loading/Loading"
 
 export default class Home extends Component {
-  allActivities = activities;
+  service = new Service();
+  AllActivities = false
 
   state = {
     filterBy: "",
-    filteredActitivies: activities,
+    filteredActitivies: [],
     showModal: false,
-    cardClicked: ""
-  };
+    cardClicked: "",
+  }
+  
+  componentDidMount() {
+    this.service.getActivities()
+    this.service.Activities.subscribe(activities => (this.AllActivities = activities, this.setState({filteredActitivies: activities})));
+  }
+
 
   filter = async filterBy => {
     await this.setState({ filterBy: filterBy });
-    let updatedActivities = this.allActivities.filter(
+    let updatedActivities = this.AllActivities.filter(
       item => item.type === this.state.filterBy
     );
     await this.setState({ filteredActitivies: updatedActivities });
-    console.log(this.state.filterBy);
-    console.log(this.state.filteredActitivies);
   };
 
   toggleModal = () => {
@@ -44,6 +47,8 @@ export default class Home extends Component {
   };
 
   render() {
+    const { filteredActitivies } = this.state;
+
     return (
       <main className="flex-center space-menu">
         <Header />
@@ -52,22 +57,27 @@ export default class Home extends Component {
           Que tal encontrar uma atividade ?
         </h1>
         <ActivitySelection filter={this.filter} />
-        {this.state.filteredActitivies.map((activity, index) => {
+
+        {this.AllActivities ?
+        (filteredActitivies.map((activity, index) => {
           return (
             <Card
-              onClick={() => this.setCardClicked(index)}
-              key={index}
-              activity={activity}
+            onClick={() => this.setCardClicked(index)}
+            key={index}
+            activity={activity}
             />
-          );
-        })}
+            );
+          })
+          // Loading isn't working =/
+          ): <Loading/>}
+
         {this.state.showModal ? (
           <ModalActivity
-            card={this.state.cardClicked}
-            close={this.toggleModal}
+          card={this.state.cardClicked}
+          close={this.toggleModal}
           />
-        ) : null}
+          ) : null}
       </main>
-    );
+    )
   }
 }

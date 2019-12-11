@@ -21,8 +21,8 @@ export default function Card(props) {
   return (
     <section className="card_container" onClick={props.onClick}>
       <div className="box">
-        <img className="img" src={user.avatar} alt={user.first_name} />
-        <p className="User_Name">{user.first_name}</p>
+        <img className="img" src={activity.author.avatar} alt={activity.author.name} />
+        <p className="User_Name">{activity.author.name}</p>
       </div>
       {/*<div className="Time">
         <div className="bar">
@@ -75,7 +75,7 @@ export default function Card(props) {
 
         <p className="Local">
           <img src={Img.location} alt="" style={{ paddingRight: "5px" }} />
-          {activity.place}
+          {activity.meeting_point}
         </p>
       </div>
       <div className="open_card">

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../../components/Header/header";
 import Modal from "../../components/Modal/modal";
 import "./myActivities.scss";
-import { Service } from "../../services";
+import  Service  from "../../services";
 
 export default function MyActivities(props) {
   const service = new Service();

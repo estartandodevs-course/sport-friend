@@ -9,26 +9,17 @@
   justify-content: center;
   background-color: rgba(0, 0, 0, 0.91);
   .modal-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    border: solid black 1px;
-    border-radius: 5px;
-    background-color: white;
     width: 65%;
     height: 65%;
-    .closeModal {
-      color: black;
-      position: relative;
-      top: 6.5vh;
-      left: 30vw;
-      font-size: 35px;
-      cursor: pointer;
-      &:hover {
-        color: red;
-      }
-    }
+    width: 336px;
+    height: 535px;
+    display: flex;
+    border-radius: 5px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border: solid black 1px;
+    background-color: white;
     form {
       display: flex;
       align-items: center;
@@ -37,14 +28,16 @@
       width: 85%;
       height: 100%;
       .descripitionInput {
-        font-family: Open Sans;
-        font-style: normal;
+        display: flex;
+        font-size: 16px;
         font-weight: 600;
-        font-size: 20px;
-        line-height: 35px;
-        margin-bottom: -7px;
-        text-align: start;
-        width: 84%;
+        line-height: 22px;
+        font-style: normal;
+        text-align: center;
+        align-items: center;
+        font-family: Open Sans;
+
+        color: rgba(48, 48, 48, 0.929648);
       }
       .containerSporte {
         width: 100%;
@@ -52,57 +45,73 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        .sports {
+        .containerSports {
+          margin: 3px;
           width: 75px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
 
-          .sportImg {
-            width: 9.5vh;
-            height: 9.5vh;
+          .sports {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 46.39px;
+            height: 46.39px;
+            left: 21px;
+            top: 115px;
+            background: #ffffff;
+            /* atividades */
+            box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.47);
             border-radius: 55px;
-            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            .sportImg {
+              width: 24.65px;
+              height: 19.51px;
+            }
           }
         }
       }
-      .formTime {
-        width: 90%;
+      .containerFormTime {
+        width: 44vw;
         display: flex;
         align-items: center;
         justify-content: space-around;
-        img {
-          width: 20px;
-          height: 20px;
-        }
-        h2 {
-          font-style: normal;
-          font-weight: 600;
-          font-size: 12px;
-          line-height: 16px;
-        }
-        p {
-          font-family: Open Sans;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 12px;
-          line-height: 16px;
+        .formTime {
+          display: flex;
+          justify-content: center;
+          align-items: baseline;
+          flex-direction: row-reverse;
+          margin-left: -6px;
+          img {
+            width: 16px;
+            height: 16px;
+            margin-left: -25px;
+          }
+          .label-float {
+            margin: 5px 12px;
+            padding-top: 18px;
+            position: relative;
+          }
         }
         .Input {
-          text-align: center;
-          width: 60px;
+          padding: 0;
           height: 20px;
-          font-family: Open Sans;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 12px;
-          line-height: 16px;
-          text-decoration-line: underline;
           display: flex;
+          font-size: 12px;
+          color: #3e3e3e;
+          min-width: 115px;
+          max-width: 107px;
+          line-height: 16px;
+          text-align: start;
+          font-style: normal;
           align-items: center;
-          &input[type="time"]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-          }
+          font-weight: normal;
+          font-family: Open Sans;
+          text-decoration-line: underline;
+          border-bottom: 1px solid #3e3e3e;
+        }
+        .Date {
+          min-width: 240px;
+        }
+        label {
+          color: #3e3e3e;
         }
       }
       .formInput {
@@ -112,24 +121,31 @@
         border-radius: 2px;
         border: 0.5px solid #ccc;
       }
+      .descriçaoAtividade {
+        width: 256px;
+        height: 99px;
+        padding: 10px;
+        text-align: left;
+        border-radius: 4px;
+        box-sizing: border-box;
+        border: 0.5px solid rgba(137, 137, 137, 0.44);
+      }
     }
     .btns {
-      width: 50%;
+      width: 100%;
       display: flex;
       align-content: center;
-      margin: 16px 0px 50px 0px;
+      margin: -9px 0px 44px 0px;
       justify-content: space-around;
-      button {
-        width: 90px;
-        height: 30px;
-        border: none;
-        display: flex;
-        cursor: pointer;
-        border-radius: 4px;
-        align-items: center;
-        justify-content: center;
-        background: rgba(70, 234, 234, 0.64);
-        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+      .modalBtn {
+        width: 120px;
+        height: 40px;
+        background: #868181;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+      }
+      .btnSecundario {
+        background: #f06033;
       }
     }
   }

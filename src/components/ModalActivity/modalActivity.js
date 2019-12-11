@@ -1,10 +1,8 @@
 import React from "react";
 import "./modalActivity.scss";
 import Map from "../Maps/maps";
-import Clock from "../../assets/img/alarm-clock.png";
-import Calendario from "../../assets/img/Calendario.svg";
-import Local from "../../assets/img/Local.svg";
 import Button from "../../components/Button/button";
+import Img from "../../assets/img.js";
 
 export default function ModalActivity(props) {
   return (
@@ -23,9 +21,9 @@ export default function ModalActivity(props) {
               <h2>Alan</h2>
             </div>
             <div className="userPerfil">
-              <img src={Clock} alt=""></img>
-              <img src={Calendario} alt=""></img>
-              <img src={Local} alt=""></img>
+              <img src={Img.clock} alt=""></img>
+              <img src={Img.calendar} alt=""></img>
+              <img src={Img.location} alt=""></img>
             </div>
             <div className="Texts">
               <p>
@@ -45,14 +43,18 @@ export default function ModalActivity(props) {
             active={props.onClick}
             className="btnTeste "
             // value="Confirmar Atividade"
-          >Confirmar Atividade</Button>
+          >
+            Confirmar Atividade
+          </Button>
         </div>
         <Map />
         <Button
           active={props.onClick}
           className="btnConfirmar "
           // value="Confirmar Atividade"
-        >Confirmar Atividade</Button>
+        >
+          Confirmar Atividade
+        </Button>
       </div>
     </main>
   );

@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { sportTypes } from "../../data/sportTypes";
 import meetingPoints from "../../data/meetingPoint";
+import Img from "../../assets/img.js";
+import Input from "../Input/input";
+import Button from "../Button/button";
+
 import Clock from "../../assets/img/clock.png";
-import Calendar from "../../assets/img/Calendario.png";
+// import Calendar from "../../assets/img/Calendario.png";
 import "./modal.scss";
 
 function Modal(props) {
@@ -43,56 +47,61 @@ function Modal(props) {
     <div style={{ display: props.display }}>
       <div className="main">
         <div className="modal-container">
-          <i onClick={props.close} className="material-icons closeModal">
-            close
-          </i>
           <form>
-            <h2 className="descripitionInput">Atividade</h2>
+            <h2 className="descripitionInput">Escolha a atividade:</h2>
             <div className="containerSporte">
               {sportTypes.map((sport, key) => {
                 return (
-                  <div key={sport.id} className="sports">
-                    <img className="sportImg" src={sport.imagem} alt="" />
+                  <div key={sport.id} className="containerSports">
+                    <div className="sports ">
+                      <img className="sportImg" src={sport.imagem} alt="" />
+                    </div>
                   </div>
                 );
               })}
             </div>
 
-            <h2 className="descripitionInput">Ponto de Encontro</h2>
+            <h2 className="descripitionInput">Defina o ponto de encontro:</h2>
             <select className="formInput">
               {meetingPoints.map((meetingPoint, key) => {
                 return <option>{meetingPoint.meeting_point}</option>;
               })}
             </select>
 
+            <div className="containerFormTime">
+              <div className="formTime">
+                <img src={Img.clock} alt="clock"></img>
+                <Input
+                  className="Input"
+                  type="number"
+                  placeholder="Hora Inicial"
+                />
+                <img src={Img.clock} alt="clock"></img>
+                <Input
+                  className="Input"
+                  type="number"
+                  placeholder="Hora Final"
+                />
+              </div>
+            </div>
+            <div className="containerFormTime">
+              <Input className="Input Date" type="number" placeholder="Data" />
+            </div>
             <h2 className="descripitionInput">Descrição</h2>
-            <input
-              className="formInput"
-              type="text"
-              placeholder="Descrição"
-            ></input>
-            <div className="formTime">
-              <img src={Clock} alt="clock"></img>
-              <h2>Hora:</h2>
-              <p>Início</p>
-              <input className="Input" type="time" value="00:00"></input>
-              <p>Até</p>
-              <input className="Input" type="time" value="00:00"></input>
-            </div>
-            <div className="formTime">
-              <img src={Calendar} alt="clock"></img>
-              <h2>Data:</h2>
-              <p>Dia</p>
-              <input className="Input" type="number"></input>
-              <p>Mês</p>
-              <input className="Input" type="number"></input>
-              <p>Ano</p>
-              <input className="Input" type="number"></input>
-            </div>
+            <textarea
+              className="descriçaoAtividade"
+              id="message"
+              placeholder="Digite sua mensagem aqui"
+            ></textarea>
           </form>
           <div className="btns">
-            <button>Cancelar</button>
-            <button onClick={() => props.action(activity)}>Publicar</button>
+            <Button className="modalBtn">Cancelar</Button>
+            <Button
+              className="modalBtn btnSecundario"
+              onClick={() => props.action(activity)}
+            >
+              Publicar
+            </Button>
           </div>
         </div>
       </div>

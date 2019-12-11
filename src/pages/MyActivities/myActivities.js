@@ -17,7 +17,7 @@ export default function MyActivities(props) {
     setModal(!modal);
   };
   return (
-    <section className="containerAtividades">
+    <section className="containerAtividades space-menu">
       <Header />
       <div className="alertAtividade">
         <h2>

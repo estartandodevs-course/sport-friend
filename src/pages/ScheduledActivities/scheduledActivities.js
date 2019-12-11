@@ -8,7 +8,7 @@ import "./scheduledActivities.scss";
 
 export default function ScheduledActivities() {
   return (
-    <section className="containerAtividades">
+    <section className="containerAtividades space-menu">
       <Header className="borderBotton" />
       <div className="alertAtividade">
         <h2>

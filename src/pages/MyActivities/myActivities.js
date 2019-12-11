@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../../components/Header/header";
 import Modal from "../../components/Modal/modal";
 import "./myActivities.scss";
-import { Service } from "../../services";
+import  Service  from "../../services";
 
 export default function MyActivities(props) {
   const service = new Service();
@@ -17,7 +17,7 @@ export default function MyActivities(props) {
     setModal(!modal);
   };
   return (
-    <section className="containerAtividades">
+    <section className="containerAtividades space-menu">
       <Header />
       <div className="alertAtividade">
         <h2>

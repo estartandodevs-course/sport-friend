@@ -38,29 +38,33 @@
       align-items: center;
       justify-content: center;
       background-color: white;
-      box-shadow: 1px 0 5px rgba(0, 0, 0, 0.54);
+      // box-shadow: 1px 0 5px rgba(0, 0, 0, 0.54);
+      box-shadow: 0px 4px 6px #868181;
       i {
         display: flex;
         font-size: 55px;
         align-items: center;
         justify-content: center;
+        color: #252323e3;
       }
     }
     .user-perfil {
       display: flex;
-      // width: 100%;
+      width: 100%;
       justify-content: center;
       flex-direction: column;
       align-items: center;
-      margin-top: 30px;
+      margin-top: 15px;
       .logout,
       .link {
-        min-width: 60px;
+        // min-width: 60px;
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         text-decoration: none;
         cursor: pointer;
+        // border-bottom: 1px solid #ffffff;
       }
       h2 {
         font-family: inherit;

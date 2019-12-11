@@ -15,10 +15,10 @@ export default function ModalActivity(props) {
           <section>
             <div className="user">
               <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Mstcwa_KvZBi8-zxjR9NwVRD-fIye-_7bxRq19F9hylyqJcT"
-                alt="Alan"
+                src={props.card.author.avatar}
+                alt={props.card.author.name}
               />
-              <h2>Alan</h2>
+              <h2>{props.card.author.name}</h2>
             </div>
             <div className="userPerfil">
               <img src={Img.clock} alt=""></img>
@@ -33,7 +33,7 @@ export default function ModalActivity(props) {
                 {props.card.date.day}/{props.card.date.month}/
                 {props.card.date.year}
               </p>
-              <p>{props.card.place}</p>
+              <p>{props.card.meeting_point}</p>
             </div>
           </section>
           <div className="description">

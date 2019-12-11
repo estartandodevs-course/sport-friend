@@ -17,27 +17,17 @@ class Firebase {
   }
 
   async register(form) {
-    const user = form;
-    await this.auth.createUserWithEmailAndPassword(user.email, user.password);
-    return this.auth.currentUser.updateProfile({
-      ...user,
-      displayName: user.name
+    await this.auth.createUserWithEmailAndPassword(form.email, form.password);
+    await this.auth.currentUser.updateProfile({
+      displayName: form.name,
+      email: form.email,
+      // photoURL: 
     });
   }
 
     async updateUser(data){
         return this.auth.currentUser.updateProfile(data);
     }
-
-    // addQuote(quote) {
-    //     if(!this.auth.currentUser) {
-    //         return alert("Not authorized")
-    //     }
-
-  //     return this.db.doc(`users_codedamn_video/${this.auth.currentUser.uid}`).set({
-  //         quote
-  //     })
-  // }
 
   isInitialized() {
     return new Promise(resolve => {
@@ -49,10 +39,10 @@ class Firebase {
     return this.auth.currentUser && this.auth.currentUser.displayName;
   }
 
-  // async getCurrentUserQuote() {
-  //     const quote = this.db.doc(`users_codedamn_video/${this.auth.currentUser.uid}`).get()
-  //     return quote.get('quote');
-  // }
+  getCurrentUserProfile(){
+    return this.auth.currentUser.providerData;
+  }
+
 }
 
 export default new Firebase();

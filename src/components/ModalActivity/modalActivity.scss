@@ -20,9 +20,12 @@
     position: relative;
     i {
       top: 6px;
-      color: black;
-      position: absolute;
       right: 8px;
+      cursor: pointer;
+      color: #f06033;
+      border: 2px solid;
+      position: absolute;
+      border-radius: 20px;
     }
     .testeBox {
       display: flex;
@@ -130,7 +133,8 @@
 @media screen and (min-width: 764px) {
   .containerModal {
     .modal {
-      width: 900px;
+      // width: 900px;
+      width: 96vw;
       height: 410px;
       display: flex;
       justify-content: space-around;
@@ -139,8 +143,9 @@
       flex-direction: row;
       background: #ffffff;
       box-sizing: border-box;
-     
+
       .testeBox {
+        width: 60%;
         section {
           width: 30em;
           .user {

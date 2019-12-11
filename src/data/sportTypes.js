@@ -1,4 +1,4 @@
-import Imagens from "../assets/img"
+import Imagens from "../assets/img";
 
 export const sportTypes = [
   {

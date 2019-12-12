@@ -30,6 +30,17 @@ class Service {
         .push(activity)
     );
   }
+
+  insertUser(user) {
+    return (
+      firebase
+        .database()
+        .ref("Users")
+        // .child("")
+        .push(user)
+    );
+  }
+  
 }
 
 export default Service;

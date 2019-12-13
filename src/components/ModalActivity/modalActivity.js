@@ -47,7 +47,7 @@ export default function ModalActivity(props) {
             Confirmar Atividade
           </Button>
         </div>
-        <Map />
+        <Map cord={props.card.place.coordinates}/>
         <Button
           active={props.onClick}
           className="btnConfirmar "

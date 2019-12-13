@@ -15,10 +15,10 @@ export default function ModalActivity(props) {
           <section>
             <div className="user">
               <img
-                src={props.card.author.avatar}
-                alt={props.card.author.name}
+                src={props.card.author.photoURL}
+                alt={props.card.author.displayName}
               />
-              <h2>{props.card.author.name}</h2>
+              <h2>{props.card.author.displayName}</h2>
             </div>
             <div className="userPerfil">
               <img src={Img.clock} alt=""></img>

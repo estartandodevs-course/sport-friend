@@ -1,20 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import "./card.scss";
-import users from "../../data/users.js";
-// import Map from "../../assets/img/maps.png";
 import Img from "../../assets/img.js";
-// import { sportTypes } from '../../data/sportTypes'
 
 export default function Card(props) {
-  // const activity = activities[0];
   const activity = props.activity;
   const date = activity.date;
 
-  let [match, setMatch] = useState(false);
+  // let [match, setMatch] = useState(false);
   
-  function toogleMatch() {
-    setMatch(!match);
-  }
+  // function toogleMatch() {
+  //   setMatch(!match);
+  // }
 
   return (
     <section className="card_container" onClick={props.onClick}>

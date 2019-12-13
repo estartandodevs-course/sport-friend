@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { sportTypes } from "../../data/sportTypes";
 import meetingPoints from "../../data/meetingPoint";
 import Img from "../../assets/img.js";
@@ -38,6 +38,8 @@ function Modal(props) {
     // prop.close()
   }
   
+  // remove warning
+  setDate(date)
 
   return (
     <div style={{ display: props.display }}>
@@ -125,33 +127,33 @@ export default Modal;
 
 
 // obj base
-const activity = {
-  type: "Futebol",
-  author: {
-    displayName: "Breno",
-    photoURL: "https://avatars3.githubusercontent.com/u/37773859?s=400&v=4",
-    uid: "AipSS8FmIKc8V9Q2ikDMvxEKYbB3"
-  },
-  description: "Futebolzin",
-  date: {
-    day: 5,
-    month: 12,
-    year: 2019,
-    date: "05/12/2019",
-    timestamp: ""
-  },
-  moment: {
-    start_hour: "10:00",
-    finish_hour: "11:00"
-  },
-  place: {
-    city: "Rio de Janeiro",
-    neighborhood: "Guaratiba",
-    meeting_point: "Praça Ivo Gomes - Praia da Brisa",
+// const activity = {
+//   type: "Futebol",
+//   author: {
+//     displayName: "Breno",
+//     photoURL: "https://avatars3.githubusercontent.com/u/37773859?s=400&v=4",
+//     uid: "AipSS8FmIKc8V9Q2ikDMvxEKYbB3"
+//   },
+//   description: "Futebolzin",
+//   date: {
+//     day: 5,
+//     month: 12,
+//     year: 2019,
+//     date: "05/12/2019",
+//     timestamp: ""
+//   },
+//   moment: {
+//     start_hour: "10:00",
+//     finish_hour: "11:00"
+//   },
+//   place: {
+//     city: "Rio de Janeiro",
+//     neighborhood: "Guaratiba",
+//     meeting_point: "Praça Ivo Gomes - Praia da Brisa",
     
-    coordinates: {
-        latitude: -22.9841311,
-        longitude: -43.6609401,
-    },
-  }
-};
+//     coordinates: {
+//         latitude: -22.9841311,
+//         longitude: -43.6609401,
+//     },
+//   }
+// };

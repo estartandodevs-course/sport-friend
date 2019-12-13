@@ -47,7 +47,8 @@
           margin: 3px;
           width: 75px;
 
-          .sports {
+          label {
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -63,11 +64,21 @@
               width: 24.65px;
               height: 19.51px;
             }
+
+            .sport-radio{
+              display: none;
+              
+              // isn't working
+              &:checked + .sports {
+                background-color: #f06033;
+              }
+            }
+
           }
         }
       }
       .containerFormTime {
-        width: 44vw;
+        // width: 44vw;
         display: flex;
         align-items: center;
         justify-content: space-around;
@@ -78,7 +89,7 @@
           margin-bottom: 15px;
           align-items: baseline;
           justify-content: center;
-          flex-direction: row-reverse;
+          flex-direction: row;
           img {
             z-index: 2;
             width: 16px;
@@ -119,7 +130,7 @@
       .formInput {
         width: 85%;
         height: 31px;
-        margin: 12px;
+        margin: 0 12px 12px;
         border-radius: 2px;
         border: 0.5px solid #ccc;
       }
@@ -161,7 +172,8 @@
         .containerSporte {
           width: calc(100% - 20px);
           padding-left: 41px;
-          overflow: scroll;
+          overflow-y: hidden;
+          overflow-x: scroll;
         }
       }
     }

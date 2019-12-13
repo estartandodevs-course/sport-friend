@@ -1,0 +1,259 @@
+.containerModal {
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000bd;
+    .modal {
+      width: 300px;
+      display: flex;
+      height: 479px;
+      align-items: center;
+      border-radius: 24px;
+      background: #ffffff;
+      flex-direction: column;
+      position: relative;
+      i {
+        top: 6px;
+        right: 8px;
+        cursor: pointer;
+        color: #f06033;
+        border: 2px solid;
+        position: absolute;
+        border-radius: 20px;
+      }
+      .testeBox {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        section {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          .user {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 14px;
+            img {
+              width: 60px;
+              height: 60px;
+              border-radius: 30px;
+            }
+            h2 {
+              width: 32px;
+              height: 13px;
+              font-family: Roboto;
+              font-style: normal;
+              font-weight: bold;
+              font-size: 12px;
+              line-height: 14px;
+              color: #1d1c1c;
+            }
+          }
+          .userPerfil {
+            flex: inherit;
+            display: flex;
+            // align-items: center;
+            flex-direction: column;
+            img {
+              width: 16px;
+              margin: 15px 9px 7px 8px;
+            }
+          }
+          .Texts {
+            width: 10em;
+            margin-top: 5px;
+            
+  
+            p {
+              display: flex;
+              // width: 12.2em;
+              font-size: 16px;
+              overflow: scroll;
+              color: #000000;
+              line-height: 19px;
+              margin-bottom: 8px;
+              font-style: normal;
+              align-items: center;
+              font-weight: normal;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+      .description {
+        width: 256px;
+        height: 99px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 26px;
+        justify-content: center;
+        border: 0.5px solid rgba(137, 137, 137, 0.44);
+        box-sizing: border-box;
+        border-radius: 4px;
+  
+        h2 {
+          display: flex;
+          font-size: 14px;
+          color: #000000;
+          line-height: 19px;
+          text-align: center;
+          font-style: normal;
+          font-weight: normal;
+          // align-items: center;
+          font-family: Open Sans;
+          justify-content: center;
+        }
+      }
+      .btnConfirmar {
+        margin-top: 19px;
+        width: 232px;
+        height: 40px;
+        border: none;
+        border-radius: 24px;
+        background: #f06033;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        outline: none;
+        &active:hover {
+          opacity: 2;
+        }
+      }
+      .btnTeste {
+        display: none;
+      }
+    }
+  }
+  @media screen and (min-width: 400px) {
+    .containerModal {
+      .modal {
+        // width: 900px;
+        width: 370px;
+        height: 375px;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 24px;
+        align-items: center;
+        flex-direction: row;
+        background: #ffffff;
+        box-sizing: border-box;
+  
+        .testeBox {
+          width: 60%;
+          section {
+            width: 30em;
+
+            .Timelocal{
+              
+              font-size: 14px;
+              margin-right: 80px;
+              margin-bottom: 20px;
+              display: flex;
+              justify-content: flex-start;
+            }
+            .user {
+              margin-left: 80px;
+              
+              img {
+                width: 84px;
+                height: 84px;
+                border-radius: 52px;
+              }
+              h2 {
+                width: 74px;
+                height: 27px;
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                color: #1d1c1c;
+              }
+            }
+            .userPerfil {
+              width: 55px;
+              margin-top: 6px;
+              flex: inherit;
+              display: flex;
+              // align-items: center;
+              flex-direction: column;
+              img {
+                width: 19px;
+                margin: 13px -47px 2px 28px;
+              }
+            }
+            .Texts {
+             
+              p {
+               
+                height: 17px;
+                display: flex;
+                font-size: 16px;
+                color: #000000;
+                line-height: 22px;
+                font-style: normal;
+                font-weight: normal;
+                align-items: center;
+                font-family: Open Sans;
+              }
+            }
+          }
+          .btts{
+            font-size: 18px;
+            width: 290px;
+            height: 80px;
+            display: flex;
+            justify-content: space-around;
+          }
+          .btncancelar{
+            display: flex;
+            width: 130px;
+            height: 40px;
+            border: none;
+            margin-top: 19px;
+            border-radius: 24px;
+            background: #5f5b5b;
+            justify-content: center;
+            box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+            font-size: 18px;
+            cursor: pointer;
+            outline: none;
+            .active:hover {
+              opacity: 0.6;
+            }
+            
+          }
+          .btnTeste {
+            display: flex;
+            width: 130px;
+            height: 40px;
+            border: none;
+            margin-top: 19px;
+            border-radius: 24px;
+            background: #f06033;
+            justify-content: center;
+            box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+            cursor: pointer;
+            outline: none;
+            .active:hover {
+              opacity: 0.6;
+            }
+          }
+        }
+        .btnConfirmar {
+          display: none;
+        }
+        .description {
+          width: 328px;
+          height: 99px;
+        }
+      }
+    }
+  }

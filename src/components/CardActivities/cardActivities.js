@@ -2,7 +2,7 @@ import React from 'react';
 import './cardActivities.scss';
 import Img from '../../assets/img.js'
 
-export default function CardActivities() {
+export default function CardActivities(props) {
 
   const imgs = Img;
 
@@ -14,7 +14,7 @@ export default function CardActivities() {
       </div>
       <div className="stats">
         <div className="hour_date">
-          <p className="clock"><img src={imgs.clock} style={{ paddingRight: "5px" }} alt="" />07:40 - 08:00</p>
+          <p className="clock"><img src={imgs.clock} style={{ paddingRight: "5px" }} alt="" />{props.data.moment.start_hour} - {props.data.moment.finish_hour}</p>
           <p><img src={imgs.calendar} style={{ paddingRight: "5px" }} alt="" />23/12/2019</p>
         </div>
         <div className="card_loc">

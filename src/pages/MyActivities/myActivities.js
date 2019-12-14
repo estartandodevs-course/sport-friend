@@ -15,24 +15,24 @@ export default function MyActivities(props) {
   const insertActivity = activity => {
     service.insertActivity(activity);
   };
-
-    useEffect(() => {
-      // getMyActivities()
-      return
+  
+  const getMyActivities = () => {
+    service.Activities.subscribe( activities => {
+      console.log(activities)
+      const my = activities.filter(item => {return item.author.uid === currentUid});
+      if(my !== myActivities){
+        setMyActivities(my)
+        console.log(my)
+      }
     })
-
-    const getMyActivities = () => {
-      service.getActivities()
-      service.Activities.subscribe( activities => {
-        // setAllActivities(activities); 
-        console.log(activities)
-        const my = activities.filter(item => {return item.author.uid === currentUid});
-        if(my !== myActivities){
-          setMyActivities(my)
-          console.log("é diferente")
-        }
-      })
   }
+
+  useEffect(() => {
+    service.getActivities() 
+    getMyActivities()
+  },[])
+
+
   
   const [modal, setModal] = useState(true);
   const toogleModal = () => {
@@ -50,8 +50,8 @@ export default function MyActivities(props) {
           Para adicionar uma atividade <br /> clique no botão abaixo.
         </h2>
       </div> */}
-      {myActivities.map(activity => {
-        return <CardActivities data={activity}/>
+      {myActivities.map((activity, index) => {
+        return <CardActivities key={index} data={activity}/>
       })}
       <div className="user">
         <i onClick={toogleModal} className="material-icons addCircle">

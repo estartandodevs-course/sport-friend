@@ -1,6 +1,7 @@
 import React from "react";
 import "./card.scss";
 import Img from "../../assets/img.js";
+import user from "../../assets/img/user.png"
 
 export default function Card(props) {
   const activity = props.activity;
@@ -15,7 +16,7 @@ export default function Card(props) {
   return (
     <section className="card_container" onClick={props.onClick}>
       <div className="box">
-        <img className="img" src={activity.author.photoURL} alt={activity.author.displayName} />
+        <img className="img" src={activity.author.photoURL ? activity.author.photoURL : user } alt={activity.author.displayName} />
         <p className="User_Name">{activity.author.displayName}</p>
       </div>
       <div className="mobile">

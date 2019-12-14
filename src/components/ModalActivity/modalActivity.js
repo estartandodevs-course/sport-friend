@@ -3,6 +3,7 @@ import "./modalActivity.scss";
 import Map from "../Maps/maps";
 import Button from "../../components/Button/button";
 import Img from "../../assets/img.js";
+import user from "../../assets/img/user.png"
 
 export default function ModalActivity(props) {
   return (
@@ -15,7 +16,7 @@ export default function ModalActivity(props) {
           <section>
             <div className="user">
               <img
-                src={props.card.author.photoURL}
+                src={props.card.author.photoURL ? props.card.author.photoURL : user}
                 alt={props.card.author.displayName}
               />
               <h2>{props.card.author.displayName}</h2>

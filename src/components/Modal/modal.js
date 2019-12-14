@@ -8,11 +8,13 @@ import firebase from "../../services/firebase";
 import "./modal.scss";
 
 function Modal(props) {
-  const author = firebase.getCurrentUserProfile()[0];
+  let author = firebase.getCurrentUserProfile()[0];
+  const uid = firebase.getCurrentUserUid();
+  author = {...author, uid}
   
   const [type, setType] = useState("");
   const [description, setDescription] = useState("");
-  const [date, setDate] = useState({day: 5, month: 12, year: 2019, date: "05/12/2019", timestamp: ""});
+  // const [date, setDate] = useState();
   const [moment, setMoment] = useState({});
   const [place, setPlace] = useState({});
 
@@ -25,11 +27,13 @@ function Modal(props) {
   }
 
   async function handleActivityData () {
+    // await setDate({day: 5, month: 12, year: 2019, date: "05/12/2019", timestamp: ""})
     const dataActivity = {
       type: type,
       author: author,
       description: description,
-      date: date,
+      // wip
+      date: {day: 5, month: 12, year: 2019, date: "05/12/2019", timestamp: ""},
       moment: moment,
       place: place
     }
@@ -38,8 +42,6 @@ function Modal(props) {
     // prop.close()
   }
   
-  // remove warning
-  setDate(date)
 
   return (
     <div style={{ display: props.display }}>

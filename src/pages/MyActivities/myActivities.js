@@ -26,7 +26,7 @@ export default function MyActivities(props) {
       service.Activities.subscribe( activities => {
         // setAllActivities(activities); 
         console.log(activities)
-        const my = activities.filter(item => {return item.author.uid == currentUid});
+        const my = activities.filter(item => {return item.author.uid === currentUid});
         if(my !== myActivities){
           setMyActivities(my)
           console.log("é diferente")

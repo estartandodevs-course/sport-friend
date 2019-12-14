@@ -34,7 +34,7 @@ export default function ModalActivity(props) {
                 {props.card.date.day}/{props.card.date.month}/
                 {props.card.date.year}
               </p>
-              <p>{props.card.meeting_point}</p>
+              <p>{props.card.place.meeting_point}</p>
             </div>
           </section>
           <div className="description">

@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css?family=Sanchez&display=swap");
+.card_activities {
+  display: flex;
+  width: 500px;
+  height: 140px;
+  border-radius: 20px;
+  background-color: #fff;
+  margin-bottom: 64px;
+  align-items: center;
+  font-family: "Open Sans";
+
+  p {
+    margin: 0;
+  }
+
+  .Activities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+
+    .sport-img {
+      border: solid 1px;
+      border-radius: 50%;
+      padding: 5px;
+      width: 55px;
+      margin-bottom: 5px;
+      background-color: #f06033;
+    }
+  }
+
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 25px;
+
+    .hour_date {
+      display: flex;
+      margin-bottom: 12px;
+      .clock {
+        margin-right: 10px;
+      }
+    }
+  }
+  .option {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 140px;
+    padding-right: 13px;
+  }
+  .card_mobile {
+    display: none;
+  }
+  .option_mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card_activities {
+    display: flex;
+    width: 335px;
+    height: 140px;
+    border-radius: 20px;
+    background-color: #fff;
+    margin-bottom: 64px;
+    align-items: center;
+    justify-content: space-around;
+
+    p {
+      margin: 0;
+    }
+
+    .Activities {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+
+      .sport-img {
+        border: solid 1px;
+        border-radius: 50%;
+        padding: 5px;
+        width: 55px;
+        margin-bottom: 5px;
+        background-color: #f06033;
+      }
+    }
+
+    .stats {
+      display: none;
+    }
+    .option {
+      display: none;
+    }
+    .card_mobile {
+      display: flex;
+      flex-direction: column;
+
+      .clock {
+        margin-bottom: 5px;
+      }
+      .loc {
+        width: 140px;
+        margin-top: 5px;
+      }
+    }
+    .option_mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100px;
+      justify-content: space-between;
+      margin-right: 10px;
+    }
+  }
+}

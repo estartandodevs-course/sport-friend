@@ -15,6 +15,8 @@ export default function Register(props) {
     const [form, setForm] = useState({})
     const [firstStep, setFirstStep] = useState(true);
     const [secondStep, setSecondStep] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
+    const [showPasswordconfirm, setShowPasswordconfirm] = useState(false);
 
 
 
@@ -33,6 +35,27 @@ export default function Register(props) {
             }
         }
     }
+    function handleShowPassword (){
+        
+        if(showPassword){
+            setShowPassword(false)
+        
+        } else if(!showPassword){
+            setShowPassword(true)
+        }
+       
+    }
+    function handleShowPasswordconfirm (){
+        
+        if(showPasswordconfirm){
+            setShowPasswordconfirm(false)
+        
+        } else if(!showPasswordconfirm){
+            setShowPasswordconfirm(true)
+        }
+       
+    }
+
 
     async function changeForm (event) {
         await setForm({
@@ -52,7 +75,7 @@ export default function Register(props) {
             setFirstStep(true)
         }
     }
-
+    
     return (
 
         <section className="containerRegister">
@@ -79,9 +102,9 @@ export default function Register(props) {
                         <span className="step">2/2</span>
                         <i onClick={() => changeStep()} className="material-icons navegate">navigate_before</i>
                         <Input id="email" type="email" name="email" placeholder="Email" autoComplete="off" onChange={e => changeForm(e)} />
-                        <Input id="password" type="password" name="password" placeholder="Senha" icon="visibility_off" autoComplete="off" onChange={e => changeForm(e)} />
-                        <Input id="passwordConfirm" type="password" name="passwordConfirm" placeholder="Confirmar Senha" icon="visibility_off" autoComplete="off" onChange={e => changeForm(e)}  />
-
+                        <Input id="password" onClickIcon={handleShowPassword} type={showPassword ? "text": "password"} name="password" placeholder="Senha" icon="visibility_off" autoComplete="off" onChange={e => changeForm(e)} />
+                        <Input id="passwordConfirm" onClickIcon={handleShowPasswordconfirm} type={showPasswordconfirm ? "text": "password"} name="passwordConfirm" placeholder="Confirmar Senha" icon="visibility_off" autoComplete="off" onChange={e => changeForm(e)}  />
+                        
                         <Button 
                             type="submit" 
                             onClick={onRegister} 

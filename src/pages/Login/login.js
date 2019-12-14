@@ -12,7 +12,7 @@ import banner from "../../assets/img/bg-login.png";
 export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+ 
   async function login() {
     try {
       await firebase.login(email, password);

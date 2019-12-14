@@ -13,13 +13,13 @@
     padding: 0 10px;
     z-index: 3;
     width: 75px;
+
     &:nth-child(5) {
       .sport-img {
         width: 75px;
         height: 75px;
         margin: 5px 10px -7px;
-        background: #f06033;
-        // color: #fff;
+        fill: #fff;
         // filter: brightness(1000%);
       }
 
@@ -48,7 +48,19 @@
       border: 1px solid #11c9c9;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
+
+    .active {
+      background-color: #f06033;
+    }
+
+    .input-radio {
+      display: none;
+    }
   }
+}
+
+.input-radio:checked + .sport-img {
+  background-color: #f06033 !important;
 }
 
 @media screen and (min-width: 768px) {
@@ -67,6 +79,7 @@
           height: 40px;
           padding: 10px;
           margin: 0 0 -7px 0;
+          background-color: #fff;
         }
 
         p {

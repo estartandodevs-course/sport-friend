@@ -21,7 +21,10 @@ export default class Home extends Component {
   
   componentDidMount() {
     this.service.getActivities()
-    this.service.Activities.subscribe(activities => (this.AllActivities = activities, this.setState({filteredActitivies: activities})));
+    this.service.Activities.subscribe(activities => {
+      this.AllActivities = activities; 
+      this.setState({filteredActitivies: activities})
+    });
     setTimeout(() => {
       this.setState({ showCards: true });
     }, 1500);

@@ -62,9 +62,11 @@
     .hour {
       display: flex;
       align-items: center;
+      border: solid 1px black;
     }
 
     .data {
+      border: solid 1px black;
       margin: 0;
       font-size: 12px;
     }
@@ -111,7 +113,7 @@
     justify-content: space-around;
     width: 314px;
     height: 132px;
-    border: solid 2px #11c9c9;
+    
     border-radius: 24px;
     font-family: "Sanchez", serif;
     margin: 10px;

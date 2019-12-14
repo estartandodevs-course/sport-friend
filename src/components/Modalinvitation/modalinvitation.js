@@ -1,18 +1,15 @@
 import React from "react";
-import "./modalActivity.scss";
-import Map from "../Maps/maps";
+import "./modalinvitation.scss";
 import Button from "../../components/Button/button";
 import Img from "../../assets/img.js";
 
-export default function ModalActivity(props) {
+export default function Modalinvitation(props) {
   return (
     <main className="containerModal">
       <div className="modal">
-        <i onClick={props.close} className="material-icons closeModal">
-          close
-        </i>
         <div className="testeBox">
           <section>
+            
             <div className="user">
               <img
                 src={props.card.author.photoURL}
@@ -20,6 +17,7 @@ export default function ModalActivity(props) {
               />
               <h2>{props.card.author.displayName}</h2>
             </div>
+          <div className="Timelocal" >
             <div className="userPerfil">
               <img src={Img.clock} alt=""></img>
               <img src={Img.calendar} alt=""></img>
@@ -35,26 +33,25 @@ export default function ModalActivity(props) {
               </p>
               <p>{props.card.meeting_point}</p>
             </div>
+          </div>
           </section>
           <div className="description">
             <h2>{props.card.description}</h2>
           </div>
+          <div className="btts">
           <Button
             active={props.onClick}
-            className="btnTeste "
-            // value="Confirmar Atividade"
-          >
-            Confirmar Atividade
+            onClick={props.close}
+            className="btncancelar ">
+            Recusar
           </Button>
+          <Button
+            active={props.onClick}
+            className="btnTeste ">
+            Confirmar 
+          </Button>
+          </div>
         </div>
-        <Map cord={props.card.place.coordinates}/>
-        <Button
-          active={props.onClick}
-          className="btnConfirmar "
-          // value="Confirmar Atividade"
-        >
-          Confirmar Atividade
-        </Button>
       </div>
     </main>
   );

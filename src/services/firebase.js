@@ -43,6 +43,10 @@ class Firebase {
     return this.auth.currentUser.providerData;
   }
 
+  getCurrentUserUid(){
+    return this.auth.currentUser.uid;
+  }
+
 }
 
 export default new Firebase();

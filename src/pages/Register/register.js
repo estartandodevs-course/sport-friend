@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 import Logo from '../../components/Logo/logo'
 import Input from '../../components/Input/input'
 import Button from '../../components/Button/button'
+import Service from "../../services/index"
 
 
 import './register.scss';
 
 export default function Register(props) {
+    const service = new Service();
+
     const [form, setForm] = useState({})
     const [firstStep, setFirstStep] = useState(true);
     const [secondStep, setSecondStep] = useState(false);
@@ -22,6 +25,8 @@ export default function Register(props) {
             try {
                 // await firebase.register(name, email, password)
                 await firebase.register(form)
+                const uidUser = firebase.getCurrentUserUid()
+                await service.insertUser({...form, uid: uidUser})
                 props.history.replace("/")
             } catch (error) {
                 alert(error.message)

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Component } from "react";
 import { Link } from "react-router-dom";
 import Google from "../../assets/img/google.png";
 import Facebook from "../../assets/img/facebook.png";
@@ -8,11 +8,12 @@ import firebase from "../../services/firebase";
 import Button from "../../components/Button/button";
 import Input from "../../components/Input/input";
 import banner from "../../assets/img/bg-login.png";
+import googleAuth from '../../services/googleAuth'
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+ 
   async function login() {
     try {
       await firebase.login(email, password);

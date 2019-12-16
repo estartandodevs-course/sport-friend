@@ -3,6 +3,7 @@ import "./menu.scss";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown/dropDown";
 import firebase from "../../../services/firebase";
+import user from "../../../assets/img/user.png"
 
 function Menu(props) {
   const [dropdown, setDropdown] = useState(true);
@@ -23,7 +24,8 @@ function Menu(props) {
         </i>
         <div className="containerUser">
           <div className="user">
-            <i className="material-icons">perm_identity</i>
+            {/* <i className="material-icons">perm_identity</i> */}
+            <img src={firebase.getCurrentUserProfile()[0].photoURL ? firebase.getCurrentUserProfile()[0].photoURL : user } />
           </div>
           <h1>{firebase.getCurrentUsername()} </h1>
         {/* <div>

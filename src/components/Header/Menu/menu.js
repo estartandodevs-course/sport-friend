@@ -25,7 +25,7 @@ function Menu(props) {
         <div className="containerUser">
           <div className="user">
             {/* <i className="material-icons">perm_identity</i> */}
-            <img src={firebase.getCurrentUserProfile()[0].photoURL ? firebase.getCurrentUserProfile()[0].photoURL : user } />
+            <img src={firebase.getCurrentUserProfile()[0].photoURL ? firebase.getCurrentUserProfile()[0].photoURL : user } alt="user" />
           </div>
           <h1>{firebase.getCurrentUsername()} </h1>
         {/* <div>

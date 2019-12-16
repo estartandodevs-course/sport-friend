@@ -3,33 +3,32 @@ import Header from "../../components/Header/header.js";
 import Card from "../../components/Card/card";
 import ModalActivity from "../../components/ModalActivity/modalActivity";
 import "./home.scss";
-import Service from '../../services/index'
-import ActivitySelection from '../../components/ActivitySelection/ActivitySelection.js';
-import Loading from "../../components/Loading/Loading"
+import Service from "../../services/index";
+import ActivitySelection from "../../components/ActivitySelection/ActivitySelection.js";
+import Loading from "../../components/Loading/Loading";
 
 export default class Home extends Component {
   service = new Service();
-  AllActivities = false
+  AllActivities = false;
 
   state = {
     filterBy: "",
     filteredActitivies: [],
     showModal: false,
     showCards: false,
-    cardClicked: "",
-  }
-  
+    cardClicked: ""
+  };
+
   componentDidMount() {
-    this.service.getActivities()
+    this.service.getActivities();
     this.service.Activities.subscribe(activities => {
-      this.AllActivities = activities; 
-      this.setState({filteredActitivies: activities})
+      this.AllActivities = activities;
+      this.setState({ filteredActitivies: activities });
     });
     setTimeout(() => {
       this.setState({ showCards: true });
     }, 1500);
   }
-
 
   filter = async filterBy => {
     await this.setState({ filterBy: filterBy });
@@ -53,6 +52,9 @@ export default class Home extends Component {
     this.toggleModal();
   };
 
+  setFilter = sport => {
+    this.setState({ ...this.state });
+  };
   render() {
     const { filteredActitivies } = this.state;
 
@@ -63,28 +65,30 @@ export default class Home extends Component {
           {/* Olá {firebase.getCurrentUsername()}! <br></br>  */}
           Que tal encontrar uma atividade ?
         </h1>
-        <ActivitySelection filter={this.filter} />
+        <ActivitySelection filter={this.filter} setFilter={this.setFilter} />
 
-        {this.state.showCards ?
-        (filteredActitivies.map((activity, index) => {
-          return (
-            <Card
-            onClick={() => this.setCardClicked(index)}
-            key={index}
-            activity={activity}
-            />
+        {this.state.showCards ? (
+          filteredActitivies.map((activity, index) => {
+            return (
+              <Card
+                onClick={() => this.setCardClicked(index)}
+                key={index}
+                activity={activity}
+              />
             );
           })
+        ) : (
           // Loading isn't working =/
-          ): <Loading/>}
+          <Loading />
+        )}
 
         {this.state.showModal ? (
           <ModalActivity
-          card={this.state.cardClicked}
-          close={this.toggleModal}
+            card={this.state.cardClicked}
+            close={this.toggleModal}
           />
-          ) : null}
+        ) : null}
       </main>
-    )
+    );
   }
 }

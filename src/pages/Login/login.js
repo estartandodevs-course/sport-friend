@@ -8,11 +8,12 @@ import firebase from "../../services/firebase";
 import Button from "../../components/Button/button";
 import Input from "../../components/Input/input";
 import banner from "../../assets/img/bg-login.png";
+// import googleAuth from "../../services/googleAuth";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- 
+
   async function login() {
     try {
       await firebase.login(email, password);
@@ -25,7 +26,7 @@ export default function Login(props) {
   return (
     <section className="container-login">
       <section className="content-login">
-          <img className="banner" src={banner} alt="Banner" />
+        <img className="banner" src={banner} alt="Banner" />
 
         <form onSubmit={e => e.preventDefault() && false}>
           <div className="Logo ">
@@ -56,8 +57,10 @@ export default function Login(props) {
           <Button
             type="submit"
             onClick={login}
-            style={{width: 200 +"px", fontWeight: "bold"}}
-          >Entrar</Button>
+            style={{ width: 200 + "px", fontWeight: "bold" }}
+          >
+            Entrar
+          </Button>
           <label className="Textlabel">Esqueceu sua senha ?</label>
           <div className="loginSocial">
             <h2 className="test placeText">Entrar com</h2>

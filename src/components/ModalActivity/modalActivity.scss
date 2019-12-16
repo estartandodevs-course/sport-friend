@@ -62,9 +62,8 @@
         }
         .userPoint {
           display: flex;
-          min-width: 220px;
+          min-width: 170px;
           align-items: center;
-          justify-content: center;
           .userPerfil {
             display: flex;
             flex-direction: column;
@@ -175,14 +174,19 @@
               color: #1d1c1c;
             }
           }
-          .userPerfil {
-            flex: inherit;
+          .userPoint {
             display: flex;
-            // align-items: center;
-            flex-direction: column;
-            img {
-              width: 19px;
-              margin: 13px -47px 2px 28px;
+            min-width: 250px;
+            align-items: center;
+            .userPerfil {
+              flex: inherit;
+              display: flex;
+              // align-items: center;
+              flex-direction: column;
+              img {
+                width: 19px;
+                margin: 5px 12px 5px 0px;
+              }
             }
           }
           .Texts {

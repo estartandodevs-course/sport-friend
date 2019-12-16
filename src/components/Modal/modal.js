@@ -95,7 +95,7 @@ function Modal(props) {
             </div>
             <div className="containerFormTime">
               <InputMask
-                type="tell"
+                type="date"
                 className="Input date"
                 placeholder="Data"
                 mask="99/99/9999"

@@ -1,12 +1,13 @@
-import react, { Component } from 'react';
+import React, { Component } from 'react';
 import widthFirebaseAuth from 'react-with-firebase-auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-import firebase from './firebase';
+import Button from "../components/Button/button"
+// import firebase from './firebase';
 
-const firebaseApp = firebase.initializeApp(firebase);
+// const firebaseApp = firebase.initializeApp(firebase);
 
-class GoogleAuth extends compoment {
+class GoogleAuth extends Component {
   render() {
     const { user,singnOut,sigwithgloogle } = this.props;
     return (
@@ -24,13 +25,13 @@ class GoogleAuth extends compoment {
      );
   }
 }
-const firebaseApp = firebaseApp.auth();
+// const firebaseApp = firebaseApp.auth();
 
-const proveders = {
+const providers = {
   gloogleprovider: new firebase.auth.gloogleprovider(),
 };
 
 export default widthFirebaseAuth({
-  proveders,
-  FirebaseAppAuth,
+  providers,
+  // FirebaseAppAuth,
 })(GoogleAuth);

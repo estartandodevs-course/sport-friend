@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./ActivitySelection.scss";
 import { sportTypes } from "../../data/sportTypes";
-import { useMedia } from "../../hooks/useMedia";
+// import { useMedia } from "../../hooks/useMedia";
 
 export default function(props) {
-  const [allSports, setAllSports] = useState(sportTypes);
+  const [allSports] = useState(sportTypes);
   const [selectedSport, setSelectedSport] = useState({});
-  var { isSmall } = useMedia();
+  // var { isSmall } = useMedia();
 
   // const handleSelectedSport = e => {
   //   const elementName = e.target.name;

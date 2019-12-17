@@ -20,14 +20,14 @@ class Firebase {
     await this.auth.createUserWithEmailAndPassword(form.email, form.password);
     await this.auth.currentUser.updateProfile({
       displayName: form.name,
-      email: form.email,
-      // photoURL: 
+      email: form.email
+      // photoURL:
     });
   }
 
-    async updateUser(data){
-        return this.auth.currentUser.updateProfile(data);
-    }
+  async updateUser(data) {
+    return this.auth.currentUser.updateProfile(data);
+  }
 
   isInitialized() {
     return new Promise(resolve => {
@@ -39,14 +39,13 @@ class Firebase {
     return this.auth.currentUser && this.auth.currentUser.displayName;
   }
 
-  getCurrentUserProfile(){
-    return this.auth.currentUser.providerData;
+  getCurrentUserProfile() {
+    // return this.auth.currentUser.providerData;
   }
 
-  getCurrentUserUid(){
+  getCurrentUserUid() {
     return this.auth.currentUser.uid;
   }
-
 }
 
 export default new Firebase();

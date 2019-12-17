@@ -35,7 +35,7 @@ export default function(props) {
   return (
     <div className="container-activity">
       {allSports.map(sport => {
-        if (isSelected(sport)) return;
+        if (isSelected(sport)) return null;
         return (
           <label forhtml={sport.name} key={sport.id} className="sport">
             <input

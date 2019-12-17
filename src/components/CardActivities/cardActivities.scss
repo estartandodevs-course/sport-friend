@@ -60,6 +60,11 @@
   }
 }
 
+.delete-icon {
+  color: #f06033;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 768px) {
   .card_activities {
     display: flex;

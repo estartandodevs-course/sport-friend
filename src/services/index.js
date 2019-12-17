@@ -31,6 +31,17 @@ class Service {
     );
   }
 
+  deleteActivity(activity) {
+    return (
+      firebase
+        .database()
+        .ref("Activities")
+        .remove(activity)
+        .then(() => console.log("Atividade removida com sucesso"))
+        .catch(error => console.error(error))
+    );
+  }
+
   insertUser(user) {
     return (
       firebase

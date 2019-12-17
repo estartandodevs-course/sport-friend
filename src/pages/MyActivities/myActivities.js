@@ -15,6 +15,10 @@ export default function MyActivities(props) {
   const insertActivity = activity => {
     service.insertActivity(activity);
   };
+
+  const deleteActivity = (activity) => {
+    service.deleteActivity(activity)
+  }
   
   const getMyActivities = () => {
     service.Activities.subscribe( activities => {
@@ -51,7 +55,7 @@ export default function MyActivities(props) {
         </h2>
       </div> */}
       {myActivities.map((activity, index) => {
-        return <CardActivities key={index} data={activity}/>
+        return <CardActivities key={index} data={activity} deleteActivity={deleteActivity}/>
       })}
       <div className="user">
         <i onClick={toogleModal} className="material-icons addCircle">

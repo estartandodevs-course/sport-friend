@@ -15,7 +15,6 @@
   cursor: pointer;
 
   .box {
-    
     display: flex;
     flex-direction: column;
     margin-top: 10px;
@@ -41,7 +40,6 @@
     margin-bottom: 25px;
 
     .bar {
-      
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -100,10 +98,9 @@
     }
   }
   .mobile {
-    
   }
-  .open_card{
-   margin-top: 70px;
+  .open_card {
+    margin-top: 70px;
   }
 }
 
@@ -113,7 +110,7 @@
     justify-content: space-around;
     width: 314px;
     height: 132px;
-    
+
     border-radius: 24px;
     font-family: "Sanchez", serif;
     margin: 10px;
@@ -123,20 +120,20 @@
 
     .box {
       display: flex;
-      flex-direction: column;
       margin-top: 10px;
       align-items: center;
+      flex-direction: column;
       justify-content: center;
 
       .img {
-        width: 55px;
-        height: 55px;
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
         background-color: #fff;
       }
 
       .User_Name {
-        font-size: 14px;
+        font-size: 12px;
       }
     }
     .Time {
@@ -146,14 +143,18 @@
       display: none;
     }
     .mobile {
+      width: 190px;
       display: flex;
+      flex-wrap: wrap;
+      margin-right: -20px;
       flex-direction: column;
       justify-content: center;
       p {
         margin: 5px;
+        font-size: 12px;
       }
     }
-    .open_card{
+    .open_card {
       display: flex;
       align-items: flex-end;
       margin-bottom: 15px;

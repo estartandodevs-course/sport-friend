@@ -17,7 +17,7 @@ export default function MyActivities(props) {
   };
 
   const deleteActivity = (activity) => {
-    service.deleteActivity(activity)
+    service.deleteActivity(activity.key)
   }
   
   const getMyActivities = () => {

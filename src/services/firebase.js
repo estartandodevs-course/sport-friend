@@ -40,7 +40,7 @@ class Firebase {
   }
 
   getCurrentUserProfile() {
-    // return this.auth.currentUser.providerData;
+    return this.auth.currentUser;
   }
 
   getCurrentUserUid() {

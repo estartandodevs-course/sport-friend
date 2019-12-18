@@ -8,13 +8,24 @@ import firebase from "../../services/firebase";
 import "./modal.scss";
 
 function Modal(props) {
-  let author = firebase.getCurrentUserProfile()[0];
+  let currentUser = firebase.getCurrentUserProfile();
   const uid = firebase.getCurrentUserUid();
-  author = {...author, uid}
+  const author = {displayName: currentUser.displayName, uid}
+
+  // const [author, setAuthor] = useState({})
+
+  // useEffect(() => {
+  //   const currentUser = firebase.getCurrentUserProfile();
+  //   const uid = firebase.getCurrentUserUid();
+  //   setAuthor({
+  //     ...currentUser,
+  //     uid
+  //   })
+  // }, [])
   
   const [type, setType] = useState("");
   const [description, setDescription] = useState("");
-  // const [date, setDate] = useState();
+  const [date, setDate] = useState({});
   const [moment, setMoment] = useState({});
   const [place, setPlace] = useState({});
 
@@ -26,6 +37,21 @@ function Modal(props) {
     await console.log(moment)
   }
 
+  async function handleDate (event) {
+    const splitedDate = event.target.value.split("-");
+    let fullDate = {
+      day: splitedDate[2],
+      month: splitedDate[1],
+      year: splitedDate[0],
+    }
+    fullDate = {
+      ...fullDate,
+      date: `${fullDate.day}/${fullDate.month}/${fullDate.year}`
+    }
+    console.log(fullDate)
+    setDate(fullDate)
+  }
+
   async function handleActivityData () {
     // await setDate({day: 5, month: 12, year: 2019, date: "05/12/2019", timestamp: ""})
     const dataActivity = {
@@ -33,7 +59,8 @@ function Modal(props) {
       author: author,
       description: description,
       // wip
-      date: {day: 5, month: 12, year: 2019, date: "05/12/2019", timestamp: ""},
+      // date: {day: 5, month: 12, year: 2019, date: "05/12/2019", timestamp: ""},
+      date: date,
       moment: moment,
       place: place
     }
@@ -94,12 +121,13 @@ function Modal(props) {
               </div>
             </div>
             <div className="containerFormTime">
-              <InputMask
+              <input
                 type="date"
                 className="Input date"
                 placeholder="Data"
                 mask="99/99/9999"
-                onChange={props.onChange}
+                // onChange={props.onChange}
+                onChange={(e)=> handleDate(e)}
                 value={props.value}
               />
             </div>
@@ -114,7 +142,11 @@ function Modal(props) {
             <Button className="modalBtn" onClick={props.close}>Cancelar</Button>
             <Button
               className="modalBtn btnSecundario"
-              onClick={() => handleActivityData() }
+              onClick={() => {
+                handleActivityData();
+                setTimeout(props.close, 400)
+                }
+              }
             >
               Publicar
             </Button>

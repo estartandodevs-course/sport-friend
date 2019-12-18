@@ -1,6 +1,6 @@
 {
   "name": "sport-friend",
-  "homepage": "https://sport-friend-1574096025701.firebaseapp.com",
+  "homepage": "",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "firebasedeploy": "npm run build && firebase deploy"
   },
   "eslintConfig": {
     "extends": "react-app"

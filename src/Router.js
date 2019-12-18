@@ -10,7 +10,7 @@ import ScheduledActivities from "./pages/ScheduledActivities/scheduledActivities
 
 export default function Routers() {
   return (
-    <BrowserRouter>
+    <BrowserRouter Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/login" component={Login} />

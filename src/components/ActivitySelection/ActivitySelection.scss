@@ -28,8 +28,10 @@
       }
     }
 
-    &:nth-child(5) {
-      order: 6;
+    @media (max-width: "768px") {
+      &:nth-child(5) {
+        order: 5;
+      }
     }
 
     &:nth-child(1),

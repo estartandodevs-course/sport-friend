@@ -1,94 +1,104 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/header.js";
 import Card from "../../components/Card/card";
 import ModalActivity from "../../components/ModalActivity/modalActivity";
 import "./home.scss";
 import Service from "../../services/index";
+import Firebase from "../../services/firebase";
 import ActivitySelection from "../../components/ActivitySelection/ActivitySelection.js";
 import Loading from "../../components/Loading/Loading";
 
-export default class Home extends Component {
-  service = new Service();
-  AllActivities = false;
-
-  state = {
-    filterBy: "",
+export default function Home() {
+  const service = new Service();
+  const initialState = {
     filteredActitivies: [],
     showModal: false,
-    showCards: false,
-    cardClicked: ""
+    showCards: true,
+    cardClicked: {},
+    sport: false,
+    allActivities: [],
+    currentUserUid: ""
   };
+  const [state, setState] = useState(initialState);
 
-  componentDidMount() {
-    this.service.getActivities();
-    this.service.Activities.subscribe(activities => {
-      this.AllActivities = activities;
-      this.setState({ filteredActitivies: activities });
+  const {
+    showModal,
+    showCards,
+    cardClicked,
+    sport,
+    allActivities,
+    currentUserUid
+  } = state;
+
+  useEffect(() => {
+    const uid = Firebase.getCurrentUserUid();
+    service.getActivities();
+    service.Activities.subscribe(_activities => {
+      setState({
+        ...state,
+        allActivities: _activities,
+        currentUserUid: uid
+      });
     });
     setTimeout(() => {
-      this.setState({ showCards: true });
+      setState(prev => ({ ...prev, showCards: true }));
     }, 1500);
-  }
+  }, []);
 
-  filter = async filterBy => {
-    await this.setState({ filterBy: filterBy });
-    let updatedActivities = this.AllActivities.filter(
-      item => item.type === this.state.filterBy
-    );
-    await this.setState({ filteredActitivies: updatedActivities });
+  const toggleModal = () => {
+    setState(prev => ({
+      ...prev,
+      showModal: !prev.showModal
+    }));
   };
 
-  toggleModal = () => {
-    this.setState({
-      showModal: !this.state.showModal
+  const setCardClicked = async _activity => {
+    await setState({
+      ...state,
+      cardClicked: _activity
     });
+    toggleModal();
   };
 
-  setCardClicked = async i => {
-    await this.setState({
-      cardClicked: this.state.filteredActitivies[i]
-    });
-    console.log(this.state.cardClicked);
-    this.toggleModal();
+  const setFilter = sport => {
+    setState({ ...state, sport });
   };
 
-  setFilter = sport => {
-    this.setState({ ...this.state });
-  };
-  render() {
-    const { filteredActitivies } = this.state;
+  console.log("SUBSCRIBE ::: ", state);
 
-    return (
-      <main className="flex-center space-menu">
-        <Header />
-        <h1 className="apresentation-title">
-          {/* Olá {firebase.getCurrentUsername()}! <br></br>  */}
-          Que tal encontrar uma atividade ?
-        </h1>
-        <ActivitySelection filter={this.filter} setFilter={this.setFilter} />
+  return (
+    <main className="flex-center space-menu">
+      <Header />
+      <h1 className="apresentation-title">
+        {/* Olá {firebase.getCurrentUsername()}! <br></br>  */}
+        Que tal encontrar uma atividade ?
+      </h1>
+      <ActivitySelection setFilter={setFilter} />
 
-        {this.state.showCards ? (
-          filteredActitivies.map((activity, index) => {
+      {showCards ? (
+        allActivities
+          .filter(activity => {
+            return (
+              activity.author.uid !== currentUserUid &&
+              (!sport || sport.name === activity.type)
+            );
+          })
+          .map((activity, index) => {
             return (
               <Card
-                onClick={() => this.setCardClicked(index)}
+                onClick={() => setCardClicked(activity)}
                 key={index}
                 activity={activity}
               />
             );
           })
-        ) : (
-          // Loading isn't working =/
-          <Loading />
-        )}
+      ) : (
+        <Loading />
+      )}
 
-        {this.state.showModal ? (
-          <ModalActivity
-            card={this.state.cardClicked}
-            close={this.toggleModal}
-          />
-        ) : null}
-      </main>
-    );
-  }
+      {showModal ? (
+        <ModalActivity card={cardClicked} close={toggleModal} />
+      ) : null}
+    </main>
+  );
 }

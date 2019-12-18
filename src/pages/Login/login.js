@@ -76,7 +76,7 @@ export default function Login(props) {
           <label className="NewUser">
             Novo no SportFriend ?
             <Link className="NewUser cadastrar" to="/register">
-              &nbsp;Escreva-se
+              &nbsp;Inscreva-se
             </Link>
           </label>
         </form>

@@ -11,7 +11,7 @@ export default function dropDown(props) {
       </div>
       <div className="dropDownDetalis" style={{ display: props.display }}>
         <Link className="link" to="/my-activities">
-          <h2>Minhas atividade</h2>
+          <h2>Minhas Atividades</h2>
         </Link>
         <Link className="link" to="/scheduled-activities">
           <h2>Atividades Agendadas</h2>

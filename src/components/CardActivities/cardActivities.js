@@ -12,7 +12,7 @@ export default function CardActivities(props) {
     "Exercícios": Img.gymActive,
     "Corrida": Img.runningActive,
     "Skate": Img.skateActive,
-    "Caminhada": Img.walkActive
+    "Caminhar": Img.walkActive
   }
 
   return (
@@ -24,7 +24,7 @@ export default function CardActivities(props) {
       <div className="stats">
         <div className="hour_date">
           <p className="clock"><img src={Img.clock} style={{ paddingRight: "5px" }} alt="" />{props.data.moment.start_hour} - {props.data.moment.finish_hour}</p>
-          <p><img src={Img.calendar} style={{ paddingRight: "5px" }} alt="" />{props.data.date.data}</p>
+          <p><img src={Img.calendar} style={{ paddingRight: "5px" }} alt="" />{props.data.date.date}</p>
         </div>
         <div className="card_loc">
           <p><img src={Img.location} style={{ paddingRight: "5px" }} alt="" />{props.data.place.meeting_point}</p>
@@ -32,16 +32,16 @@ export default function CardActivities(props) {
       </div>
       <div className="option">
         {/* <img src={Img.calendar} alt="" /> */}
-        <img src={Img.calendar} alt="" />
+        {/* <img src={Img.calendar} alt="" /> */}
         <i className="material-icons delete-icon" onClick={() => props.deleteActivity(props.data)}>delete</i>
       </div>
       <div className="card_mobile">
-        <p className="clock"><img src={Img.clock} style={{ paddingRight: "5px" }} alt="" />07:40 - 08:00</p>
-        <p><img src={Img.calendar} style={{ paddingRight: "5px" }} alt="" />23/12/2019</p>
-        <p className="loc"><img src={Img.location} style={{ paddingRight: "5px" }} alt="" />Praça Ivo Gomes - Praia da Brisa - Rj</p>
+        <p className="clock"><img src={Img.clock} style={{ paddingRight: "5px" }} alt="" />{props.data.moment.start_hour} - {props.data.moment.finish_hour}</p>
+        <p><img src={Img.calendar} style={{ paddingRight: "5px" }} alt="" />{props.data.date.date}</p>
+        <p className="loc"><img src={Img.location} style={{ paddingRight: "5px" }} alt="" />{props.data.place.meeting_point}</p>
       </div>
       <div className="option_mobile">
-        <img src={Img.calendar} alt="" />
+        {/* <img src={Img.calendar} alt="" /> */}
         <i className="material-icons delete-icon" onClick={() => props.deleteActivity(props.data)}>delete</i>
       </div>
     </section>

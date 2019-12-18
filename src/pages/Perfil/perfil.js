@@ -6,7 +6,7 @@ import '../Perfil/perfil.scss';
 
 export default function Perfil(props) {
     return (
-        <main>
+        <main className="space-menu">
             <Header />
             <section className="containerPerfil">
                 <div className="user">

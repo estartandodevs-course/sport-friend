@@ -1,30 +1,16 @@
 import React, { useState } from "react";
 import "./ActivitySelection.scss";
 import { sportTypes } from "../../data/sportTypes";
-// import { useMedia } from "../../hooks/useMedia";
+import { useMedia } from "../../hooks/useMedia";
 
 export default function(props) {
   const [allSports] = useState(sportTypes);
   const [selectedSport, setSelectedSport] = useState({});
-  // var { isSmall } = useMedia();
-
-  // const handleSelectedSport = e => {
-  //   const elementName = e.target.name;
-  //   const sports = allSports;
-  //   const nextSport = sports.find(obj => obj.name === elementName);
-  //   const nextSportIndex = sports.indexOf(nextSport);
-
-  //   if (isSmall) {
-  //     const currentSelected = sports[4];
-  //     sports[nextSportIndex] = currentSelected;
-  //     sports[4] = nextSport;
-  //   }
-
-  //   setAllSports(sports);
-  // };
+  var { isSmall } = useMedia();
 
   const handleSelectedSport = sport => {
     setSelectedSport(sport);
+    props.setFilter(sport);
   };
 
   const isSelected = sport => {
@@ -34,8 +20,8 @@ export default function(props) {
 
   return (
     <div className="container-activity">
-      {allSports.map(sport => {
-        if (isSelected(sport)) return null;
+      {allSports.map((sport, index) => {
+        if (isSelected(sport) && isSmall) return null;
         return (
           <label forhtml={sport.name} key={sport.id} className="sport">
             <input
@@ -56,7 +42,7 @@ export default function(props) {
           </label>
         );
       })}
-      {!!selectedSport.id && (
+      {!!selectedSport.id && isSmall && (
         <label
           forhtml={selectedSport.name}
           key={selectedSport.id}

@@ -4,8 +4,21 @@ import Map from "../Maps/maps";
 import Button from "../../components/Button/button";
 import Img from "../../assets/img.js";
 import user from "../../assets/img/user.png";
+import firebase from "../../services/firebase";
+import Service from "../../services/index";
 
 export default function ModalActivity(props) {
+  const service = new Service()
+
+  const matchActivity = () => {
+    const currentUser = firebase.getCurrentUserProfile();
+    const activity = props.card;
+    activity.matches ? activity.matches.push(currentUser) : activity.matches = [currentUser];
+
+    service.updateActivity(activity)
+  }
+
+
   return (
     <main className="containerModal">
       <div className="modal">
@@ -48,7 +61,7 @@ export default function ModalActivity(props) {
           <Button
             active={props.onClick}
             className="btnTeste "
-            // value="Confirmar Atividade"
+            onClick={() => matchActivity}
           >
             Confirmar Atividade
           </Button>
@@ -57,7 +70,7 @@ export default function ModalActivity(props) {
         <Button
           active={props.onClick}
           className="btnConfirmar "
-          // value="Confirmar Atividade"
+          onClick={() => matchActivity}
         >
           Confirmar Atividade
         </Button>

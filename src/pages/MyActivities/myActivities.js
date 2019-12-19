@@ -44,8 +44,9 @@ export default function MyActivities(props) {
   };
 
   return (
+    <>
     <section className="containerAtividades space-menu">
-      <Header />
+    <Header title="Minhas Atividades"/>
       {/* <div className="alertAtividade">
         <h2>
           Opss... você não possui <br /> atividades !!!{" "}
@@ -74,5 +75,6 @@ export default function MyActivities(props) {
         rel="stylesheet"
       ></link>
     </section>
+    </>
   );
 }

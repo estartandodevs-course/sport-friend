@@ -59,7 +59,7 @@ export default function ScheduledActivities() {
 
   return (
     <section className="containerAtividades space-menu">
-      <Header className="borderBotton" />
+      <Header title="Atividades Agendadas" />
       {/* <div className="alertAtividade">
         <h2>
           Para adicionar uma atividade <br /> clique no botão abaixo.

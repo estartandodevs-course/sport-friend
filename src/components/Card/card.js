@@ -7,41 +7,28 @@ export default function Card(props) {
   const activity = props.activity;
   const date = activity.date;
 
-  // let [match, setMatch] = useState(false);
-  
-  // function toogleMatch() {
-  //   setMatch(!match);
-  // }
-
   return (
-    <section className="card_container" onClick={props.onClick}>
-      <div className="box">
-        <img className="img" src={activity.author.photoURL ? activity.author.photoURL : user } alt={activity.author.displayName} />
-        <p className="User_Name">{activity.author.displayName}</p>
+    <section className="card_container">
+      <div className="user-box">
+        <img className="user-img" src={activity.author.photoURL ? activity.author.photoURL : user } alt={activity.author.displayName} />
+        <p className="user-name">{activity.author.displayName}</p>
       </div>
-      <div className="mobile">
-        <p className="hour">
-          <img
-            src={Img.clock}
-            alt="clock"
-            className="test"
-            style={{ paddingRight: "5px", width: "16px" }}
-          />
-          {activity.moment.start_hour}- {activity.moment.finish_hour}
-        </p>
-
-        <p className="data">
-          <img src={Img.calendar} alt="" style={{ paddingRight: "5px" }} />
-          {date["day"]}/{date["month"]}/{date["year"]}
-        </p>
-
-        <p className="Local">
-          <img src={Img.location} alt="" style={{ paddingRight: "5px" }} />
-          {activity.place.meeting_point}
-        </p>
-      </div>
+      <section className="informations-container">
+        <div className="inform-content">
+          <img src={Img.clock} alt="clock"/>
+          <p>{activity.moment.start_hour} - {activity.moment.finish_hour}</p>
+        </div>
+        <div className="inform-content">
+          <img src={Img.calendar} alt=""/>
+          <p>{date["day"]}/{date["month"]}/{date["year"]}</p>
+        </div>
+        <div className="inform-content">
+          <img src={Img.location} alt=""/>
+          <p>{activity.place.meeting_point}</p>
+        </div>
+      </section>
       <div className="open_card">
-        <img src={Img.arrows} alt="" />
+        <img onClick={props.onClick} src={Img.arrows} alt="" />
       </div>
     </section>
   );

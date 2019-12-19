@@ -4,161 +4,105 @@
   box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
   align-items: center;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 500px;
-  height: 150px;
+  min-height: 135px;
   border-radius: 24px;
   font-family: "Sanchez", serif;
   margin: 10px;
+  padding: 5px 5px;
   color: #000;
   background: #ffffff;
   cursor: pointer;
 
-  .box {
+  .user-box {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
     align-items: center;
+    padding: 0 10px 0 25px;
 
-    .img {
+    .user-img {
       width: 65px;
       height: 65px;
       border-radius: 50%;
       background-color: #fff;
     }
 
-    .User_Name {
-      font-size: 14px;
+    .user-name {
+      font-size: 16px;
     }
   }
-  .Time {
-    visibility: hidden;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 14px;
-    margin-bottom: 25px;
-
-    .bar {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      border-right: 1px solid;
-      height: 40px;
-
-      .start {
-        margin-right: 5px;
-        display: flex;
-
-        .icon_start {
-          font-size: 15px;
-          margin-right: 5px;
-        }
-      }
-    }
-
-    .hour {
-      display: flex;
-      align-items: center;
-      border: solid 1px black;
-    }
-
-    .data {
-      border: solid 1px black;
-      margin: 0;
-      font-size: 12px;
-    }
-  }
-  .Box_info {
-    border: solid 1px black;
+  
+  .informations-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
 
-    .cheked {
-      margin: 20px;
-    }
+    .inform-content {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 5px 0;
 
-    .stats {
-      .Local {
+      img {
+        width: 20px;
+        height: auto;
+        margin-right: 5px;
+      }
+
+      p {
+        font-size: 15px;
         margin: 0;
       }
-      .lacalization {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+    }
+  }
+
+  .open_card {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    min-height: 135px;
+
+    img {
+      margin: 0 20px 15px 0;
+      width: 20px;
+    }
+  }
+}
+  
+@media screen and (max-width: 768px) {
+  .card_container {
+    width: 350px;
+
+    .user-box {
+      padding: 0 10px 0 15px;
+    }
+    .informations-container {
+      .inform-content {
+
         img {
-          width: 25px;
-          height: 25px;
-          border: 1px solid rgba(17, 201, 201, 0.54);
-          border-radius: 15px;
+          width: 18px;
+        }
+
+        p {
+          font-size: 13px;
         }
       }
     }
-  }
-  .mobile {
-  }
-  .open_card {
-    margin-top: 70px;
+
+    .open_card {
+      img {
+        width: 16px;
+      }
+    }
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 375px) {
   .card_container {
-    display: flex;
-    justify-content: space-around;
-    width: 314px;
-    height: 132px;
-
-    border-radius: 24px;
-    font-family: "Sanchez", serif;
-    margin: 10px;
-    color: #000;
-    background: #ffffff;
-    cursor: pointer;
-
-    .box {
-      display: flex;
-      margin-top: 10px;
-      align-items: center;
-      flex-direction: column;
-      justify-content: center;
-
-      .img {
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background-color: #fff;
-      }
-
-      .User_Name {
-        font-size: 12px;
-      }
-    }
-    .Time {
-      display: none;
-    }
-    .Box_info {
-      display: none;
-    }
-    .mobile {
-      width: 190px;
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: -20px;
-      flex-direction: column;
-      justify-content: center;
-      p {
-        margin: 5px;
-        font-size: 12px;
-      }
-    }
-    .open_card {
-      display: flex;
-      align-items: flex-end;
-      margin-bottom: 15px;
-      margin-right: 4px;
-    }
+    width: 280px;
   }
 }

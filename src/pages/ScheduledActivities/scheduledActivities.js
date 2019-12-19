@@ -35,24 +35,26 @@ export default function ScheduledActivities() {
   }, [allActivities])
 
   const handleScheduled = () => {
+    const scheduleds = scheduledActivities;
+
     allActivities.forEach(activity => {
       console.log(activity)
 
       if(activity.matches) {
-        //pegando cada match do array
+        //getting each match of array
         activity.matches.forEach(match => {
           if(match.uid == currentUserUid){
-            const scheduleds = scheduledActivities;
             scheduleds.push(activity);
-
-            setState({
-              ...state,
-              scheduledActivities: scheduleds
-            })
           }
         })
       }
     })
+
+    setState({
+      ...state,
+      scheduledActivities: scheduleds
+    })
+    
   }
 
   return (

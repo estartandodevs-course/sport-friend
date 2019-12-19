@@ -43,7 +43,7 @@ export default function ScheduledActivities() {
       if(activity.matches) {
         //getting each match of array
         activity.matches.forEach(match => {
-          if(match.uid == currentUserUid){
+          if(match.uid === currentUserUid){
             scheduleds.push(activity);
           }
         })

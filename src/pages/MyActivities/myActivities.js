@@ -61,7 +61,7 @@ export default function MyActivities(props) {
         <i onClick={toogleModal} className="material-icons addCircle">
           add
         </i>
-        <h1>Adcionar atividade</h1>
+        <h1>Adicionar Atividade</h1>
         <Modal
           close={toogleModal}
           action={insertActivity}

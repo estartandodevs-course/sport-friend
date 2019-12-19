@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./modalActivity.scss";
 import Map from "../Maps/maps";
 import Button from "../../components/Button/button";
@@ -9,14 +9,26 @@ import Service from "../../services/index";
 
 export default function ModalActivity(props) {
   const service = new Service()
+  const [currentUser, setUser] = useState({})
 
   const matchActivity = () => {
-    const currentUser = firebase.getCurrentUserProfile();
+    const { uid, displayName } = currentUser;
+    const matcher = {
+      uid,
+      displayName
+    }
+
     const activity = props.card;
-    activity.matches ? activity.matches.push(currentUser) : activity.matches = [currentUser];
+    activity.matches ? activity.matches.push(matcher) : activity.matches = [matcher];
+    console.log(activity)
 
     service.updateActivity(activity)
   }
+
+  useEffect(() => {
+    const user = firebase.getCurrentUserProfile();
+    setUser(user)
+  },[])
 
 
   return (
@@ -61,7 +73,7 @@ export default function ModalActivity(props) {
           <Button
             active={props.onClick}
             className="btnTeste "
-            onClick={() => matchActivity}
+            onClick={() => matchActivity()}
           >
             Confirmar Atividade
           </Button>
@@ -70,7 +82,7 @@ export default function ModalActivity(props) {
         <Button
           active={props.onClick}
           className="btnConfirmar "
-          onClick={() => matchActivity}
+          onClick={() => matchActivity()}
         >
           Confirmar Atividade
         </Button>

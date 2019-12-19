@@ -10,8 +10,8 @@ export default function Perfil(props) {
             <Header />
             <section className="containerPerfil">
                 <div className="user">
-                    <i class="material-icons addCircle">add</i>
-                    <h1>Adcionar foto</h1>
+                    <i className="material-icons addCircle">add</i>
+                    <h1>Adicionar foto</h1>
                 </div>
                 <input className="input" placeholder="Nome" autoComplete="off" autoFocus />
                 <input className="input" placeholder="Sexo" autoComplete="off" autoFocus />

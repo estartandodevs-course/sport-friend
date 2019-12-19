@@ -76,7 +76,7 @@ export default function ScheduledActivities() {
               );
           })
       }
-      <div className="user">
+      <div className="add-activity">
         <Link to="/">
           <i className="material-icons addCircle">add</i>
         </Link>

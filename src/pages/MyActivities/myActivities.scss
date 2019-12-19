@@ -29,13 +29,20 @@
       color: #ffffff;
     }
   }
-  .user {
+  .add-activity {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
+    margin: 20px 0;
+    // position: fixed;
+    // bottom: 0;
+    z-index: 5;
+    // background-color: #4796ec;
+    
     .addCircle {
-      font-size: 60px;
+      font-size: 50px;
       color: #ffffff;
       border: 4px solid white;
       border-radius: 35px;

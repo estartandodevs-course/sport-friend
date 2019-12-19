@@ -57,7 +57,7 @@ export default function MyActivities(props) {
       {myActivities.map((activity, index) => {
         return <CardActivities key={index} data={activity} deleteActivity={deleteActivity}/>
       })}
-      <div className="user">
+      <div className="add-activity">
         <i onClick={toogleModal} className="material-icons addCircle">
           add
         </i>

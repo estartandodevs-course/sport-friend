@@ -9,13 +9,13 @@ import Service from "../../services/index";
 import "./register.scss";
 // import Auth from "../../services/auth";
 
-function validarForm() {
-  if (form.name == "") {
-    alert("Preencha o campo com seu nome");
-  } else {
-    return true;
-  }
-}
+// function validarForm() {
+//   if (form.name == "") {
+//     alert("Preencha o campo com seu nome");
+//   } else {
+//     return true;
+//   }
+// }
 
 export default function Register(props) {
   const service = new Service();
@@ -30,7 +30,8 @@ export default function Register(props) {
   async function onRegister() {
     if (form.password !== form.passwordConfirm) {
       alert("Por favor, confirme a senha corretamente");
-    } else if (validarForm()) {
+    // } else if (validarForm()) {
+    }
       try {
         // await firebase.register(name, email, password)
         await firebase.register(form);
@@ -43,7 +44,7 @@ export default function Register(props) {
         console.error(error)
       }
     }
-  }
+  
   function handleShowPassword() {
     if (showPassword) {
       setShowPassword(false);
@@ -95,12 +96,12 @@ export default function Register(props) {
               placeholder="Nome*"
               autoComplete="off"
               autoFocus={true}
-              value={nome}
+              // value={nome}
               onChange={e => changeForm(e)}
               // onChange={e => setNome(e.target.value)}
               // onChange={e => validarForm(e.target.value)}
               // onSubmit={() => validarForm()}
-              onChange={(e => changeForm(e), e => setName(e.target.value))}
+              // onChange={(e => changeForm(e), e => setName(e.target.value))}
             />
             <Input
               id="age "

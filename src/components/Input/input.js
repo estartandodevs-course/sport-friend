@@ -25,7 +25,7 @@ export default function Input(props) {
           type={props.type}
           placeholder=" "
           onChange={props.onChange}
-          autoComplete={props.autoComplete}
+          autoComplete="off"
           autoFocus={props.autoFocus}
           style={props.style}
           className={props.className}

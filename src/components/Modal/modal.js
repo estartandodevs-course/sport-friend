@@ -3,25 +3,16 @@ import { sportTypes } from "../../data/sportTypes";
 import meetingPoints from "../../data/meetingPoint";
 import Img from "../../assets/img.js";
 import Button from "../Button/button";
-import InputMask from "react-input-mask";
 import firebase from "../../services/firebase";
 import "./modal.scss";
+import InputMaskReact from "../InputMask/inputMask";
+import ModalAlert from "../ModalAlert/modalAlert";
 
 function Modal(props) {
   let currentUser = firebase.getCurrentUserProfile();
   const uid = firebase.getCurrentUserUid();
   const author = {displayName: currentUser.displayName, uid}
-
-  // const [author, setAuthor] = useState({})
-
-  // useEffect(() => {
-  //   const currentUser = firebase.getCurrentUserProfile();
-  //   const uid = firebase.getCurrentUserUid();
-  //   setAuthor({
-  //     ...currentUser,
-  //     uid
-  //   })
-  // }, [])
+  const [alert, setAlert] = useState({show: false, content: ""})
   
   const [type, setType] = useState("");
   const [description, setDescription] = useState("");
@@ -34,7 +25,6 @@ function Modal(props) {
       ...moment,
       [event.target.name]: event.target.value
     })
-    await console.log(moment)
   }
 
   async function handleDate (event) {
@@ -48,7 +38,6 @@ function Modal(props) {
       ...fullDate,
       date: `${fullDate.day}/${fullDate.month}/${fullDate.year}`
     }
-    console.log(fullDate)
     setDate(fullDate)
   }
 
@@ -64,13 +53,39 @@ function Modal(props) {
       moment: moment,
       place: place
     }
-    console.log(dataActivity)
-    props.action(dataActivity)
+    if(compareHours()){
+      props.action(dataActivity)
+      setTimeout(props.close, 400)
+    } else {
+      setAlert({show: true, content:"Hora Inicial não pode ser maior que hora final"})
+    }
     // prop.close()
   }
+
+  const compareHours = () => {
+    const start_hour = moment.start_hour.split(":");
+    const finish_hour = moment.finish_hour.split(":");
+
+    var d = new Date();
+    var data1 = new Date(d.getFullYear(), d.getMonth(), d.getDate(), start_hour[0], start_hour[1]);
+    var data2 = new Date(d.getFullYear(), d.getMonth(), d.getDate(), finish_hour[0], finish_hour[1]);
+
+    return (data1 < data2);
+  }
+
+  const [selectedSport, setSelectedSport] = useState({});
+
+  const handleSelectedSport = sport => {
+    setSelectedSport(sport);
+  };
+
+  const isSelected = sport => {
+    return selectedSport.id === sport.id;
+  };
   
 
   return (
+    <>
     <div style={{ display: props.display }}>
       <div className="main">
         <div className="modal-container">
@@ -80,8 +95,8 @@ function Modal(props) {
               {sportTypes.map((sport, key) => {
                 return (
                   <div key={sport.id} className="containerSports">
-                    <label className="" forhtml={sport.name}>
-                      <img  className="sportImg" src={sport.imagem} alt={sport.name} />
+                    <label className={`${isSelected(sport) ? "active" : ""}`} forhtml={sport.name} onClick={() => handleSelectedSport(sport)} >
+                      <img  className="sportImg" src={isSelected(sport) ? sport.activeImg : sport.imagem} alt={sport.name} />
                       <input className="sport-radio" name="sportType" id={sport.name} type="radio" onChange={e => setType(e.target.id)} />
                     </label>
                   </div>
@@ -99,8 +114,9 @@ function Modal(props) {
 
             <div className="containerFormTime">
               <div className="formTime">
-                <InputMask
-                  className="Input"
+                <InputMaskReact
+                  // className="Input"
+                  width="110px"
                   placeholder="Hora Inicial"
                   mask="99:99"
                   name="start_hour"
@@ -108,9 +124,9 @@ function Modal(props) {
                   value={props.value}
                 />
                 <img src={Img.clock} alt="clock"></img>
-                <InputMask
+                <InputMaskReact
                   type="tell"
-                  className="Input"
+                  // className="Input"
                   placeholder="Hora Final"
                   mask="99:99"
                   name="finish_hour"
@@ -142,10 +158,7 @@ function Modal(props) {
             <Button className="modalBtn" onClick={props.close}>Cancelar</Button>
             <Button
               className="modalBtn btnSecundario"
-              onClick={() => {
-                handleActivityData();
-                setTimeout(props.close, 400)
-                }
+              onClick={() => {handleActivityData()}
               }
             >
               Publicar
@@ -154,40 +167,14 @@ function Modal(props) {
         </div>
       </div>
     </div>
+      {alert.show ? (
+        <ModalAlert close={() => setAlert(false)}>
+          {alert.content}
+        </ModalAlert>
+      ): null}
+    </>
   );
 }
 
 export default Modal;
 
-
-// obj base
-// const activity = {
-//   type: "Futebol",
-//   author: {
-//     displayName: "Breno",
-//     photoURL: "https://avatars3.githubusercontent.com/u/37773859?s=400&v=4",
-//     uid: "AipSS8FmIKc8V9Q2ikDMvxEKYbB3"
-//   },
-//   description: "Futebolzin",
-//   date: {
-//     day: 5,
-//     month: 12,
-//     year: 2019,
-//     date: "05/12/2019",
-//     timestamp: ""
-//   },
-//   moment: {
-//     start_hour: "10:00",
-//     finish_hour: "11:00"
-//   },
-//   place: {
-//     city: "Rio de Janeiro",
-//     neighborhood: "Guaratiba",
-//     meeting_point: "Praça Ivo Gomes - Praia da Brisa",
-    
-//     coordinates: {
-//         latitude: -22.9841311,
-//         longitude: -43.6609401,
-//     },
-//   }
-// };

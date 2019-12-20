@@ -12,18 +12,14 @@ const loginService = {
         })
   },
   addUser: (newUser) => {
-    console.log("pre-posting new user");
     axios
       .post(sheetDB_URL, {
         data: newUser
       })
       .then(res => {
-        console.log(res);
-        console.log(res.data);
       });
   },
   searchUser: (userId) => {
-    console.log(userId)
   },
   getSortBy: async (sort) => {
     axios

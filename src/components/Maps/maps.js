@@ -22,7 +22,6 @@ export default class Map extends Component {
   // };
 
   render() {
-    console.log(this.props.cord)
     return (
       <main className="map">
         <GoogleMapReact

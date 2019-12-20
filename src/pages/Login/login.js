@@ -6,22 +6,33 @@ import firebase from "../../services/firebase";
 import Button from "../../components/Button/button";
 import Input from "../../components/Input/input";
 import banner from "../../assets/img/bg-login.png";
+import ModalAlert from "../../components/ModalAlert/modalAlert";
 // import googleAuth from "../../services/googleAuth";
 
 export default function Login(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [alert, setAlert] = useState({show: false, content: ""})
+
   async function login() {
-    try {
-      await firebase.login(email, password);
-      props.history.push("/");
-    } catch (error) {
-      alert(error.menssage);
+
+    if(email === ""){
+      setAlert({show: true, content: "Digite seu email"})
+    } else if(password === ""){
+      setAlert({show: true, content: "Digite sua senha"})
+    } else {
+      try {
+        await firebase.login(email, password);
+        props.history.push("/");
+      } catch (error) {
+        setAlert({show: true, content: "Senha Inválida"})
+      }
     }
   }
 
   return (
+    <>
     <section className="container-login">
       <section className="content-login">
         <img className="banner" src={banner} alt="Banner" />
@@ -71,18 +82,24 @@ export default function Login(props) {
               ></img>
             </div>
           </div> */}
+        </form>
           <label className="NewUser">
             Novo no SportFriend ?
             <Link className="NewUser cadastrar" to="/register">
               &nbsp;Inscreva-se
             </Link>
           </label>
-        </form>
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         ></link>
       </section>
     </section>
+    {alert.show ? (
+        <ModalAlert close={() => setAlert(false)}>
+          {alert.content}
+        </ModalAlert>
+      ): null}
+    </>
   );
 }

@@ -20,9 +20,23 @@ export default function ModalActivity(props) {
 
     const activity = props.card;
     activity.matches ? activity.matches.push(matcher) : activity.matches = [matcher];
-    console.log(activity)
 
     service.updateActivity(activity)
+  }
+
+  const cancelMatch = () => {
+    const { uid } = currentUser;
+    const activity = props.card;
+
+    if(activity.matches) {
+      activity.matches.forEach((match, index) => {
+
+        if(match.uid === uid) {
+          activity.matches.splice(index, 1)
+          service.updateActivity(activity)
+        }
+      })
+    }
   }
 
   useEffect(() => {
@@ -73,18 +87,19 @@ export default function ModalActivity(props) {
           <Button
             active={props.onClick}
             className="btnTeste "
-            onClick={() => matchActivity()}
+            onClick={(props.cancelMatch) ? () => cancelMatch() : () => matchActivity()}
           >
-            Confirmar Atividade
+          {(props.cancelMatch) ? "Cancelar Atividade" : "Confirmar Atividade"}
           </Button>
         </div>
         <Map cord={props.card.place.coordinates} />
         <Button
           active={props.onClick}
           className="btnConfirmar "
-          onClick={() => matchActivity()}
+          onClick={(props.cancelMatch) ? () => cancelMatch() : () => matchActivity()}
         >
-          Confirmar Atividade
+          {(props.cancelMatch) ? "Cancelar Atividade" : "Confirmar Atividade"}
+          
         </Button>
       </div>
     </main>

@@ -8,6 +8,7 @@ import Service from "../../services/index"
 
 
 import './register.scss';
+import auth from '../../services/auth';
 
 export default function Register(props) {
     const service = new Service();
@@ -29,7 +30,10 @@ export default function Register(props) {
                 await firebase.register(form)
                 const uidUser = firebase.getCurrentUserUid()
                 await service.insertUser({...form, uid: uidUser})
-                props.history.replace("/")
+                await firebase.login(form.email, form.password);
+                auth.login(() => {
+                    props.history.push("/")
+                })
             } catch (error) {
                 alert(error.message)
             }

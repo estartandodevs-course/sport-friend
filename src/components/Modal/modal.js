@@ -74,6 +74,17 @@ function Modal(props) {
 
     return (data1 < data2);
   }
+
+  const [selectedSport, setSelectedSport] = useState({});
+
+  const handleSelectedSport = sport => {
+    setSelectedSport(sport);
+  };
+
+  const isSelected = sport => {
+    // console.log(selectedSport.id === sport.id);
+    return selectedSport.id === sport.id;
+  };
   
 
   return (
@@ -87,8 +98,8 @@ function Modal(props) {
               {sportTypes.map((sport, key) => {
                 return (
                   <div key={sport.id} className="containerSports">
-                    <label className="" forhtml={sport.name}>
-                      <img  className="sportImg" src={sport.imagem} alt={sport.name} />
+                    <label className={`${isSelected(sport) ? "active" : ""}`} forhtml={sport.name} onClick={() => handleSelectedSport(sport)} >
+                      <img  className="sportImg" src={isSelected(sport) ? sport.activeImg : sport.imagem} alt={sport.name} />
                       <input className="sport-radio" name="sportType" id={sport.name} type="radio" onChange={e => setType(e.target.id)} />
                     </label>
                   </div>

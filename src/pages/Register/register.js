@@ -7,17 +7,11 @@ import Button from "../../components/Button/button";
 import Service from "../../services/index";
 
 import "./register.scss";
-import auth from "../../services/auth";
-
-// function validarForm(e) {
-//   if (e.name.value == "") {
-//     alert("Preencha o campo com seu nome");
-//     name.focus();
-//   }
-// }
+// import Auth from "../../services/auth";
 
 export default function Register(props) {
   const service = new Service();
+//   const auth = new Auth();
 
   const [form, setForm] = useState({});
   const [firstStep, setFirstStep] = useState(true);
@@ -32,14 +26,13 @@ export default function Register(props) {
       try {
         // await firebase.register(name, email, password)
         await firebase.register(form);
-        const uidUser = firebase.getCurrentUserUid();
+        const uidUser = await firebase.getCurrentUserUid();
         await service.insertUser({ ...form, uid: uidUser });
-        await firebase.login(form.email, form.password);
-        auth.login(() => {
-          props.history.push("/");
-        });
+        // await firebase.login(form.email, form.password);
+        // Auth.login()
+        props.history.push("/login")
       } catch (error) {
-        alert(error.message);
+        console.error(error)
       }
     }
   }
@@ -80,7 +73,7 @@ export default function Register(props) {
   return (
     <section className="containerRegister">
       <Logo width="125px" />
-      <form onSubmit={e => e.preventDefault() && false}>
+      <form onSubmit={e => e.preventDefault()}>
         {firstStep ? (
           <>
             <span className="step">1/2</span>
@@ -91,13 +84,11 @@ export default function Register(props) {
               id="name"
               type="text"
               name="name"
-              placeholder="Nome"
+              placeholder="Nome*"
               autoComplete="off"
               autoFocus={true}
               value={nome}
               onChange={(e => changeForm(e), e => setName(e.target.value))}
-              //   onChange={e => setEmail(e.target.value)}
-              //   onSubmit={() => validarForm()}
             />
             <Input
               id="age "
@@ -139,7 +130,8 @@ export default function Register(props) {
               id="email"
               type="email"
               name="email"
-              placeholder="Email"
+              autoFocus={true}
+              placeholder="Email *"
               autoComplete="off"
               onChange={e => changeForm(e)}
             />
@@ -148,7 +140,7 @@ export default function Register(props) {
               onClickIcon={handleShowPassword}
               type={showPassword ? "text" : "password"}
               name="password"
-              placeholder="Senha"
+              placeholder="Senha *"
               icon="visibility_off"
               autoComplete="off"
               onChange={e => changeForm(e)}
@@ -158,13 +150,13 @@ export default function Register(props) {
               onClickIcon={handleShowPasswordconfirm}
               type={showPasswordconfirm ? "text" : "password"}
               name="passwordConfirm"
-              placeholder="Confirmar Senha"
+              placeholder="Confirmar Senha *"
               icon="visibility_off"
               autoComplete="off"
               onChange={e => changeForm(e)}
             />
 
-            <Button type="submit" onClick={onRegister}>
+            <Button type="submit" onClick={() => onRegister()}>
               Cadastrar
             </Button>
           </>

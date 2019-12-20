@@ -12,12 +12,13 @@
   }
 
   .logo{ 
-    margin-left: 35px;
+    // margin-left: 35px;
   }
 
   .content-login {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
     // min-height: 100vh;
     height: 100vh;
@@ -105,27 +106,27 @@
         }
       }
 
-      .NewUser {
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 16px;
-        line-height: 19px;
-        display: flex;
-        align-items: center;
-        text-align: center;
-        color: #ffffff;
-        text-decoration: none;
-      }
-
+      
       .cadastrar {
         cursor: pointer;
-
+        
         &:hover {
           color: #551a8b;
         }
       }
     }
+                  .NewUser {
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 19px;
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                    color: #ffffff;
+                    text-decoration: none;
+                  }
   }
 }
 
@@ -141,7 +142,7 @@
         height: 420px;
         
         .logo {
-          width: 100px;
+          width: 153px;
         }
       }
     }

@@ -20,7 +20,6 @@ export default function ModalActivity(props) {
 
     const activity = props.card;
     activity.matches ? activity.matches.push(matcher) : activity.matches = [matcher];
-    console.log(activity)
 
     service.updateActivity(activity)
   }

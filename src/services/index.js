@@ -42,8 +42,8 @@ class Service {
         .database()
         .ref(`Activities/${key}`)
         .remove()
-        .then(() => console.log("Atividade removida com sucesso"))
-        .catch(error => console.error(error))
+        // .then(() => console.log("Atividade removida com sucesso"))
+        // .catch(error => console.error(error))
     );
   }
 
@@ -53,7 +53,7 @@ class Service {
         .database()
         .ref(`Activities/${activity.key}`)
         .update(activity)
-        .then(() => console.log("Updated"))
+        // .then(() => console.log("Updated"))
     )
   }
 

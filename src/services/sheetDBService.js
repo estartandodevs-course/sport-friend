@@ -12,18 +12,14 @@ const sheetDBService = {
         })
   },
   add: (newUser) => {
-    console.log("pre-posting new user");
     axios
       .post(sheetDB_URL, {
         data: newUser
       })
       .then(res => {
-        console.log(res);
-        console.log(res.data);
       });
   },
   searchById: (userId) => {
-    console.log(userId)
   },
   getSortBy: async (sort) => {
     axios

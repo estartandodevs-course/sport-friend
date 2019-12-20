@@ -14,7 +14,6 @@ export default function(props) {
   };
 
   const isSelected = sport => {
-    // console.log(selectedSport.id === sport.id);
     return selectedSport.id === sport.id;
   };
 

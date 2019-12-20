@@ -8,6 +8,7 @@ import firebase from "../../services/firebase";
 import Button from "../../components/Button/button";
 import Input from "../../components/Input/input";
 import banner from "../../assets/img/bg-login.png";
+import auth from "../../services/auth";
 // import googleAuth from "../../services/googleAuth";
 
 export default function Login(props) {
@@ -17,7 +18,9 @@ export default function Login(props) {
   async function login() {
     try {
       await firebase.login(email, password);
-      props.history.replace("/");
+      auth.login(() => {
+        props.history.push("/")
+      })
     } catch (error) {
       alert(error.menssage);
     }
@@ -61,7 +64,7 @@ export default function Login(props) {
           >
             Entrar
           </Button>
-          <label className="Textlabel">Esqueceu sua senha ?</label>
+          {/* <label className="Textlabel">Esqueceu sua senha ?</label>
           <div className="loginSocial">
             <h2 className="test placeText">Entrar com</h2>
             <div className="SocialIcon">
@@ -72,7 +75,7 @@ export default function Login(props) {
                 src={Facebook}
               ></img>
             </div>
-          </div>
+          </div> */}
           <label className="NewUser">
             Novo no SportFriend ?
             <Link className="NewUser cadastrar" to="/register">

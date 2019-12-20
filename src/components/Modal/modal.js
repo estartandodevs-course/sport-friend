@@ -3,9 +3,9 @@ import { sportTypes } from "../../data/sportTypes";
 import meetingPoints from "../../data/meetingPoint";
 import Img from "../../assets/img.js";
 import Button from "../Button/button";
-import InputMask from "react-input-mask";
 import firebase from "../../services/firebase";
 import "./modal.scss";
+import InputMaskReact from "../InputMask/inputMask";
 
 function Modal(props) {
   let currentUser = firebase.getCurrentUserProfile();
@@ -34,7 +34,6 @@ function Modal(props) {
       ...moment,
       [event.target.name]: event.target.value
     })
-    await console.log(moment)
   }
 
   async function handleDate (event) {
@@ -99,8 +98,9 @@ function Modal(props) {
 
             <div className="containerFormTime">
               <div className="formTime">
-                <InputMask
-                  className="Input"
+                <InputMaskReact
+                  // className="Input"
+                  width="110px"
                   placeholder="Hora Inicial"
                   mask="99:99"
                   name="start_hour"
@@ -108,9 +108,9 @@ function Modal(props) {
                   value={props.value}
                 />
                 <img src={Img.clock} alt="clock"></img>
-                <InputMask
+                <InputMaskReact
                   type="tell"
-                  className="Input"
+                  // className="Input"
                   placeholder="Hora Final"
                   mask="99:99"
                   name="finish_hour"

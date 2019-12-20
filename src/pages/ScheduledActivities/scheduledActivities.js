@@ -5,15 +5,18 @@ import "./scheduledActivities.scss";
 import Firebase from "../../services/firebase";
 import Service from "../../services/index";
 import Card from "../../components/Card/card";
+import ModalActivity from "../../components/ModalActivity/modalActivity";
 
 export default function ScheduledActivities() {
   const service = new Service();
   const initialState = {
-    scheduledActivities: []
+    scheduledActivities: [],
+    showModal: false,
+    cardClicked: {}
   };
   const [state, setState] = useState(initialState);
 
-  const { scheduledActivities } = state;
+  const { scheduledActivities, showModal, cardClicked } = state;
 
   useEffect(() => {
     const uid = Firebase.getCurrentUserUid();
@@ -43,6 +46,21 @@ export default function ScheduledActivities() {
     return scheduleds;
   };
 
+  const setCardClicked = async _activity => {
+    await setState({
+      ...state,
+      cardClicked: _activity
+    });
+    toggleModal();
+  };
+
+  const toggleModal = () => {
+    setState(prev => ({
+      ...prev,
+      showModal: !prev.showModal
+    }));
+  };
+
   return (
     <section className="containerAtividades space-menu">
       <Header title="Atividades Agendadas" />
@@ -56,7 +74,7 @@ export default function ScheduledActivities() {
           <Card
             key={index}
             activity={activity}
-            onClick={() => console.log("clicked")}
+            onClick={() => setCardClicked(activity)}
           />
         );
       })}
@@ -66,6 +84,10 @@ export default function ScheduledActivities() {
         </Link>
         <h1>Escolher atividade</h1>
       </div>
+
+      {showModal ? (
+        <ModalActivity cancelMatch="true" card={cardClicked} close={toggleModal} />
+      ) : null}
     </section>
   );
 }

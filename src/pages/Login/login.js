@@ -82,13 +82,13 @@ export default function Login(props) {
               ></img>
             </div>
           </div> */}
-        </form>
           <label className="NewUser">
             Novo no SportFriend ?
             <Link className="NewUser cadastrar" to="/register">
               &nbsp;Inscreva-se
             </Link>
           </label>
+        </form>
         <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"

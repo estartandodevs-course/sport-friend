@@ -1,9 +1,9 @@
 .container-login {
-  background: #E5E5E5;
+  background: #e5e5e5;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, #60D3D3 0%, #4897ED 100%);
+  background: linear-gradient(180deg, #60d3d3 0%, #4897ed 100%);
 
   @media only screen and (min-width: 1024px) {
     background-image: url("https://cdn.pixabay.com/photo/2015/10/12/15/00/water-984077_960_720.jpg");
@@ -11,14 +11,13 @@
     background-size: cover;
   }
 
-  .logo{ 
+  .logo {
     // margin-left: 35px;
   }
 
   .content-login {
     display: flex;
-    justify-content: space-around;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
     // min-height: 100vh;
     height: 100vh;
@@ -34,10 +33,8 @@
       margin-right: -140px;
     }
 
-
     form {
-      
-      background: linear-gradient(180deg, #60D3D3 0%, #4897ED 100%);
+      background: linear-gradient(180deg, #60d3d3 0%, #4897ed 100%);
       height: 480px;
       top: 10px;
       box-shadow: 1px 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -106,41 +103,39 @@
         }
       }
 
-      
+      .NewUser {
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #ffffff;
+        text-decoration: none;
+      }
       .cadastrar {
         cursor: pointer;
-        
+
         &:hover {
           color: #551a8b;
         }
       }
     }
-                  .NewUser {
-                    font-family: Roboto;
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: 16px;
-                    line-height: 19px;
-                    display: flex;
-                    align-items: center;
-                    text-align: center;
-                    color: #ffffff;
-                    text-decoration: none;
-                  }
   }
 }
 
 @media only screen and (max-width: 1100px) {
-  .container-login{
-
+  .container-login {
     .content-login {
       .banner {
         width: 650px;
       }
-      
+
       form {
         height: 420px;
-        
+
         .logo {
           width: 153px;
         }
@@ -150,13 +145,12 @@
 }
 
 @media only screen and (max-width: 1023px) {
-  
   .container-login {
-    .content-login{
+    .content-login {
       .banner {
         display: none;
       }
-      
+
       form {
         padding-left: 0;
         padding-right: 0;
@@ -167,69 +161,68 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        
-          .placeText {
-            font-family: Sanchez;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 18px;
-            line-height: 23px;
+
+        .placeText {
+          font-family: Sanchez;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 18px;
+          line-height: 23px;
+          color: #fffdfd;
+
+          &::-webkit-input-placeholder {
             color: #fffdfd;
-            
-            &::-webkit-input-placeholder {
-              color: #fffdfd;
-            }
           }
-          
-          
-          // .Textlabel {
-          //   font-family: Sanchez;
-          //   font-style: normal;
-          //   font-weight: normal;
-          //   font-size: 14px;
-          //   line-height: 18px;
-          //   display: flex;
-          //   align-items: center;
-          //   text-align: center;
-          //   color: #efefef;
-          //   margin-bottom: 10px;
-          // }
-          
-          // .loginSocial {
-          //   display: flex;
-          //   justify-content: center;
-          //   align-items: center;
-          //   flex-direction: column;
-          //   min-height: 100px;
-          //   margin-bottom: 10px;
-            
-          //   .test {
-          //     margin-bottom: 17px;
-          //   }
-            
-          //   .SocialIcon {
-          //     display: flex;
-          //     justify-content: center;
-          //     align-items: center;
-              
-          //     .iconFace {
-          //       margin-left: 40px;
-          //     }
-              
-          //     .icons {
-          //       cursor: pointer;
-          //     }
-          //   }
-          // }
-          
-          .cadastrar {
-            cursor: pointer;
-            
-            &:hover {
-              color: #551a8b;
-            }
+        }
+
+        // .Textlabel {
+        //   font-family: Sanchez;
+        //   font-style: normal;
+        //   font-weight: normal;
+        //   font-size: 14px;
+        //   line-height: 18px;
+        //   display: flex;
+        //   align-items: center;
+        //   text-align: center;
+        //   color: #efefef;
+        //   margin-bottom: 10px;
+        // }
+
+        // .loginSocial {
+        //   display: flex;
+        //   justify-content: center;
+        //   align-items: center;
+        //   flex-direction: column;
+        //   min-height: 100px;
+        //   margin-bottom: 10px;
+
+        //   .test {
+        //     margin-bottom: 17px;
+        //   }
+
+        //   .SocialIcon {
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+
+        //     .iconFace {
+        //       margin-left: 40px;
+        //     }
+
+        //     .icons {
+        //       cursor: pointer;
+        //     }
+        //   }
+        // }
+
+        .cadastrar {
+          cursor: pointer;
+
+          &:hover {
+            color: #551a8b;
           }
         }
       }
     }
   }
+}

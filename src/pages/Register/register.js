@@ -56,7 +56,6 @@ export default function Register(props) {
       ...form,
       [event.target.name]: event.target.value
     });
-    await console.log(form);
   }
 
   function changeStep() {

@@ -38,7 +38,6 @@ function Modal(props) {
       ...fullDate,
       date: `${fullDate.day}/${fullDate.month}/${fullDate.year}`
     }
-    console.log(fullDate)
     setDate(fullDate)
   }
 
@@ -55,7 +54,6 @@ function Modal(props) {
       place: place
     }
     if(compareHours()){
-      console.log(dataActivity)
       props.action(dataActivity)
       setTimeout(props.close, 400)
     } else {
@@ -82,7 +80,6 @@ function Modal(props) {
   };
 
   const isSelected = sport => {
-    // console.log(selectedSport.id === sport.id);
     return selectedSport.id === sport.id;
   };
   

@@ -22,11 +22,9 @@ export default function MyActivities(props) {
   
   const getMyActivities = () => {
     service.Activities.subscribe( activities => {
-      console.log(activities)
       const my = activities.filter(item => {return item.author.uid === currentUid});
       if(my !== myActivities){
         setMyActivities(my)
-        console.log(my)
       }
     })
   }

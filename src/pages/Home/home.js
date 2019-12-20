@@ -71,7 +71,7 @@ export default function Home() {
       <Header />
       <h1 className="apresentation-title">
         {/* Olá {firebase.getCurrentUsername()}! <br></br>  */}
-        Que tal encontrar uma atividade ?
+        Qual atividade você<br/>quer fazer hoje ?
       </h1>
       <ActivitySelection setFilter={setFilter} />
 

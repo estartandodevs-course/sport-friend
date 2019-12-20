@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./menu.scss";
 import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown/dropDown";
 import firebase from "../../../services/firebase";
 import user from "../../../assets/img/user.png";
+import auth from "../../../services/auth";
 
 function Menu(props) {
+  const [ isLogged, setLogged ] = useState(false)
   const [dropdown, setDropdown] = useState(true);
   async function logout() {
     await firebase.logout();
     // props.history.push('/')
   }
+
+  useEffect(() => {
+    auth.isAuthenticated() ? setLogged(true) : setLogged(false)
+  }, [])
 
   const toogleDropdown = () => {
     setDropdown(!dropdown);
@@ -27,16 +33,14 @@ function Menu(props) {
             {/* <i className="material-icons">perm_identity</i> */}
             <img
               src={
-                firebase.getCurrentUserProfile().photoURL
-                  ? firebase.getCurrentUserProfile().photoURL
-                  : user
+                isLogged ? (
+                    firebase.getCurrentUserProfile().photoURL ? firebase.getCurrentUserProfile().photoURL : user
+                  ) : user
               }
               alt="user"
             />
           </div>
           <h1>{firebase.getCurrentUsername()} </h1>
-          {/* <div>
-          </div> */}
           <div className="user-perfil">
             <Link className="link" to="/perfil">
               <h2>Perfil</h2>

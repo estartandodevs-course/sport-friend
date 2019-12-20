@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import Dropdown from "./Dropdown/dropDown";
 import firebase from "../../../services/firebase";
 import user from "../../../assets/img/user.png";
-import auth from "../../../services/auth";
+import Auth from "../../../services/auth";
 
 function Menu(props) {
-  const [ isLogged, setLogged ] = useState(false)
+  const auth = new Auth();
+  const [isLogged, setLogged] = useState(false);
   const [dropdown, setDropdown] = useState(true);
   async function logout() {
     await firebase.logout();
@@ -15,8 +16,8 @@ function Menu(props) {
   }
 
   useEffect(() => {
-    auth.isAuthenticated() ? setLogged(true) : setLogged(false)
-  }, [])
+    auth.isAuthenticated() ? setLogged(true) : setLogged(false);
+  }, []);
 
   const toogleDropdown = () => {
     setDropdown(!dropdown);
@@ -33,9 +34,11 @@ function Menu(props) {
             {/* <i className="material-icons">perm_identity</i> */}
             <img
               src={
-                isLogged ? (
-                    firebase.getCurrentUserProfile().photoURL ? firebase.getCurrentUserProfile().photoURL : user
-                  ) : user
+                isLogged
+                  ? firebase.getCurrentUserProfile().photoURL
+                    ? firebase.getCurrentUserProfile().photoURL
+                    : user
+                  : user
               }
               alt="user"
             />

@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Google from "../../assets/img/google.png";
-import Facebook from "../../assets/img/facebook.png";
 import Logo from "../../components/Logo/logo";
 import "./login.scss";
 import firebase from "../../services/firebase";
 import Button from "../../components/Button/button";
 import Input from "../../components/Input/input";
 import banner from "../../assets/img/bg-login.png";
-import auth from "../../services/auth";
 // import googleAuth from "../../services/googleAuth";
 
 export default function Login(props) {
@@ -18,9 +15,7 @@ export default function Login(props) {
   async function login() {
     try {
       await firebase.login(email, password);
-      auth.login(() => {
-        props.history.push("/")
-      })
+      props.history.push("/");
     } catch (error) {
       alert(error.menssage);
     }

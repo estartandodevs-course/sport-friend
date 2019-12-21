@@ -5,21 +5,13 @@ import Logo from "../../components/Logo/logo";
 import Input from "../../components/Input/input";
 import Button from "../../components/Button/button";
 import Service from "../../services/index";
+import ModalAlert from "../../components/ModalAlert/modalAlert";
 
 import "./register.scss";
 // import Auth from "../../services/auth";
-
-// function validarForm() {
-//   if (form.name == "") {
-//     alert("Preencha o campo com seu nome");
-//   } else {
-//     return true;
-//   }
-// }
-
 export default function Register(props) {
   const service = new Service();
-//   const auth = new Auth();
+  //   const auth = new Auth();
 
   const [form, setForm] = useState({});
   const [firstStep, setFirstStep] = useState(true);
@@ -27,11 +19,47 @@ export default function Register(props) {
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordconfirm, setShowPasswordconfirm] = useState(false);
 
+  const [nome, setNome] = useState("");
+  const [idade, setIdade] = useState("");
+  const [email, setEmail] = useState("");
+
+  const [password, setPassword] = useState("");
+
+  const [alert, setAlert] = useState({ show: false, content: "" });
+
+  async function login() {
+    if (email === "") {
+      setAlert({ show: true, content: "Digite seu email" });
+    } else if (password === "") {
+      setAlert({ show: true, content: "Digite sua senha" });
+    } else {
+      try {
+        await firebase.login(email, password);
+        props.history.push("/");
+      } catch (error) {
+        setAlert({ show: true, content: "Senha Inválida" });
+      }
+    }
+  }
+
+  async function validarForm() {
+    if (nome === "") {
+      setAlert({ show: true, content: "Digite seu nome" });
+    } else if (idade === "") {
+      setAlert({ show: true, content: "Digite sua idade" });
+    } else {
+      changeStep();
+    }
+    if (email === "") {
+      setAlert({ show: true, content: "Digite seu email" });
+    } else if (password === "") {
+      setAlert({ show: true, content: "Digite sua senha" });
+    }
+  }
   async function onRegister() {
     if (form.password !== form.passwordConfirm) {
       alert("Por favor, confirme a senha corretamente");
-    // } else if (validarForm()) {
-    }
+    } else {
       try {
         // await firebase.register(name, email, password)
         await firebase.register(form);
@@ -39,12 +67,12 @@ export default function Register(props) {
         await service.insertUser({ ...form, uid: uidUser });
         // await firebase.login(form.email, form.password);
         // Auth.login()
-        props.history.push("/login")
+        props.history.push("/login");
       } catch (error) {
-        console.error(error)
+        console.error(error);
       }
     }
-  
+  }
   function handleShowPassword() {
     if (showPassword) {
       setShowPassword(false);
@@ -80,105 +108,117 @@ export default function Register(props) {
     }
   }
   return (
-    <section className="containerRegister">
-      <Logo width="125px" />
-      <form onSubmit={e => e.preventDefault()}>
-        {firstStep ? (
-          <>
-            <span className="step">1/2</span>
-            <Link to="/login">
-              <i className="material-icons navegate">navigate_before</i>
-            </Link>
-            <Input
-              id="name"
-              type="text"
-              name="name"
-              placeholder="Nome*"
-              autoComplete="off"
-              autoFocus={true}
-              // value={nome}
-              onChange={e => changeForm(e)}
-              // onChange={e => setNome(e.target.value)}
-              // onChange={e => validarForm(e.target.value)}
-              // onSubmit={() => validarForm()}
-              // onChange={(e => changeForm(e), e => setName(e.target.value))}
-            />
-            <Input
-              id="age "
-              type="text"
-              name="age"
-              placeholder="Idade"
-              autoComplete="off"
-              onChange={e => changeForm(e)}
-            />
-            <Input
-              id="datebirth"
-              type="text"
-              name="datebirth"
-              placeholder="Data de Nascimento"
-              autoComplete="off"
-              onChange={e => changeForm(e)}
-            />
-            <Input
-              id="adress"
-              type="text"
-              name="adress"
-              placeholder="Endereço"
-              autoComplete="off"
-              onChange={e => changeForm(e)}
-            />
+    <>
+      <section className="containerRegister">
+        <Logo width="125px" />
+        <form onSubmit={e => e.preventDefault()}>
+          {firstStep ? (
+            <>
+              <span className="step">1/2</span>
+              <Link to="/login">
+                <i className="material-icons navegate">navigate_before</i>
+              </Link>
+              <Input
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Nome "
+                autoComplete="off"
+                autoFocus={true}
+                value={nome}
+                onChange={(e => changeForm(e), e => setNome(e.target.value))}
+              />
+              <Input
+                id="age "
+                type="text"
+                name="age"
+                placeholder="Idade"
+                autoComplete="off"
+                onChange={(e => changeForm(e), e => setIdade(e.target.value))}
+              />
+              <Input
+                id="datebirth"
+                type="text"
+                name="datebirth"
+                placeholder="Data de Nascimento"
+                autoComplete="off"
+                onChange={e => changeForm(e)}
+              />
+              <Input
+                id="adress"
+                type="text"
+                name="adress"
+                placeholder="Endereço"
+                autoComplete="off"
+                onChange={e => changeForm(e)}
+              />
 
-            <Button type="submit" onClick={() => changeStep()}>
-              Próximo
-            </Button>
-          </>
-        ) : null}
-        {secondStep ? (
-          <>
-            <span className="step">2/2</span>
-            <i onClick={() => changeStep()} className="material-icons navegate">
-              navigate_before
-            </i>
-            <Input
-              id="email"
-              type="email"
-              name="email"
-              autoFocus={true}
-              placeholder="Email *"
-              autoComplete="off"
-              onChange={e => changeForm(e)}
-            />
-            <Input
-              id="password"
-              onClickIcon={handleShowPassword}
-              type={showPassword ? "text" : "password"}
-              name="password"
-              placeholder="Senha *"
-              icon="visibility_off"
-              autoComplete="off"
-              onChange={e => changeForm(e)}
-            />
-            <Input
-              id="passwordConfirm"
-              onClickIcon={handleShowPasswordconfirm}
-              type={showPasswordconfirm ? "text" : "password"}
-              name="passwordConfirm"
-              placeholder="Confirmar Senha *"
-              icon="visibility_off"
-              autoComplete="off"
-              onChange={e => changeForm(e)}
-            />
+              <Button
+                type="submit"
+                onClick={() => (validarForm() ? null : changeStep())}
+              >
+                Próximo
+              </Button>
+            </>
+          ) : null}
+          {secondStep ? (
+            <>
+              <span className="step">2/2</span>
+              <i
+                onClick={() => changeStep()}
+                className="material-icons navegate"
+              >
+                navigate_before
+              </i>
+              <Input
+                id="email"
+                type="email"
+                name="email"
+                autoFocus={true}
+                placeholder="Email *"
+                autoComplete="off"
+                onChange={(e => changeForm(e), e => setEmail(e.target.value))}
+              />
+              <Input
+                id="password"
+                onClickIcon={handleShowPassword}
+                type={showPassword ? "text" : "password"}
+                name="password"
+                placeholder="Senha *"
+                icon="visibility_off"
+                autoComplete="off"
+                onChange={
+                  (e => changeForm(e), e => validarForm(e.target.value))
+                }
+              />
+              <Input
+                id="passwordConfirm"
+                onClickIcon={handleShowPasswordconfirm}
+                type={showPasswordconfirm ? "text" : "password"}
+                name="passwordConfirm"
+                placeholder="Confirmar Senha *"
+                icon="visibility_off"
+                autoComplete="off"
+                onChange={e => changeForm(e)}
+              />
 
-            <Button type="submit" onClick={() => onRegister()}>
-              Cadastrar
-            </Button>
-          </>
-        ) : null}
-      </form>
-      <link
-        href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet"
-      ></link>
-    </section>
+              <Button
+                type="submit"
+                onClick={() => validarForm() && onRegister()}
+              >
+                Cadastrar
+              </Button>
+            </>
+          ) : null}
+        </form>
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        ></link>
+      </section>
+      {alert.show ? (
+        <ModalAlert close={() => setAlert(false)}>{alert.content}</ModalAlert>
+      ) : null}
+    </>
   );
 }

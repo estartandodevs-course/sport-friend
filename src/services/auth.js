@@ -2,7 +2,7 @@ import Firebase from "./firebase";
 
 class Auth {
   constructor() {
-    if (Firebase.getCurrentUsername()) {
+    if (Firebase.getCurrentUserUid()) {
       this.authenticated = true;
     } else {
       this.authenticated = false;
@@ -11,12 +11,12 @@ class Auth {
 
   login(cb) {
     this.authenticated = true;
-    cb()
+    cb();
   }
 
   logout(cb) {
     this.authenticated = false;
-    cb()
+    cb();
   }
 
   isAuthenticated() {

@@ -19,59 +19,68 @@ export default function Register(props) {
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordconfirm, setShowPasswordconfirm] = useState(false);
 
-  const [nome, setNome] = useState("");
-  const [idade, setIdade] = useState("");
+  const [displayName, setDisplayName] = useState("");
+  // const [idade, setIdade] = useState("");
   const [email, setEmail] = useState("");
+  // const [age, setAge] = useState("");
+  const [dataNascimento, setDataNascimento] = useState("");
+  const [endereco, setEndereco] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const [alert, setAlert] = useState({ show: false, content: "" });
 
-  async function login() {
-    if (email === "") {
-      setAlert({ show: true, content: "Digite seu email" });
-    } else if (password === "") {
-      setAlert({ show: true, content: "Digite sua senha" });
-    } else {
-      try {
-        await firebase.login(email, password);
-        props.history.push("/");
-      } catch (error) {
-        setAlert({ show: true, content: "Senha Inválida" });
-      }
-    }
-  }
-
-  async function validarForm() {
-    if (nome === "") {
+  async function validarFirstStep() {
+    if (displayName === "") {
       setAlert({ show: true, content: "Digite seu nome" });
-    } else if (idade === "") {
-      setAlert({ show: true, content: "Digite sua idade" });
+    } else if (dataNascimento === "") {
+      setAlert({ show: true, content: "Digite sua data de nascimento" });
+    } else if (endereco === "") {
+      setAlert({ show: true, content: "Digite seu endereço" });
     } else {
       changeStep();
     }
+  }
+
+  async function validarSecondStep() {
     if (email === "") {
       setAlert({ show: true, content: "Digite seu email" });
     } else if (password === "") {
       setAlert({ show: true, content: "Digite sua senha" });
-    }
-  }
-  async function onRegister() {
-    if (form.password !== form.passwordConfirm) {
-      alert("Por favor, confirme a senha corretamente");
+    } else if (confirmPassword === "") {
+      setAlert({ show: true, content: "Digite sua confirmação de senha" });
+    } else if (confirmPassword !== password) {
+      setAlert({ show: true, content: "As senhas não conferem" });
     } else {
-      try {
-        // await firebase.register(name, email, password)
-        await firebase.register(form);
-        const uidUser = await firebase.getCurrentUserUid();
-        await service.insertUser({ ...form, uid: uidUser });
-        // await firebase.login(form.email, form.password);
-        // Auth.login()
-        props.history.push("/login");
-      } catch (error) {
-        console.error(error);
-      }
+      onRegister();
     }
   }
+
+  async function onRegister() {
+    console.log(getFormObject());
+    try {
+      // await firebase.register(name, email, password)
+      await firebase.register(getFormObject());
+      const uidUser = await firebase.getCurrentUserUid();
+      await service.insertUser({ ...getFormObject(), uid: uidUser });
+      // await firebase.login(form.email, form.password);
+      // Auth.login()
+      props.history.push("/login");
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  function getFormObject() {
+    return {
+      email,
+      password,
+      endereco,
+      dataNascimento,
+      displayName
+    };
+  }
+
   function handleShowPassword() {
     if (showPassword) {
       setShowPassword(false);
@@ -85,15 +94,6 @@ export default function Register(props) {
     } else if (!showPasswordconfirm) {
       setShowPasswordconfirm(true);
     }
-
-    console.log(changeForm);
-  }
-
-  async function changeForm(event) {
-    await setForm({
-      ...form,
-      [event.target.name]: event.target.value
-    });
   }
 
   function changeStep() {
@@ -124,24 +124,23 @@ export default function Register(props) {
                 placeholder="Nome "
                 autoComplete="off"
                 autoFocus={true}
-                value={nome}
-                onChange={(e => changeForm(e), e => setNome(e.target.value))}
+                onChange={e => setDisplayName(e.target.value)}
               />
-              <Input
-                id="age "
+              {/* <Input
+                id="age"
                 type="text"
                 name="age"
                 placeholder="Idade"
                 autoComplete="off"
-                onChange={(e => changeForm(e), e => setIdade(e.target.value))}
-              />
+                onChange={(e => setIdade(e.target.value))}
+              /> */}
               <Input
                 id="datebirth"
                 type="text"
                 name="datebirth"
                 placeholder="Data de Nascimento"
                 autoComplete="off"
-                onChange={e => changeForm(e)}
+                onChange={e => setDataNascimento(e.target.value)}
               />
               <Input
                 id="adress"
@@ -149,13 +148,10 @@ export default function Register(props) {
                 name="adress"
                 placeholder="Endereço"
                 autoComplete="off"
-                onChange={e => changeForm(e)}
+                onChange={e => setEndereco(e.target.value)}
               />
 
-              <Button
-                type="submit"
-                onClick={() => (validarForm() ? null : changeStep())}
-              >
+              <Button type="submit" onClick={validarFirstStep}>
                 Próximo
               </Button>
             </>
@@ -176,7 +172,7 @@ export default function Register(props) {
                 autoFocus={true}
                 placeholder="Email *"
                 autoComplete="off"
-                onChange={(e => changeForm(e), e => setEmail(e.target.value))}
+                onChange={e => setEmail(e.target.value)}
               />
               <Input
                 id="password"
@@ -186,9 +182,7 @@ export default function Register(props) {
                 placeholder="Senha *"
                 icon="visibility_off"
                 autoComplete="off"
-                onChange={
-                  (e => changeForm(e), e => validarForm(e.target.value))
-                }
+                onChange={e => setPassword(e.target.value)}
               />
               <Input
                 id="passwordConfirm"
@@ -198,13 +192,10 @@ export default function Register(props) {
                 placeholder="Confirmar Senha *"
                 icon="visibility_off"
                 autoComplete="off"
-                onChange={e => changeForm(e)}
+                onChange={e => setConfirmPassword(e.target.value)}
               />
 
-              <Button
-                type="submit"
-                onClick={() => validarForm() && onRegister()}
-              >
+              <Button type="submit" onClick={validarSecondStep}>
                 Cadastrar
               </Button>
             </>

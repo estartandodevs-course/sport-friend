@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
 #loader {
   position: fixed;
@@ -13,7 +13,7 @@
 }
 
 .space-menu {
-  @media only screen and (min-width:1024px){
+  @media only screen and (min-width: 1024px) {
     margin-left: 260px;
   }
 }

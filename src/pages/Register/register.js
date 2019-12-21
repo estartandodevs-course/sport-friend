@@ -22,7 +22,6 @@ export default function Register(props) {
   const [nome, setNome] = useState("");
   const [idade, setIdade] = useState("");
   const [email, setEmail] = useState("");
-
   const [password, setPassword] = useState("");
 
   const [alert, setAlert] = useState({ show: false, content: "" });

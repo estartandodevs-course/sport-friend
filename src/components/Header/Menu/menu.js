@@ -45,9 +45,9 @@ function Menu(props) {
           </div>
           <h1>{firebase.getCurrentUsername()} </h1>
           <div className="user-perfil">
-            <Link className="link" to="/perfil">
+            {/* <Link className="link" to="/perfil">
               <h2>Perfil</h2>
-            </Link>
+            </Link> */}
             <Link className="link" to="/">
               <h2>Página inicial</h2>
             </Link>

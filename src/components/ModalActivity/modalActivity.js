@@ -8,6 +8,15 @@ import firebase from "../../services/firebase";
 import Service from "../../services/index";
 
 export default function ModalActivity(props) {
+  const typeSport = {
+    Bicicleta: Img.frame,
+    Futebol: Img.football,
+    Exercícios: Img.gym,
+    Skate: Img.skate,
+    Corrida: Img.running,
+    Caminhar: Img.walk
+  }
+
   const service = new Service()
   const [currentUser, setUser] = useState({})
 
@@ -44,6 +53,11 @@ export default function ModalActivity(props) {
     setUser(user)
   },[])
 
+  const activityImg = () => {
+    const type = props.card.type;
+    return (typeSport[type])
+  }
+
 
   return (
     <main className="containerModal">
@@ -58,6 +72,7 @@ export default function ModalActivity(props) {
                 <img src={Img.clock} alt=""></img>
                 <img src={Img.calendar} alt=""></img>
                 <img src={Img.location} alt=""></img>
+                <img src={activityImg()} alt=""></img>
               </div>
               <div className="Texts">
                 <p>
@@ -69,6 +84,7 @@ export default function ModalActivity(props) {
                   {props.card.date.year}
                 </p>
                 <p>{props.card.place.meeting_point}</p>
+                <p>{props.card.type} </p>
               </div>
             </div>
             <div className="user">

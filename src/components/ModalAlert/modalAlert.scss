@@ -1,0 +1,30 @@
+.alert-container {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.438);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+
+  .alert-content {
+    background-color: #fff;
+    padding: 15px;
+    min-width: 220px;
+    max-width: 280px;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: #0000008a -1px 1px 8px 1px;
+
+    p {
+      max-width: 170px;
+      text-align: center;
+    }
+  }
+}

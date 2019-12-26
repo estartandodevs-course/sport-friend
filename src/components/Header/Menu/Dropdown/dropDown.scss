@@ -1,0 +1,14 @@
+.containerDropdown {
+  .DropdownShow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      cursor: pointer;
+    }
+  }
+  .dropDownDetalis {
+    flex-direction: column;
+  }
+}

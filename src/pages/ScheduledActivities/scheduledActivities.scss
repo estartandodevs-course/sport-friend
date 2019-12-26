@@ -1,0 +1,35 @@
+.containerAtividades {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+  .alertAtividade {
+    width: 300px;
+    height: 128px;
+    display: flex;
+    margin-top: 100px;
+    border-radius: 8px;
+    align-items: center;
+    margin-bottom: 140px;
+    justify-content: center;
+    background: rgba(196, 196, 196, 0.41);
+    
+    h2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 19px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+
+      color: #ffffff;
+    }
+  }   
+}

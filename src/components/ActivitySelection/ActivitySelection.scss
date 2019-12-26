@@ -1,0 +1,109 @@
+.container-activity {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 290px;
+
+  .sport {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    z-index: 3;
+    width: 75px;
+
+    &:nth-child(6) {
+      .sport-img {
+        width: 75px;
+        height: 75px;
+        margin: 5px 10px -7px;
+        // fill: #fff;
+        // filter: brightness(1000%);
+      }
+
+      // p {
+      //   font-size: 20px;
+      // }
+    }
+
+    @media (max-width: "768px") {
+      &:nth-child(5) {
+        order: 5;
+      }
+    }
+
+    &:nth-child(1),
+    &:nth-child(3) {
+      margin: 0 -6px -71px;
+    }
+
+    .sport-img {
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      margin-bottom: -7px;
+      display: flex;
+      align-items: center;
+      border-radius: 68px;
+      background: #ffffff;
+      justify-content: center;
+      border: 1px solid #11c9c9;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      &.active {
+        background-color: #f06033;
+      }
+    }
+
+    .input-radio {
+      display: none;
+    }
+  }
+}
+
+// .input-radio:checked + .sport-img {
+//   background-color: #f06033 !important;
+// }
+
+@media screen and (min-width: 768px) {
+  .container-activity {
+    width: initial;
+
+    .sport {
+      &:nth-child(6) {
+        .sport-img {
+          width: 40px;
+          height: 40px;
+          // margin: 5px 10px -7px;
+          // fill: #fff;
+          // filter: brightness(1000%);
+        }
+
+        // p {
+        //   font-size: 20px;
+        // }
+      }
+
+      &:nth-child(1),
+      &:nth-child(3) {
+        margin: 0;
+      }
+
+      // &:nth-child(5) {
+      //   .sport-img {
+      //     width: 40px;
+      //     height: 40px;
+      //     padding: 10px;
+      //     margin: 0 0 -7px 0;
+      //     background-color: #fff;
+      //   }
+
+      //   p {
+      //     font-size: initial;
+      //   }
+      // }
+    }
+  }
+}

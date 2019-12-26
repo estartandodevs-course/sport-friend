@@ -1,0 +1,13 @@
+.map {
+  width: 334px;
+  height: 321px;
+  position: relative;
+  margin-right: 11px;
+}
+@media screen and (max-width: 828px) {
+  .map {
+    width: 240px;
+    height: 171px;
+    margin-right: 0;
+  }
+}
